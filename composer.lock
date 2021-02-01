@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "48c51387445db3253d05f848c3c3b9ce",
+    "content-hash": "8a6ac1ec8c2abb2cda9f4526adc45b7f",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -64,16 +64,16 @@
         },
         {
             "name": "backpack/crud",
-            "version": "4.1.32",
+            "version": "4.1.x-dev",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Laravel-Backpack/CRUD.git",
-                "reference": "1a65e15562989c8fda3d2941da7110ca4008e21e"
+                "reference": "62856b1f01fc3e05c80140fc22f85ea2aac8368c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Laravel-Backpack/CRUD/zipball/1a65e15562989c8fda3d2941da7110ca4008e21e",
-                "reference": "1a65e15562989c8fda3d2941da7110ca4008e21e",
+                "url": "https://api.github.com/repos/Laravel-Backpack/CRUD/zipball/62856b1f01fc3e05c80140fc22f85ea2aac8368c",
+                "reference": "62856b1f01fc3e05c80140fc22f85ea2aac8368c",
                 "shasum": ""
             },
             "require": {
@@ -85,7 +85,8 @@
                 "prologue/alerts": "^0.4.1"
             },
             "require-dev": {
-                "orchestra/testbench": "^6.0|^5.0|^4.0|^3.0",
+                "orchestra/database": "^5.0|^4.0|^3.0",
+                "orchestra/testbench": "^5.0|^4.0|^3.0",
                 "phpunit/phpunit": "~8.0|~7.0|~9.0",
                 "scrutinizer/ocular": "~1.7|~1.1",
                 "spatie/laravel-translatable": "^4.0"
@@ -151,9 +152,9 @@
             ],
             "support": {
                 "issues": "https://github.com/Laravel-Backpack/CRUD/issues",
-                "source": "https://github.com/Laravel-Backpack/CRUD/tree/4.1.32"
+                "source": "https://github.com/Laravel-Backpack/CRUD/tree/4.1.30"
             },
-            "time": "2021-02-01T14:06:00+00:00"
+            "time": "2020-12-17T12:27:29+00:00"
         },
         {
             "name": "brick/math",
@@ -8078,9 +8079,18 @@
             "time": "2020-07-12T23:59:07+00:00"
         }
     ],
-    "aliases": [],
+    "aliases": [
+        {
+            "package": "backpack/crud",
+            "version": "4.1.9999999.9999999-dev",
+            "alias": "4.0.99",
+            "alias_normalized": "4.0.99.0"
+        }
+    ],
     "minimum-stability": "dev",
-    "stability-flags": [],
+    "stability-flags": {
+        "backpack/crud": 20
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
