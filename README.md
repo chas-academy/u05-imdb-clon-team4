@@ -8,11 +8,19 @@ Other than that, happy hacking 🤩
 
 ## TBA - Standards and conventions
 
-- PHP version
-- MySQL version
-- Indentation (e.g. 1 tab / 2 spaces)
-- Naming (classes/functions/variables, files/folder etc)
-  - camelCase
-  - PascalCase
-  - kebab-case
-  - snake_case
+-   PHP version
+-   MySQL version
+-   Indentation (e.g. 1 tab / 2 spaces)
+-   Naming (classes/functions/variables, files/folder etc)
+    -   camelCase
+    -   PascalCase
+    -   kebab-case
+    -   snake_case
+
+## Setup Development Environment
+
+```bash
+code --install-extension kokororin.vscode-phpfmt
+code --install-extension HookyQR.beautify
+code --install-extension esbenp.prettier-vscode
+```
