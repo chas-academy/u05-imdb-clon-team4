@@ -9,10 +9,10 @@ return [
     |
     | Make it yours.
     |
-    */
+     */
 
     // Date & Datetime Format Syntax: https://carbon.nesbot.com/docs/#api-localization
-    'default_date_format'     => 'D MMM YYYY',
+    'default_date_format' => 'D MMM YYYY',
     'default_datetime_format' => 'D MMM YYYY, HH:mm',
 
     // Direction, according to language
@@ -24,7 +24,7 @@ return [
     // ----
 
     // Project name. Shown in the window title.
-    'project_name' => 'Backpack Admin Panel',
+    'project_name' => 'IMDB Clone',
 
     // When clicking on the admin panel's top-left logo/name,
     // where should the user be redirected?
@@ -71,7 +71,7 @@ return [
     // ------
 
     // Menu logo. You can replace this with an <img> tag if you have a logo.
-    'project_logo'   => '<b>Back</b>pack',
+    'project_logo' => '<b>IMDB</b>Clone',
 
     // Show / hide breadcrumbs on admin panel pages.
     'breadcrumbs' => true,
@@ -138,7 +138,7 @@ return [
     ],
 
     // JS files that are loaded in all pages, using Laravel's mix() helper
-    'mix_scripts' => [// file_path => manifest_directory_path
+    'mix_scripts' => [ // file_path => manifest_directory_path
         // 'js/app.js' => '',
     ],
 
@@ -161,7 +161,7 @@ return [
     | Register functions in AuthController.
     |
     | By default the registration is open only on localhost.
-    */
+     */
 
     'registration_open' => env('BACKPACK_REGISTRATION_OPEN', env('APP_ENV') === 'local'),
 
@@ -169,7 +169,7 @@ return [
     |--------------------------------------------------------------------------
     | Routing
     |--------------------------------------------------------------------------
-    */
+     */
 
     // The prefix used in all base routes (the 'admin' in admin/dashboard)
     // You can make sure all your URLs use this prefix by using the backpack_url() helper instead of url()
@@ -209,7 +209,7 @@ return [
     |--------------------------------------------------------------------------
     | Authentication
     |--------------------------------------------------------------------------
-    */
+     */
 
     // Fully qualified namespace of the User model
     'user_model_fqn' => config('auth.providers.users.model'),
@@ -231,7 +231,7 @@ return [
     // Username column for authentication
     // The Backpack default is the same as the Laravel default (email)
     // If you need to switch to username, you also need to create that column in your db
-    'authentication_column'      => 'email',
+    'authentication_column' => 'email',
     'authentication_column_name' => 'Email',
 
     // The guard that protects the Backpack admin panel.
@@ -253,7 +253,7 @@ return [
     |--------------------------------------------------------------------------
     | Theme (User Interface)
     |--------------------------------------------------------------------------
-    */
+     */
     // Change the view namespace in order to load a different theme than the one Backpack provides.
     // You can create child themes yourself, by creating a view folder anywhere in your resources/views
     // and choosing that view_namespace instead of the default one. Backpack will load a file from there
@@ -269,7 +269,7 @@ return [
     |--------------------------------------------------------------------------
     | File System
     |--------------------------------------------------------------------------
-    */
+     */
 
     // Backpack\Base sets up its own filesystem disk, just like you would by
     // adding an entry to your config/filesystems.php. It points to the root
@@ -290,7 +290,7 @@ return [
     | More info and payment form on:
     | https://www.backpackforlaravel.com
     |
-    */
+     */
 
     'license_code' => env('BACKPACK_LICENSE', false),
 ];
