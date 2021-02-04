@@ -1,3 +1,13 @@
 {
-	"editor.tabSize": 2
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "emmet.includeLanguages": {
+        "blade": "html"
+    },
+    "[php]": {
+        "editor.defaultFormatter": "kokororin.vscode-phpfmt"
+    },
+    "beautify.language": {
+        "html": ["blade"]
+    }
 }

@@ -16,3 +16,11 @@ Other than that, happy hacking 🤩
     -   PascalCase
     -   kebab-case
     -   snake_case
+
+## Setup Development Environment
+
+```bash
+code --install-extension kokororin.vscode-phpfmt
+code --install-extension HookyQR.beautify
+code --install-extension esbenp.prettier-vscode
+```
