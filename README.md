@@ -6,10 +6,27 @@ This being said we are all people with personal lives and unexpected things can 
 
 Other than that, happy hacking 🤩
 
+## Product Backlog
+
+The product backlog can be found in [our GitHub project](https://github.com/chas-academy/u05-imdb-clone-team4/projects/1) and is our single authoritative source for things that we are working on.
+
+Not every item on the backlog is ready to work on. An item can be place in the backlog even if it never gets used.
+
+If a backlog item description is unclear, you can add clearification request to the author asking to clearlify the item by adding `---`, e.g:
+
+```
+Add option for user to do some stuff.
+
+---
+
+Which user should be able to do what?
+```
+
+
 ## Standards and conventions
 
--   PHP version: 8.0.1 or newer
--   Indentation: 2 tabs / 4 spaces
+- PHP version: 8.0.1 or newer
+- Indentation: 2 tabs / 4 spaces
 
 Additionally, we want to follow popular/common practices and conventions. Sources to those highlighted below are [PHP_FIG - PSR-1](https://www.php-fig.org/psr/psr-1/) and [Laravel Best Practices (Repo)](https://github.com/alexeymezenin/laravel-best-practices#follow-laravel-naming-conventions).
 
