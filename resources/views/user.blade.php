@@ -8,6 +8,14 @@
 </head>
 <body>
     <h1>User page</h1>
-    <a href="/">👈 Back home</a>
+    <p>
+        <a href="/">👈 Back home</a>
+    </p>
+    
+    <p>
+        <a href="/admin/logout">Logout 🦄</a>
+    </p>
+
+    
 </body>
 </html>
