@@ -9,5 +9,6 @@
     },
     "beautify.language": {
         "html": ["blade"]
-    }
+    },
+    "phpfmt.passes": ["OnlyOrderUseClauses"]
 }
