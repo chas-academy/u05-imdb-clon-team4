@@ -1,4 +1,5 @@
 <?php
+use App\Http\Controllers\MovieController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\RegisteredUserController;
 use App\Http\Controllers\SignInController;
@@ -31,3 +32,7 @@ Route::get('/signup', [SignUpController::class, 'index']);
 Route::get('/adminview', [AdminController::class, 'index']);
 
 Route::get('/registereduser', [RegisteredUserController::class, 'index']);
+
+Route::get('/movie/{id}', [MovieController::class, 'show']);
+
+
