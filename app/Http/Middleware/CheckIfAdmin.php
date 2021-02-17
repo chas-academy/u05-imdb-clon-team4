@@ -28,11 +28,8 @@ class CheckIfAdmin
      */
     private function checkIfUserIsAdmin($user)
     {
-        // return ($user->is_admin == 1);
-        /*
-        Looks like this is where we can check user type/role
-         */
-        return true;
+        return ($user->hasRole('admin'));
+        // return true;
     }
 
     /**
