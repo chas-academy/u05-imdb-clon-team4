@@ -22,7 +22,7 @@ services:
 
     # DATABASE
     db:
-        image: mysql:5.7
+        image: mariadb:latest
         container_name: imdbclone-db
         restart: unless-stopped
         environment:
