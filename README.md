@@ -6,6 +6,12 @@ This being said we are all people with personal lives and unexpected things can 
 
 Other than that, happy hacking 🤩
 
+# Envirnoment and setup
+
+We use docker for a standardized and easy to follow environment setup.
+
+[Setup instructions](https://github.com/chas-academy/u05-imdb-clone-team4/blob/main/docker-compose/README.md)
+
 ## Product Backlog
 
 The product backlog can be found in [our GitHub project](https://github.com/chas-academy/u05-imdb-clone-team4/projects/1) and is our single authoritative source for things that we are working on.
@@ -22,11 +28,9 @@ Add option for user to do some stuff.
 Which user should be able to do what?
 ```
 
-
 ## Standards and conventions
 
-- PHP version: 8.0.1 or newer
-- Indentation: 2 tabs / 4 spaces
+-   Indentation: 2 tabs / 4 spaces
 
 Additionally, we want to follow popular/common practices and conventions. Sources to those highlighted below are [PHP_FIG - PSR-1](https://www.php-fig.org/psr/psr-1/) and [Laravel Best Practices (Repo)](https://github.com/alexeymezenin/laravel-best-practices#follow-laravel-naming-conventions).
 
