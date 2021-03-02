@@ -30,12 +30,12 @@ return [
     | - creating and updating should be disabled
      */
 
-    'allow_permission_create' => false,
-    'allow_permission_update' => false,
-    'allow_permission_delete' => false,
-    'allow_role_create' => false,
-    'allow_role_update' => false,
-    'allow_role_delete' => false,
+    'allow_permission_create' => env('PERMISSION_CREATE', true),
+    'allow_permission_update' => env('PERMISSION_UPDATE', true),
+    'allow_permission_delete' => env('PERMISSION_DELETE', true),
+    'allow_role_create' => env('ROLE_CREATE', true),
+    'allow_role_update' => env('ROLE_UPDATE', true),
+    'allow_role_delete' => env('ROLE_DELETE', true),
 
     /*
     |--------------------------------------------------------------------------
