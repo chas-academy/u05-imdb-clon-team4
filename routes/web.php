@@ -4,6 +4,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\RegisteredUserController;
 use App\Http\Controllers\SignInController;
 use App\Http\Controllers\SignUpController;
+use App\Http\Controllers\MovieList;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -34,5 +35,8 @@ Route::get('/adminview', [AdminController::class, 'index']);
 Route::get('/registereduser', [RegisteredUserController::class, 'index']);
 
 Route::get('/movie/{id}', [MovieController::class, 'show']);
+
+Route::get('/movielist', [MovieList::class, 'index']);
+
 
 
