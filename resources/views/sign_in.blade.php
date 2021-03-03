@@ -7,7 +7,8 @@
     <title>Sign In</title>
 </head>
 <body>
+<x-header title="This is the component title"></x-header>
 <h1>Sign In</h1>
-    
+
 </body>
 </html>
