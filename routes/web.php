@@ -1,5 +1,10 @@
 <?php
-
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\MovieController;
+use App\Http\Controllers\MovieList;
+use App\Http\Controllers\RegisteredUserController;
+use App\Http\Controllers\SignInController;
+use App\Http\Controllers\SignUpController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,10 +18,22 @@ use Illuminate\Support\Facades\Route;
 |
  */
 
+// Route::get('/', function () {
+// return view('welcome');
+// });
+
 Route::get('/', function () {
-    return view('welcome');
+    return view('index');
 });
 
-Route::get('/user', function () {
-    return view('user');
-});
+Route::get('/signin', [SignInController::class, 'index']);
+
+Route::get('/signup', [SignUpController::class, 'index']);
+
+Route::get('/adminview', [AdminController::class, 'index']);
+
+Route::get('/registereduser', [RegisteredUserController::class, 'index']);
+
+Route::get('/movie/{id}', [MovieController::class, 'show']);
+
+Route::get('/movielist', [MovieList::class, 'index']);
