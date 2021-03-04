@@ -1,1 +1,25 @@
-@import 'node_modules/font-awesome/scss/font-awesome.css';
+@import url('https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.0/font/bootstrap-icons.css');
+.footer {
+    background-color: rgb(56, 55, 55) !important;
+}
+
+.footer * {
+    color: white !important;
+}
+
+/* :hover på länkar
+ text-decoration: none;
+font-awesome */
+
+a {
+    text-decoration: none !important;
+}
+
+a:hover {
+    text-decoration: underline !important;
+}
+
+[class^='fa'] {
+    width: 80px !important;
+    height: 80px !important;
+}
