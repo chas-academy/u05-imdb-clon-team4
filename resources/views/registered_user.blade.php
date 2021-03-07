@@ -8,6 +8,6 @@
 </head>
 <body>
 <h1>Registered User</h1>
-    
+<x-footer></x-footer>
 </body>
 </html>

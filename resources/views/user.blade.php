@@ -11,11 +11,11 @@
     <p>
         <a href="/">👈 Back home</a>
     </p>
-    
+
     <p>
         <a href="/admin/logout">Logout 🦄</a>
     </p>
 
-    
+<x-footer></x-footer>
 </body>
 </html>

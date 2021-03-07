@@ -10,6 +10,6 @@
     <h1>MovieList</h1>
 
 
-    
+<x-footer></x-footer>
 </body>
 </html>

@@ -8,5 +8,6 @@
 </head>
 <body>
  <h1> Movie's </h1>
+ <x-footer></x-footer>
 </body>
 </html>
