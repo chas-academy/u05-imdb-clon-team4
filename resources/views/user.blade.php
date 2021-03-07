@@ -1,13 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
+<x-header title="User"></x-header>
+
 <body>
-    <h1>User page</h1>
+    <x-navbar></x-navbar>
+    <h1>User view</h1>
     <p>
         <a href="/">👈 Back home</a>
     </p>
@@ -16,6 +13,7 @@
         <a href="/admin/logout">Logout 🦄</a>
     </p>
 
-<x-footer></x-footer>
+    <x-footer></x-footer>
 </body>
+
 </html>

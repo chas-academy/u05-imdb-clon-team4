@@ -10,5 +10,10 @@
     "beautify.language": {
         "html": ["blade"]
     },
-    "phpfmt.passes": ["OnlyOrderUseClauses"]
+    "phpfmt.passes": [
+        "OnlyOrderUseClauses"
+    ],
+    "[blade]": {
+        "editor.defaultFormatter": "HookyQR.beautify"
+    }
 }

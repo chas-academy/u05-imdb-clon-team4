@@ -1,13 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Movie</title>
-</head>
+<x-header title="Movie"></x-header>
+
 <body>
- <h1> Movie's </h1>
- <x-footer></x-footer>
+    <x-navbar></x-navbar>
+    <h1>Movie view</h1>
+    <x-footer></x-footer>
 </body>
+
 </html>
