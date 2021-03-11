@@ -11,5 +11,8 @@
         {
             "url": "heroku/node"
         }
-    ]
+    ],
+    "scripts": {
+        "postdeploy": "bundle exec npm run dev"
+    }
 }
