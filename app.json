@@ -9,10 +9,10 @@
             "url": "heroku/php"
         },
         {
-            "url": "heroku/node"
+            "url": "heroku/nodejs"
         }
     ],
     "scripts": {
-        "postdeploy": "bundle exec npm run dev"
+        "postdeploy": "npm run prod"
     }
 }
