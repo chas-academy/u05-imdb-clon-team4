@@ -23,3 +23,11 @@ a:hover {
     width: 80px !important;
     height: 80px !important;
 }
+
+.navbar-end {
+    justify-content: flex-end;
+    position: absolute;
+    right: 80px;
+    top: 5px;
+    bottom: 5px;
+}
