@@ -1,7 +1,7 @@
 {
     "private": true,
     "scripts": {
-        "heroku-postbuild": "npm run prod",
+        "heroku-postbuild": "npm run production",
         "dev": "npm run development",
         "development": "mix",
         "watch": "mix watch",
@@ -15,7 +15,8 @@
         "laravel-mix": "^6.0.6",
         "lodash": "^4.17.19",
         "postcss": "^8.1.14",
-        "sass-loader": "10.x",
-        "resolve-url-loader": "^3.1.2"
+        "resolve-url-loader": "^3.1.2",
+        "sass": "^1.32.8",
+        "sass-loader": "^10.1.1"
     }
 }
