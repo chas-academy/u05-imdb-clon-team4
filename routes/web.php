@@ -1,7 +1,7 @@
 <?php
-use App\Http\Controllers\Admin\AdminController;
-use App\Http\Controllers\Admin\SignInController;
-use App\Http\Controllers\Admin\SignUpController;
+// use App\Http\Controllers\Admin\AdminController;
+// use App\Http\Controllers\Admin\SignInController;
+// use App\Http\Controllers\Admin\SignUpController;
 use App\Http\Controllers\Movie\MovieController;
 use App\Http\Controllers\Movie\MovieList;
 use App\Http\Controllers\User\LoginController;
@@ -17,11 +17,11 @@ Route::get('/', function () {
 })->name('home');
 
 // Admin
-Route::get('/adminview', [AdminController::class, 'index']);
+// Route::get('admin/dashboard', [AdminController::class, 'index']);
 
 // User
 // home
-Route::get('/account', [RegisteredUserController::class, 'index'])->name('user_home');
+Route::get('account', [RegisteredUserController::class, 'index'])->name('user_home');
 
 // login
 Route::get('login', [LoginController::class, 'index'])->name('user_login');
