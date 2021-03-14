@@ -22,8 +22,6 @@ class RegisterUserController extends Controller
 
     public function create(Request $request)
     {
-        // dd($request);
-
         // Validate input
         $this->validate($request, [
             'name' => 'required|max:255',
@@ -33,11 +31,14 @@ class RegisterUserController extends Controller
         ]);
 
         // Create user
-        User::create([
+        $user = User::create([
             'name' => $request->name,
             'email' => $request->email,
             'password' => Hash::make($request->password),
         ]);
+
+        // Assign role "user" to account
+        $user->assignRole('user');
 
         // Sign in user
         auth()->attempt($request->only('email', 'password'));
