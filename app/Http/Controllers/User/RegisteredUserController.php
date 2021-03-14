@@ -15,6 +15,11 @@ class RegisteredUserController extends Controller
 
     public function index(Request $request)
     {
-        return view('user.index');
+        $user = auth()->user();
+
+        return view('user.index')
+            ->with([
+                'user' => $user,
+            ]);
     }
 }
