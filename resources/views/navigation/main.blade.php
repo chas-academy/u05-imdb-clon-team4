@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-light bg-light p-3">
     <div class="container-fluid">
     
         <a class="navbar-brand" href="{{ route('home') }}">IMDB Clone</a>
@@ -18,10 +18,10 @@
             
             @guest
                 <li class="nav-item">
-                    {{-- <a class="nav-link" href="{{ route('user_login') }}">Login</a> --}}
+                    <a class="nav-link" href="{{ route('user_login') }}">Login</a>
                 </li>
                 <li class="nav-item">
-                    {{-- <a class="nav-li9nk" href="{{ route('user_create') }}">Create account</a> --}}
+                    <a class="nav-link" href="{{ route('user_create') }}">Create account</a>
                 </li>
             @endguest
         </ul>
