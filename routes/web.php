@@ -1,39 +1,42 @@
 <?php
-use App\Http\Controllers\AdminController;
-use App\Http\Controllers\MovieController;
-use App\Http\Controllers\MovieList;
-use App\Http\Controllers\RegisteredUserController;
-use App\Http\Controllers\SignInController;
-use App\Http\Controllers\SignUpController;
+use App\Http\Controllers\Admin\AdminController;
+use App\Http\Controllers\Admin\SignInController;
+use App\Http\Controllers\Admin\SignUpController;
+use App\Http\Controllers\Movie\MovieController;
+use App\Http\Controllers\Movie\MovieList;
+use App\Http\Controllers\User\LoginController;
+use App\Http\Controllers\User\LogoutController;
+use App\Http\Controllers\User\RegisteredUserController;
+use App\Http\Controllers\User\RegisterUserController;
+use App\Http\Controllers\User\TermsController;
 use Illuminate\Support\Facades\Route;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
- */
-
-// Route::get('/', function () {
-// return view('welcome');
-// });
-
+// Interface
 Route::get('/', function () {
     return view('index');
-});
+})->name('home');
 
-Route::get('/signin', [SignInController::class, 'index']);
-
-Route::get('/signup', [SignUpController::class, 'index']);
-
+// Admin
 Route::get('/adminview', [AdminController::class, 'index']);
 
-Route::get('/registereduser', [RegisteredUserController::class, 'index']);
+// User
+// home
+Route::get('/account', [RegisteredUserController::class, 'index'])->name('user_home');
 
-Route::get('/movie/{id}', [MovieController::class, 'show']);
+// login
+Route::get('login', [LoginController::class, 'index'])->name('user_login');
+Route::post('login', [LoginController::class, 'store']);
 
-Route::get('/movielist', [MovieList::class, 'index']);
+// logout
+Route::get('logout', [LogoutController::class, 'store'])->name('user_logout');
+
+// create
+Route::get('register', [RegisterUserController::class, 'index'])->name('user_create');
+Route::post('register', [RegisterUserController::class, 'create']);
+
+// terms
+Route::get('user-terms', [TermsController::class, 'index'])->name('user_terms');
+
+// Movie
+Route::get('movie/{id}', [MovieController::class, 'show']);
+Route::get('movielist', [MovieList::class, 'index']);
