@@ -19,7 +19,7 @@
     {{-- We'll use this for dynamic page content
     and add a wrapping section with some padding.
     We can remove this later on if we want side-to-side content --}}
-    <div class="container">
+    <div class="container mt-3">
       @yield('content')
     </div>
     
