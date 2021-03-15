@@ -1,0 +1,32 @@
+.footer {
+    background-color: rgb(56, 55, 55) !important;
+
+    * {
+        color: white !important;
+    }
+}
+
+/* :hover på länkar
+ text-decoration: none;
+font-awesome */
+
+a {
+    text-decoration: none !important;
+
+    &:hover {
+        text-decoration: underline !important;
+    }
+}
+
+[class^='fa'] {
+    width: 80px !important;
+    height: 80px !important;
+}
+
+.navbar-end {
+    justify-content: flex-end;
+    position: absolute;
+    right: 80px;
+    top: 5px;
+    bottom: 5px;
+}
