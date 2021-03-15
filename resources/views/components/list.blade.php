@@ -1,7 +1,8 @@
-    <div class="d-flex col">
-        <div {{-- class="col" --}}><h2 class="text-center">Other content below</h2></div>
 
-        <div class="container bg-dark row p-2 gx-5">
+    <div class="d-flex flex-column align-items-center card-container">
+           <h2 class="text-center mt-3">Other content below</h2>
+
+        <div class="container row p-2 gx-5">
         {{-- fortsätta här om vi vill ha lådor med klickbara listor --}}
 
 
