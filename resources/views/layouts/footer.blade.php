@@ -1,4 +1,4 @@
-<footer class="footer .text-white mt-auto py-3 bg-dark fixed-bottom" style="height: 200px;">
+<footer class="footer .text-white mt-auto py-3 bg-dark {{-- fixed-bottom --}}" style="height: 200px;">
   <div class="footer-container d-flex justify-content-around">
     <h4 class="p-2"><a href="#">About</a></h4>
     <h4 class="p-2"><a href="#">FAQ</a></h4>
