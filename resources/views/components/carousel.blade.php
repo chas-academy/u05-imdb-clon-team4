@@ -1,5 +1,4 @@
-{{-- @extends('layouts.app') --}}
- <div
+<div
       id="carouselExampleCaptions"
       class="carousel slide"
       data-bs-ride="carousel"
@@ -91,22 +90,5 @@
         </button>
       </div>
     </div>
-    <div>
-        <h2 class="text-center">Other content below</h2>
-        <div class="container ">
-        {{-- fortsätta här om vi vill ha lådor med klickbara listor --}}
-            <div class="row d-flex justify-content-around">
-                <div class="col-md-8">
-                Listcontainer
-                </div>
-                <div class="col-md-8">
-                Another listcontainer
-                </div>
-                <div class="col-md-8">
-                Another listcontainer
-                </div>
-            </div>
-            </div>
 
-    </div>
 

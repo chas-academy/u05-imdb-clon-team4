@@ -1,0 +1,12 @@
+@import 'layout/colors';
+.card-container {
+    background-color: $dark-bg-color;
+}
+
+.card-header {
+    background-color: $accent-color;
+}
+
+h2 {
+    color: $text-color;
+}
