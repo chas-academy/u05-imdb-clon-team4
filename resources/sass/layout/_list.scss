@@ -1,7 +1,4 @@
-$dark-bg-color: #010925;
-$accent-color: #fac94c;
-$text-color: #fff;
-
+@import 'layout/colors';
 .card-container {
     background-color: $dark-bg-color;
 }
