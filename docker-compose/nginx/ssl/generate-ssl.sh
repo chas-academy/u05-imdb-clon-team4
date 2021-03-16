@@ -21,12 +21,12 @@ x509_extensions = v3_req
 distinguished_name = dn
 
 [dn]
-C = CA
-ST = BC
-L = Vancouver
-O = Example Corp
-OU = Testing Domain
-emailAddress = webmaster@$BASE_DOMAIN
+C = SE
+ST = Stockholm
+L = Stockholm
+O = CHAS ACADEMY
+OU = IMDB Clone G4
+emailAddress = masters@$BASE_DOMAIN
 CN = $BASE_DOMAIN
 
 [v3_req]
