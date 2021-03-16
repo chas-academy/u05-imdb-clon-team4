@@ -13,7 +13,7 @@
 
     <h1>Login</h1>
 
-    <form class="p-3 bg-light border border-2 rounded" action="{{ route('user_login') }}" method="post">
+    <form class="p-3 logincontainer border border-2 rounded" action="{{ route('user_login') }}" method="post">
       @csrf
       <div class="mb-3">
         <label for="email" class="form-label">Your email</label>
@@ -37,7 +37,7 @@
         @enderror
       </div>
 
-      <button type="submit" class="btn btn-primary">Login</button>
+      <button type="submit" class="btn logbtn">Login</button>
     </form>
 
     <p class="mt-2 small text-muted">Don't have an account? <a href="{{ route('user_create') }}">Create account</a>
