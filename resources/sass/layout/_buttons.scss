@@ -3,17 +3,17 @@
         color: $text-color-light;
         background-color: $primary-color;
         border-color: $primary-color;
-		:hover {
-			background-color: mix(black, $primary-color, 40%);
-		}
+        :hover {
+            background-color: mix(black, $primary-color, 40%);
+        }
     }
     .imdb-btn-secondary {
         color: $text-color;
         background-color: $secondary-bg-color;
         border-color: $secondary-bg-color;
-		:hover {
-			background-color: mix(black, $secondary-bg-color, 40%);
-		}
+        :hover {
+            background-color: mix(black, $secondary-bg-color, 40%);
+        }
     }
 
     :hover {
