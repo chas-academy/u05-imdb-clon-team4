@@ -12,7 +12,7 @@ services:
             args:
                 user: user
                 uid: 1000
-            context: ./docker-compose/
+            context: ./docker-compose/php
         image: imdbclone
         container_name: imdbclone-app
         restart: unless-stopped
@@ -35,14 +35,20 @@ services:
 
     # WEB SERVER
     nginx:
-        image: nginx:alpine
+        build:
+            args:
+                DEV_DOMAIN: ${DEV_DOMAIN}
+            context: ./docker-compose/nginx
+        image: nginx
         container_name: imdbclone-nginx
         restart: unless-stopped
         ports:
             - 80:80
+            - 443:443
         volumes:
             - ./:/var/www
-            - ./docker-compose/nginx:/etc/nginx/conf.d/
+            - ./docker-compose/nginx/vhost:/etc/nginx/conf.d/default.conf
+
     #PMA
     phpmyadmin:
         depends_on:
