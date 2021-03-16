@@ -1,3 +1,6 @@
+//--------------------------------------------------------------------------
+// Color variables
+
 $cod-gray: #1c1b1b;
 $red-devil: #830417;
 $mine-shaft: #2e2e2e;
@@ -6,15 +9,28 @@ $tempress: #290000;
 $burnt-maroon: #450703;
 $rosewood: #5e000a;
 $alto: #dfdfdf;
-/**/
 
-$dark-bg-color: $cod-gray;
-$accent-color: $red-devil;
-$text-color: $silver;
-$text-color-light: $alto;
-$link-color: $accent-color;
+//--------------------------------------------------------------------------
+// Basics
+
 $primary-color: $rosewood;
 $secondary-color: $burnt-maroon;
+
+$dark-bg-color: $cod-gray;
 $secondary-bg-color: $mine-shaft;
-/* $light-bg-color: #e7e6e6;
-$dark-text-color: #000002; */
+
+$accent-color: $red-devil;
+
+$text-color: $silver;
+$text-color-light: $alto;
+
+$primary-color: $rosewood;
+$secondary-color: $burnt-maroon;
+
+//--------------------------------------------------------------------------
+// Buttons
+
+$btn-primary-color: $primary-color;
+$btn-secondary-color: $secondary-bg-color;
+$btn-text-color: $text-color;
+$btn-text-color-light: $text-color-light;
