@@ -1,24 +1,27 @@
+# Use nginx alpine latest image
 FROM nginx:alpine
 
+# Add DEV DOMAIN arg from .env as var
 ARG DEV_DOMAIN
 ENV DEV_DOMAIN $DEV_DOMAIN
 
+# Install openssl and bash to alpine
 RUN apk update && apk add \
     openssl \
     bash
 
+# Import shell files
 COPY ssl/generate-ssl.sh /etc/nginx/generate-ssl.sh
+COPY ssl/vhost.sh /etc/nginx/vhost.sh
+
+# Set execute privileges to imported shell files
 RUN chmod +x /etc/nginx/generate-ssl.sh
+RUN chmod +x /etc/nginx/vhost.sh
+
+# Run imported shell files
 RUN cd /etc/nginx && ./generate-ssl.sh
-# RUN ./etc/nginx/generate-ssl.sh
+RUN cd /etc/nginx && ./vhost.sh
 
-
-
-
-
-
-# # Install system dependencies
-# RUN apk --update --no-cache add openssl
-
-# # Create selfsigned SSL for localhost
-# RUN openssl req -x509 -nodes -days 365 -subj "/C=CA/ST=QC/O=Company, Inc./CN=localhost" -addext "subjectAltName=DNS:localhost" -newkey rsa:2048 -keyout /etc/ssl/private/localhost.key -out /etc/ssl/certs/localhost.crt;
+# Expose ports 80 (HTTP) and 443 (HTTPS)
+EXPOSE 80
+EXPOSE 443
