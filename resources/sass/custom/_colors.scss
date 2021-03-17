@@ -39,6 +39,10 @@ $dark: $cod-gray;
 
 // custom-colors-map
 $custom-colors: (
+    'primary': $red-devil,
+    'secondary': $tundora,
+    'light': $alto,
+    'dark': $cod-gray,
     'red-devil': $red-devil,
     'rosewood': $rosewood,
     'burnt-maroon': $burnt-maroon,
@@ -49,6 +53,9 @@ $custom-colors: (
     'alto': $alto,
     'silver': $silver
 );
+
+// merge custom-colors-map w colors-map
+$colors: map-merge($colors, $custom-colors);
 
 // merge custom-colors-map w theme-colors-map
 $theme-colors: map-merge($theme-colors, $custom-colors);
