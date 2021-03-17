@@ -17,7 +17,7 @@ $alto: #dfdfdf;
 $silver: #c1c1c1;
 
 //--------------------------------------------------------------------------
-// Override variables
+// Override Bootstrap variables
 
 // theme-color-variables
 $primary: $red-devil;
@@ -29,13 +29,13 @@ $dark: $cod-gray;
 $custom-colors: (
     'red-devil': $red-devil,
     'rosewood': $rosewood,
-	"burnt-maroon": $burnt-maroon,
-	"tempress": $tempress,
-	"tundora": $tundora,
-	"mine-shaft": $mine-shaft,
-	"cod-gray": $cod-gray,
-	"alto": $alto,
-	"silver": $silver,
+    'burnt-maroon': $burnt-maroon,
+    'tempress': $tempress,
+    'tundora': $tundora,
+    'mine-shaft': $mine-shaft,
+    'cod-gray': $cod-gray,
+    'alto': $alto,
+    'silver': $silver
 );
 
 // merge custom-colors-map w theme-colors-map
