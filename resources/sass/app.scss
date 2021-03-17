@@ -1,0 +1,27 @@
+//--------------------------------------------------------------------------
+// Required
+@import '../../node_modules/bootstrap/scss/functions';
+@import '../../node_modules/bootstrap/scss/variables';
+@import '../../node_modules/bootstrap/scss/mixins';
+
+//--------------------------------------------------------------------------
+// Override color variables
+@import 'custom/colors';
+@import 'custom/variables';
+
+//--------------------------------------------------------------------------
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
+
+//--------------------------------------------------------------------------
+// Other custom changes
+
+/** Assets **/
+@import 'layout/colors';
+@import 'layout/buttons';
+
+/** Components **/
+@import 'layout/list';
+@import 'layout/footer';
+
+/** Pages **/
