@@ -1,7 +1,9 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Movie;
 
+use App\Http\Controllers\Controller;
+use App\Providers\RouteServiceProvider;
 use Illuminate\Http\Request;
 
 class MovieController extends Controller
@@ -13,7 +15,8 @@ class MovieController extends Controller
      */
     public function index()
     {
-    //
+        return view('movies.movie');
+
     }
 
     /**
@@ -43,9 +46,9 @@ class MovieController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show()
     {
-        return view ('movie');
+
     }
 
     /**
