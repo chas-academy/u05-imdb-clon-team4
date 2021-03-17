@@ -1,5 +1,21 @@
+//--------------------------------------------------------------------------
+// Framework
+
 @import '~bootstrap/scss/bootstrap';
-@import 'layout/footer';
-@import 'layout/list';
+
+//--------------------------------------------------------------------------
+// Assets
+
 @import 'layout/colors';
+@import 'layout/buttons';
+
+//--------------------------------------------------------------------------
+// Components
+
+@import 'layout/list';
+@import 'layout/footer';
+
+//--------------------------------------------------------------------------
+// Pages
 @import 'layout/login';
+
