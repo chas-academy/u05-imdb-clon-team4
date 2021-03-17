@@ -14,7 +14,6 @@ RUN apt-get update && apt-get install -y \
     zip \
     unzip \
     build-essential \
-    openssl \
     libssl-dev
 
 # Clear cache
