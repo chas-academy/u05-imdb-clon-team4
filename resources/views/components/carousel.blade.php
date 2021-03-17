@@ -1,3 +1,5 @@
+@extend('layouts.app')
+@section('content')
 <div
       id="carouselExampleCaptions"
       class="carousel slide"
@@ -90,5 +92,6 @@
         </button>
       </div>
     </div>
+@endsection
 
 
