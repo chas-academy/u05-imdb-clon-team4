@@ -9,10 +9,10 @@
     }
     .imdb-btn-secondary {
         color: $text-color;
-        background-color: $secondary-bg-color;
-        border-color: $secondary-bg-color;
+        background-color: $site-bg-color;
+        border-color: $site-bg-color;
         :hover {
-            background-color: mix(black, $secondary-bg-color, 40%);
+            background-color: mix(black, $site-bg-color, 40%);
         }
     }
 
