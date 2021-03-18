@@ -5,7 +5,7 @@
     <title>IMDB Clone</title>
     {{-- Bootstrap --}}
     {{-- Scripts --}}
-    <script src="{{ secure_asset('js/app.js') }}" defer></script>
+    <script src="{{ mix('js/app.js') }}" defer></script>
     {{-- Styles --}}
-    <link href="{{ secure_asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ mix('css/app.css') }}" rel="stylesheet">
 </head>
