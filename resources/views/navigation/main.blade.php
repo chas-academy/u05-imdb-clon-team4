@@ -17,18 +17,22 @@
                 <button class="btn" type="button" id="button-addon2">🔍</button>
 
             </div>
-            <div class="sign-flex">
+            <ul class="navbar-nav sign-flex mb-2 mb-lg-0">
+           <li class="nav-item">
             <button class="imdb-pro">IMDbPro</button>
+            </li>
+            <li class="nav-item">
             <div class="divider"><div>
+            </li>
+            <li class="nav-item">
             <button class="watch-list"> Watchlist</button>
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            </li>
                     @auth
                         <li class="nav-item">
                             <a class="signin-link" href="{{ route('user_home') }}">{{ auth()->user()->name }}</a>
                         </li>
                         <li class="nav-item">
                             <form action="{{ route('user_logout') }}" class="inline">
-                                @csrf
                                 <button type="submit" class="btn">Logout</button>
                             </form>
                         </li>
