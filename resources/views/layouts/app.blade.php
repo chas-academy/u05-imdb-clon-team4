@@ -17,10 +17,11 @@
 
 
     {{-- Include carousel --}}
-    @include('components.carousel')
+
+    {{-- @include('components.carousel') --}}
 
     {{-- Include list --}}
-    @include('components.list')
+    {{-- @include('components.list') --}}
 
     {{-- Include our static footer --}}
     @include('layouts.footer')

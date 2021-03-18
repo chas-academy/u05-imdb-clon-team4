@@ -1,32 +1,25 @@
 .footer {
-    background-color: rgb(56, 55, 55) !important;
+    background-color: $dark-bg-color;
 
     * {
-        color: white !important;
+        color: $text-color;
     }
 }
-
-/* :hover på länkar
- text-decoration: none;
-font-awesome */
 
 a {
     text-decoration: none;
 
     &:hover {
-        text-decoration: underline !important;
+        text-decoration: underline;
+        text-decoration-color: $primary-color;
+        color: $text-color;
     }
 }
 
-[class^='fa'] {
-    width: 80px !important;
-    height: 80px !important;
-}
+.fa {
+    font-size: 1.2em;
 
-.navbar-end {
-    justify-content: flex-end;
-    position: absolute;
-    right: 80px;
-    top: 5px;
-    bottom: 5px;
+    &:hover {
+        transform: scale(1.5);
+    }
 }

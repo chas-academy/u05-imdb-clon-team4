@@ -1,6 +1,31 @@
+//--------------------------------------------------------------------------
+// Required Bootstrap
+@import '../../node_modules/bootstrap/scss/functions';
+@import '../../node_modules/bootstrap/scss/variables';
+@import '../../node_modules/bootstrap/scss/mixins';
+
+//--------------------------------------------------------------------------
+// Override variables
+@import 'custom/colors';
+@import 'custom/variables';
+
+//--------------------------------------------------------------------------
+// Optional Bootstrap
 @import '~bootstrap/scss/bootstrap';
-@import 'layout/footer';
+
+//--------------------------------------------------------------------------
+// Other custom styles
+@import 'custom/styling';
+
+// Assets
+// @import 'layout/buttons';
+
+// Components
 @import 'layout/list';
-@import 'layout/colors';
+@import 'layout/footer';
 @import 'layout/header';
 @import 'layout/main';
+
+//--------------------------------------------------------------------------
+// Pages
+@import 'layout/login';
