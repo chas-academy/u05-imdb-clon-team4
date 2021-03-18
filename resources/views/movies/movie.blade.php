@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class=" d-flex flex-column g-0 justify-content-evenly col-lg-10 mx-auto">
+<div class=" d-flex flex-column g-0 justify-content-evenly col-lg-10 mx-auto h ">
 
     <section class="col-sm-12 col-md-12 col-lg-12">
         <div class="col-lg-12 d-lg-flex flex-row row ">
@@ -26,16 +26,16 @@
 
     </section>
 
-    <section class="col-sm-12 col-md-12 d-lg-flex justify-content-lg-start flex-row ">
+    <section class="col-sm-12 col-md-12 d-lg-flex justify-content-lg-start flex-row  h-auto ">
 
         <div class="row my-auto col-lg-12">
-            <div class="col-lg-5">
-                <img src="/images/once.jpg" class="image-fluid">
+            <div class="col-lg-5 h-50">
+                <img src="/images/once.jpg" class="thumbnail">
             </div>
 
 
-            <div class="col-sm-12 col-lg-5 ">
-                <h2>Storyline</h2>
+            <div class="col-sm-12 col-lg-5  h-50">
+                <h2 class="mt-2">Storyline</h2>
 
                 <p class="my-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa quidem iste laudantium
                     asperiores,
@@ -53,41 +53,30 @@
         </div>
 
     </section>
-    <div id="reviews">
-        <h2>User reviews</h2>
-    </div>
-
-</div>
-
-
-<!-- <div class="d-flex-sm row justify-content-between">
-    <div class="col">
-        <h1 class="mr-auto p-2 text-break"> Once upon a time in Hollywood</h1>
-    </div>
 
 
 </div>
+<section id="reviews">
+    <div class="container">
+        <h1 class="title">User reviews</h1>
+        <div class="card-body d-flex">
+            @for($i = 0; $i < 4; $i++) <div class="card mx-2 ">
+                <h3 class="card-header ">
+                    Username
+                </h3>
+                <div class="card-body">
+                    <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora, nemo?</p>
+                    <a href="#" class="btn btn-primary">Admin Delete</a>
+                </div>
 
-<div class="d-flex col">
-    <p class="p-2">2019</p>
-    <p class="p-2">15</p>
-    <p class="p-2">2H 20min</p>
-</div>
 
-<div class="d-flex mb-4 container">
-    <div class=" row justify-content-start">
-
-        <div class="col-lg-2 col-sm-12 ">
 
         </div>
-
-
-
-        <div class="d-inline-flex col-sm-12">
-            <button type="button" class="btn btn-warning m-2 p-2 col-sm-6">Rating</button>
-            <button type="button" class="btn btn-primary m-2 p-2 col-sm-6">Add movie to list</button>
-        </div>
+        @endfor
     </div>
-</div>
-<h2>User reviews</h2> -->
+    </div>
+
+</section>
+
+
 @endsection
