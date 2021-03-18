@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Route;
 
 // Interface
 Route::get('/', function () {
-    return view('index');
+    return view('pages.home');
 })->name('home');
 
 // Admin
