@@ -8,6 +8,4 @@
     <script src="{{ secure_asset('js/app.js') }}" defer></script>
     {{-- Styles --}}
     <link href="{{ secure_asset('css/app.css') }}" rel="stylesheet">
-    {{-- Font Awesome --}}
-    <script src="https://kit.fontawesome.com/e7d0d2ed9d.js" crossorigin="anonymous"></script>
 </head>
