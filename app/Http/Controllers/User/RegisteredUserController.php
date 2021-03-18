@@ -17,7 +17,7 @@ class RegisteredUserController extends Controller
     {
         $user = auth()->user();
 
-        return view('user.index')
+        return view('pages.account')
             ->with([
                 'user' => $user,
             ]);

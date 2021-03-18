@@ -9,7 +9,7 @@ class LoginController extends Controller
 {
     public function index()
     {
-        return view('user.login');
+        return view('pages.login');
     }
 
     public function store(Request $request)
@@ -26,6 +26,6 @@ class LoginController extends Controller
         }
 
         // Redirect to user page
-        return redirect()->route('user_home');
+        return redirect()->route('pages_account');
     }
 }

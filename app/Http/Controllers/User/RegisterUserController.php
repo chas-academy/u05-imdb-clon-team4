@@ -17,7 +17,7 @@ class RegisterUserController extends Controller
 
     public function index()
     {
-        return view('user.register');
+        return view('pages.register');
     }
 
     public function create(Request $request)
@@ -44,6 +44,6 @@ class RegisterUserController extends Controller
         auth()->attempt($request->only('email', 'password'));
 
         // Redirect to user page
-        return redirect()->route('user_home');
+        return redirect()->route('pages_account');
     }
 }
