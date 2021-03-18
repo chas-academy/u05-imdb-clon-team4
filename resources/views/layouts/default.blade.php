@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
   {{-- Include head --}}
-  @include('layouts.head')
+  @include('includes.head')
 
   <body>
-    {{-- Include main navigation --}}
-    @include('navigation.main')
+    {{-- Include header --}}
+    @include('includes.header')
 
 
     {{-- Yielded content goes here --}}
@@ -14,6 +14,6 @@
     </main>
 
     {{-- Include static footer --}}
-    @include('layouts.footer')
+    @include('includes.footer')
     </body>
 </html>
