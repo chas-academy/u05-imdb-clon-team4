@@ -44,6 +44,6 @@ class RegisterUserController extends Controller
         auth()->attempt($request->only('email', 'password'));
 
         // Redirect to user page
-        return redirect()->route('pages_account');
+        return redirect()->route('user_home');
     }
 }

@@ -26,6 +26,6 @@ class LoginController extends Controller
         }
 
         // Redirect to user page
-        return redirect()->route('pages_account');
+        return redirect()->route('user_home');
     }
 }
