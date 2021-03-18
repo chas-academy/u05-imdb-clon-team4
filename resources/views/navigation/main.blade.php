@@ -2,6 +2,17 @@
 <nav class="navbar navbar-expand-lg navbar-light nav-container p-3">
 
         <a class="navbar-brand" href="{{ route('home') }}">IMDb</a>
+        
+        <div class="menu">
+        <div class="ham-menu">
+        <div class="ham"></div>
+        <div class="ham"></div>
+        <div class="ham"></div>
+        </div>
+        <p> Menu </p>
+        </div>
+        
+        
             <div class="input-group">
                 <div class="input-group-prepend">
                     <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">All</button>
