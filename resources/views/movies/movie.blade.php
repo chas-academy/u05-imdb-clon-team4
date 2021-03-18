@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class=" d-flex flex-column justify-content-evenly">
+<div class=" d-flex flex-column g-0 justify-content-evenly col-lg-10 mx-auto">
 
     <section class="col-sm-12 col-md-12 col-lg-12">
         <div class="col-lg-12 d-lg-flex flex-row row ">
@@ -26,29 +26,30 @@
 
     </section>
 
-    <section class="col-sm-12 col-md-12 justify-content-lg-start flex-lg-row row">
+    <section class="col-sm-12 col-md-12 d-lg-flex justify-content-lg-start flex-row ">
 
-        <div class=" col-lg-10 ">
-            <div class="col-lg-6">
-                <img src="/images/once.jpg" class="img-fluid">
+        <div class="row my-auto col-lg-12">
+            <div class="col-lg-5">
+                <img src="/images/once.jpg" class="image-fluid">
             </div>
 
-        </div>
-        <div class="col-sm-12 col-lg-4">
-            <h2>Storyline</h2>
 
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa quidem iste laudantium asperiores,
-                dolorem
-                illo
-                quibusdam voluptatem earum maiores nulla quisquam ratione et iusto deleniti eos perspiciatis sed
-                dignissimos.
-                Esse.
-            </p>
-            <p>Director: </p>
-            <p>Writer: </p>
-            <p>Stars: </p>
+            <div class="col-sm-12 col-lg-5 ">
+                <h2>Storyline</h2>
 
+                <p class="my-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa quidem iste laudantium
+                    asperiores,
+                    dolorem
+                    illo
+                    quibusdam voluptatem earum maiores nulla quisquam ratione et iusto deleniti eos perspiciatis sed
+                    dignissimos.
+                    Esse.
+                </p>
+                <p>Director: </p>
+                <p>Writer: </p>
+                <p>Stars: </p>
 
+            </div>
         </div>
 
     </section>
