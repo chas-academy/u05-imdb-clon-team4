@@ -4,9 +4,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>IMDB Clone</title>
     {{-- Scripts --}}
-    <script src="{{ secure_asset('js/app.js') }}" defer></script>
+    <script src="{{ mix('js/app.js') }}" defer></script>
     {{-- Styles --}}
-    <link href="{{ secure_asset('css/app.css') }}" rel="stylesheet">
-    {{-- Font Awesome --}}
-    <script src="https://kit.fontawesome.com/e7d0d2ed9d.js" crossorigin="anonymous"></script>
+    <link href="{{ mix('css/app.css') }}" rel="stylesheet">
 </head>
