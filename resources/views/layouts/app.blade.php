@@ -1,29 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
-  {{-- Include our header --}}
-  @include('layouts.header')
+  {{-- Include head --}}
+  @include('layouts.head')
 
   <body>
-    {{-- Include our main navigation --}}
+    {{-- Include main navigation --}}
     @include('navigation.main')
 
 
-    {{-- We'll use this for dynamic page content
-    and add a wrapping section with some padding.
-    We can remove this later on if we want side-to-side content --}}
-    <div class="container mt-3">
+    {{-- Yielded content goes here --}}
+    <main class="container mt-5 mb-5">
       @yield('content')
-    </div>
+    </main>
 
-
-    {{-- Include carousel --}}
-
-    {{-- @include('components.carousel') --}}
-
-    {{-- Include list --}}
-    {{-- @include('components.list') --}}
-
-    {{-- Include our static footer --}}
+    {{-- Include static footer --}}
     @include('layouts.footer')
     </body>
 </html>
