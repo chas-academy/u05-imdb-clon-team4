@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.default')
 
 @section('content')
 <div class=" d-flex flex-column g-0 justify-content-evenly col-lg-10 mx-auto h ">
