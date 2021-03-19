@@ -38,5 +38,5 @@ Route::post('register', [RegisterUserController::class, 'create']);
 Route::get('user-terms', [TermsController::class, 'index'])->name('user_terms');
 
 // Movie
-Route::get('movie/{id}', [MovieController::class, 'show']);
+Route::get('movie', [MovieController::class, 'index'])->name('movie');
 Route::get('movielist', [MovieList::class, 'index']);
