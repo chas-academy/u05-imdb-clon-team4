@@ -17,7 +17,7 @@ class RegisterUserController extends Controller
 
     public function index()
     {
-        return view('user.register');
+        return view('pages.register');
     }
 
     public function create(Request $request)

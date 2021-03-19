@@ -1,10 +1,4 @@
-@extend('layouts.app')
-@section('content')
-<div
-      id="carouselExampleCaptions"
-      class="carousel slide"
-      data-bs-ride="carousel"
-    >
+<div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
       <div class="carousel-indicators">
         <button
           type="button"
@@ -92,6 +86,3 @@
         </button>
       </div>
     </div>
-@endsection
-
-
