@@ -1,4 +1,4 @@
-@extends('errors.layout')
+@extends('layouts.error')
 
 @php
   $error_number = 403;

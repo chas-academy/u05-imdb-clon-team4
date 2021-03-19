@@ -1,0 +1,20 @@
+//--------------------------------------------------------------------------
+// Override Bootsrtap variables
+
+// Settings for the `<body>` element.
+$body-bg: $mine-shaft;
+$body-color: $alto;
+
+// Style anchor elements.
+$link-color: $body-color;
+$link-decoration: none;
+$link-shade-percentage: 0%;
+$link-hover-color: $body-color;
+$link-hover-decoration: underline;
+
+// Cards
+$card-border-radius: 0%;
+$card-border-color: rgba($black, 0.125) !default;
+$card-inner-border-radius: 0;
+$card-color: $alto;
+$card-bg: $tundora;

@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.default')
 
 @section('content')
 <div class="row">
@@ -6,7 +6,7 @@
 
   <h1>Create account</h1>
 
-    <form class="p-3 bg-light border border-2 rounded" action="{{ route('user_create') }}" method="post">
+    <form class="p-3 formcontainer border border-2 rounded" action="{{ route('user_create') }}" method="post">
       @csrf
       <div class="mb-3">
         <label for="name" class="form-label">Your name</label>
@@ -64,7 +64,7 @@
       @enderror
       </div>
 
-      <button type="submit" class="btn btn-primary">Create account</button>
+      <button type="submit" class="btn logbtn">Create account</button>
     </form>
     
     <p class="mt-2 small text-muted">Already have an account? <a href="{{ route('user_login') }}">Login</a>
@@ -100,7 +100,4 @@
     </div>
   </div>
 </div>
-
-
-
 @endsection

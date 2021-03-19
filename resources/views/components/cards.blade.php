@@ -1,4 +1,3 @@
-
     <div class="d-flex flex-column align-items-center card-container">
            <h2 class="text-center mt-3">Other content below</h2>
 
