@@ -16,8 +16,8 @@
 
 
             <div class="col-sm-12 col-md-12 col-lg-6">
-                <button type="button" class="btn btn-warning m-2 p-2 col-sm-6 col-lg-2 ">Rating</button>
-                <button type="button" class="btn btn-primary m-2 p-2 col-sm-6 col-lg-4">Add movie to list</button>
+            
+                <button type="button" class="btn btn-primary m-2 p-2 col-sm-6 col-lg-4"><i class="fas fa-plus"></i></button>
             </div>
 
         </div>
@@ -56,10 +56,10 @@
 
 
 </div>
-<section id="reviews">
+<section class="">
     <div class="container">
         <h1 class="title">User reviews</h1>
-        <div class="card-body d-flex">
+        <div class="card-body d-flex flex-column">
             @for($i = 0; $i < 4; $i++) <div class="card mx-2 ">
                 <h3 class="card-header ">
                     Username
