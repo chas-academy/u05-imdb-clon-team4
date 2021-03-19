@@ -7,5 +7,5 @@
 	@include('components.carousel')
 
     {{-- Include cards --}}
-    @include('components.cards')
+    @include('includes.cards')
 @endsection
