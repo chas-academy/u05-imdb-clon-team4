@@ -108,7 +108,7 @@ return [
     'developer_name' => 'Grupp 4',
 
     // Developer website. Link in footer. Type false if you want to hide it.
-    'developer_link' => '',
+    'developer_link' => 'https://github.com/chas-academy/u05-imdb-clone-team4',
 
     // Show powered by Laravel Backpack in the footer? true/false
     'show_powered_by' => false,
