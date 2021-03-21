@@ -22,29 +22,6 @@ class CreateUsersTable extends Migration
             $table->rememberToken();
             $table->timestamps();
         });
-
-        /**
-         * Set up initial users (admin + standard user).
-         *
-         */
-
-        $current_timestamp = \DB::raw('CURRENT_TIMESTAMP');
-        DB::table('users')->insert([
-            [
-                'name' => 'Admin',
-                'email' => 'admin@admin.com',
-                'password' => Hash::make('secret'),
-                'created_at' => $current_timestamp,
-                'updated_at' => $current_timestamp,
-            ],
-            [
-                'name' => 'User',
-                'email' => 'user@user.com',
-                'password' => Hash::make('secret'),
-                'created_at' => $current_timestamp,
-                'updated_at' => $current_timestamp,
-            ],
-        ]);
     }
 
     /**
