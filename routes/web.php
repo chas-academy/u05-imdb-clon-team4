@@ -16,23 +16,20 @@ Route::get('/', function () {
     return view('pages.home');
 })->name('home');
 
-// Admin
-// Route::get('admin/dashboard', [AdminController::class, 'index']);
-
 // User
-// // home
-// Route::get('account', [RegisteredUserController::class, 'index'])->name('user_home');
+// home
+Route::get('account', [RegisteredUserController::class, 'index'])->name('user_home');
 
-// // login
-// Route::get('login', [LoginController::class, 'index'])->name('user_login');
-// Route::post('login', [LoginController::class, 'store']);
+// login
+Route::get('login', [LoginController::class, 'index'])->name('user_login');
+Route::post('login', [LoginController::class, 'store']);
 
-// // logout
-// Route::get('logout', [LogoutController::class, 'store'])->name('user_logout');
+// logout
+Route::get('logout', [LogoutController::class, 'store'])->name('user_logout');
 
-// // create
-// Route::get('register', [RegisterUserController::class, 'index'])->name('user_create');
-// Route::post('register', [RegisterUserController::class, 'create']);
+// create
+Route::get('register', [RegisterUserController::class, 'index'])->name('user_create');
+Route::post('register', [RegisterUserController::class, 'create']);
 
 // terms
 Route::get('user-terms', [TermsController::class, 'index'])->name('user_terms');
