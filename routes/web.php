@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\Auth\RegisterAdminController;
 use App\Http\Controllers\Movie\MovieController;
+use App\Http\Controllers\Movie\MovieReviewWriteController;
 use App\Http\Controllers\Page\HomePageController;
 use App\Http\Controllers\User\LoginController;
 use App\Http\Controllers\User\LogoutController;
@@ -37,4 +38,9 @@ Route::post('register', [RegisterUserController::class, 'create']);
 Route::get('user-terms', [TermsController::class, 'index'])->name('user_terms');
 
 // Movies
-Route::get('movie/{id}', [MovieController::class, 'index'])->name('user_terms');
+// movie
+Route::get('movie/{id}', [MovieController::class, 'index'])->name('page_movie');
+
+// review
+Route::get('movie/{id}/review-write', [MovieReviewWriteController::class, 'index'])->name('page_movie_review_create');
+Route::post('movie/{id}/review-write', [MovieReviewWriteController::class, 'create']);
