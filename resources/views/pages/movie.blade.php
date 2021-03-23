@@ -39,13 +39,15 @@
                 @php
                     $user = auth();
                     $id = $user->id();
-                    $userReview = $reviews['table']->where('user_id', "=", $id)->first();
+                    $userReview = $reviews['table']->where([
+                        'user_id' => $id,
+                        'movie_id' => $movie->id
+                    ])->first();
                     $reviewers = $reviews['movie'];
                 @endphp
 
                 {{-- Registered and authenticated users can write a review --}}
-                @auth
-                    
+                @auth    
                     {{-- If logged in user hasn't written a review, suggest they do --}}
                     @if (!$userReview)
                         <a href="{{ route('page_movie_review_create', $movie->id) }}"><h4 class="mt-3">Write review</h4></a>
