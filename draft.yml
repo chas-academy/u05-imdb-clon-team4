@@ -13,6 +13,6 @@ models:
         title: string
         description: text
         relationships:
-            belongsToMany: User, Movie
+            belongsTo: User, Movie
 
 seeders: Movie, Review
