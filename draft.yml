@@ -1,0 +1,18 @@
+models:
+    Models\Movie:
+        title: string
+        description: text
+        year: date
+        image: string nullable
+        relationships:
+            hasMany: Review
+
+    Models\Review:
+        user_id: id foregin
+        movie_id: id foregin
+        title: string
+        description: text
+        relationships:
+            belongsTo: User, Movie
+
+seeders: Movie, Review
