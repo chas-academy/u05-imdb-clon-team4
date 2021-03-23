@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Movie;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class MovieController extends Controller
 {
@@ -13,10 +14,27 @@ class MovieController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        return view('pages.movie');
+        // The id param from URL
+        $id = $request->id;
+        // Get movie from DB using ID
+        $movie = DB::table('movies')->where('id', "=", $id)->first();
+        // Get review(s) from DB for movie using ID
+        $reviews = DB::table('reviews')->where('movie_id', "=", $id)->get();
+        // Get reviews and users from DB
+        $reviewsTable = DB::table('reviews');
+        $usersTable = DB::table('users');
 
+        // Return movie view with movie and review data
+        return view('pages.movie')->with([
+            'movie' => $movie,
+            'reviews' => [
+                'movie' => $reviews,
+                'table' => $reviewsTable,
+                'users_table' => $usersTable,
+            ],
+        ]);
     }
 
     /**
@@ -48,7 +66,7 @@ class MovieController extends Controller
      */
     public function show()
     {
-        return view ('pages.movie');
+        return view('pages.movie');
     }
 
     /**

@@ -1,19 +1,34 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Movie;
 
+use App\Http\Controllers\Controller;
+use App\Models\Review;
+use App\Providers\RouteServiceProvider;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
-class MovieList extends Controller
+class MovieReviewWriteController extends Controller
 {
+    // Make sure user is authenticated
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        return view('pages_lists');
+        $id = $request->id;
+        $movie = DB::table('movies')->where('id', "=", $id)->first();
+
+        return view('pages.review-write')->with([
+            'movie' => $movie,
+        ]);
     }
 
     /**
@@ -21,9 +36,30 @@ class MovieList extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
-        //
+        // Get input, verify and store
+
+        // Validate input
+        $this->validate($request, [
+            'title' => 'required|min:5',
+            'review' => 'required|min:5',
+        ]);
+
+        $movieId = $request->id;
+        $userId = auth()->user()->id;
+
+        // Create review
+        $user = Review::create([
+            'title' => $request->title,
+            'description' => $request->review,
+            'movie_id' => $movieId,
+            'user_id' => $userId,
+        ]);
+
+        // Redirect to movie page
+        return redirect()->route('page_movie', ['id' => $movieId]);
+
     }
 
     /**
@@ -43,9 +79,9 @@ class MovieList extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show()
     {
-        //
+        return view('pages.movie-review');
     }
 
     /**
