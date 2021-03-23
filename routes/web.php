@@ -1,7 +1,6 @@
 <?php
-// use App\Http\Controllers\Admin\AdminController;
-// use App\Http\Controllers\Admin\SignInController;
-// use App\Http\Controllers\Admin\SignUpController;
+
+use App\Http\Controllers\Admin\Auth\RegisterAdminController;
 use App\Http\Controllers\Movie\MovieController;
 use App\Http\Controllers\Movie\MovieList;
 use App\Http\Controllers\User\LoginController;
@@ -15,6 +14,11 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('pages.home');
 })->name('home');
+
+// Admin
+// register
+Route::get('admin/register', [RegisterAdminController::class, 'showRegistrationForm'])->name('backpack.auth.register');
+Route::post('admin/register', [RegisterAdminController::class, 'register']);
 
 // User
 // home
