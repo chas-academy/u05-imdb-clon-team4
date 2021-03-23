@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\Auth\RegisterAdminController;
+use App\Http\Controllers\Movie\MovieController;
 use App\Http\Controllers\Page\HomePageController;
 use App\Http\Controllers\User\LoginController;
 use App\Http\Controllers\User\LogoutController;
@@ -34,3 +35,6 @@ Route::post('register', [RegisterUserController::class, 'create']);
 
 // terms
 Route::get('user-terms', [TermsController::class, 'index'])->name('user_terms');
+
+// Movies
+Route::get('movie/{id}', [MovieController::class, 'index'])->name('user_terms');
