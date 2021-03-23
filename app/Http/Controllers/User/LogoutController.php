@@ -9,9 +9,7 @@ class LogoutController extends Controller
 {
     public function store(Request $request)
     {
-        // dd('logout');
         auth()->logout();
-
-        return redirect()->route('home');
+        return redirect()->route('page_home');
     }
 }

@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light p-3">
     <div class="container-fluid">
     
-        <a class="navbar-brand" href="{{ route('home') }}">IMDB Clone</a>
+        <a class="navbar-brand" href="{{ route('page_home') }}">IMDB Clone</a>
 
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             @auth

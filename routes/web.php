@@ -1,8 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\Auth\RegisterAdminController;
-use App\Http\Controllers\Movie\MovieController;
-use App\Http\Controllers\Movie\MovieList;
+use App\Http\Controllers\Page\HomePageController;
 use App\Http\Controllers\User\LoginController;
 use App\Http\Controllers\User\LogoutController;
 use App\Http\Controllers\User\RegisteredUserController;
@@ -10,10 +9,8 @@ use App\Http\Controllers\User\RegisterUserController;
 use App\Http\Controllers\User\TermsController;
 use Illuminate\Support\Facades\Route;
 
-// Interface
-Route::get('/', function () {
-    return view('pages.home');
-})->name('home');
+// App Pages
+Route::get('/', [HomePageController::class, 'index'])->name('page_home');
 
 // Admin
 // register
@@ -37,7 +34,3 @@ Route::post('register', [RegisterUserController::class, 'create']);
 
 // terms
 Route::get('user-terms', [TermsController::class, 'index'])->name('user_terms');
-
-// Movie
-Route::get('movie', [MovieController::class, 'index'])->name('movie');
-Route::get('movielist', [MovieList::class, 'index']);
