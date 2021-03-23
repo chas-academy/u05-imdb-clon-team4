@@ -27,7 +27,7 @@
       </div>
       
       <div class="mb-3">
-        <label for="password" class="form-label">Choose password</label>
+        <label for="password" class="form-label">Password</label>
         <input type="password" class="form-control @error('password') border-danger @enderror" name="password" id="password">
 
         @error('password')

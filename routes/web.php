@@ -16,9 +16,6 @@ Route::get('/', function () {
     return view('pages.home');
 })->name('home');
 
-// Admin
-// Route::get('admin/dashboard', [AdminController::class, 'index']);
-
 // User
 // home
 Route::get('account', [RegisteredUserController::class, 'index'])->name('user_home');
