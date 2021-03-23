@@ -33,17 +33,6 @@ class Review extends Model
         'movie_id' => 'integer',
     ];
 
-
-    public function users()
-    {
-        return $this->belongsToMany(\App\Models\User::class);
-    }
-
-    public function movies()
-    {
-        return $this->belongsToMany(\App\Models\Movie::class);
-    }
-
     public function user()
     {
         return $this->belongsTo(\App\Models\User::class);
