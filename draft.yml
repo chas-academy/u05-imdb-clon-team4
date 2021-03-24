@@ -3,7 +3,7 @@ models:
         title: string
         description: text
         year: date
-        image: binary nullable
+        image: text nullable
         relationships:
             hasMany: Review
 

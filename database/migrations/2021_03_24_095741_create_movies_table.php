@@ -19,12 +19,11 @@ class CreateMoviesTable extends Migration
             $table->string('title');
             $table->text('description');
             $table->date('year');
-            $table->binary('image')->nullable();
+            $table->text('image')->nullable();
             $table->timestamps();
         });
 
-        // Blueprint can only set BLOB type (binary)
-        // We need to set it to LONGBLOB for base64 image storage
+        // Due to major diferences in mySQL and Postgres type storage in DB we'll use text for Postgres and convert it to LONGBLOB in mySQL
 
         // For non Postgres Databases
         if (env('DB_CONNECTION') !== 'pgsql') {
