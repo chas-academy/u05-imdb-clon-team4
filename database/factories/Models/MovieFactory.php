@@ -26,7 +26,7 @@ class MovieFactory extends Factory
             'title' => $this->faker->sentence(4),
             'description' => $this->faker->text,
             'year' => $this->faker->date(),
-            'image' => $this->faker->word,
+            'image' => $this->faker->sha256,
         ];
     }
 }
