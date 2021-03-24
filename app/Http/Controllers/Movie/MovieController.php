@@ -26,7 +26,7 @@ class MovieController extends Controller
         $reviewsTable = DB::table('reviews');
         $usersTable = DB::table('users');
 
-        dd($movie->image);
+        dd($movie);
 
         // Postgres DB saves image as BYTEA (HEX decimal) which we need to convert back to base64
         if (env('DB_CONNECTION') === 'pgsql') {
