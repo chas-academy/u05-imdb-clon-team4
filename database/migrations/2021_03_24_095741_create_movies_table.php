@@ -29,9 +29,7 @@ class CreateMoviesTable extends Migration
         // For non Postgres Databases
         if (env('DB_CONNECTION') !== 'pgsql') {
             DB::statement("ALTER TABLE movies MODIFY image LONGBLOB");
-        }
-        // For Postgres Databases
-        if (env('DB_CONNECTION') === 'pgsql') {
+        } else {
             DB::statement("ALTER TABLE movies ALTER COLUMN image TYPE BYTEA");
         }
     }
