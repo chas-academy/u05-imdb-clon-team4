@@ -39,7 +39,10 @@ class MovieCrudController extends CrudController
      */
     protected function setupListOperation()
     {
-        CRUD::column('image')->type('image');
+        if (env('DB_CONNECTION') !== 'pgsql') {
+            CRUD::column('image')->type('image');
+        }
+
         CRUD::column('title');
         CRUD::column('description');
         CRUD::column('year')->type('date');

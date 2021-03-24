@@ -26,6 +26,10 @@ class MovieController extends Controller
         $reviewsTable = DB::table('reviews');
         $usersTable = DB::table('users');
 
+        if (env('DB_CONNECTION') === 'pgsql') {
+            $movie->image = encode($movie->image, 'base64');
+        }
+
         // Return movie view with movie and review data
         return view('pages.movie')->with([
             'movie' => $movie,
