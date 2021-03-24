@@ -3,7 +3,7 @@ models:
         title: string
         description: text
         year: date
-        image: longblob nullable
+        image: binary nullable
         relationships:
             hasMany: Review
 
