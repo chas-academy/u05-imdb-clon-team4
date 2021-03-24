@@ -1,14 +1,12 @@
 created:
     - database/factories/Models/MovieFactory.php
     - database/factories/Models/ReviewFactory.php
-    - database/migrations/2021_03_23_184334_create_movies_table.php
-    - database/migrations/2021_03_23_184335_create_reviews_table.php
-    - database/migrations/2021_03_23_184336_create_review_user_table.php
-    - database/migrations/2021_03_23_184337_create_movie_review_table.php
+    - database/migrations/2021_03_24_094519_create_movies_table.php
+    - database/migrations/2021_03_24_094520_create_reviews_table.php
     - app/Models/Movie.php
     - app/Models/Review.php
     - database/seeders/MovieSeeder.php
     - database/seeders/ReviewSeeder.php
 models:
-    Models\Movie: { title: string, description: text, year: date, image: 'string nullable', relationships: { hasMany: Review } }
-    Models\Review: { user_id: 'id foregin', movie_id: 'id foregin', title: string, description: text, relationships: { belongsToMany: 'User, Movie' } }
+    Models\Movie: { title: string, description: text, year: date, image: 'longblob nullable', relationships: { hasMany: Review } }
+    Models\Review: { user_id: 'id foregin', movie_id: 'id foregin', title: string, description: text, relationships: { belongsTo: 'User, Movie' } }
