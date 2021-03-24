@@ -11,6 +11,6 @@
         }
     ],
     "scripts": {
-        "postdeploy": "php artisan backpack:install && npm run prod"
+        "postdeploy": "npm run prod"
     }
 }
