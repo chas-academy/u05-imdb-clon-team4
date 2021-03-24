@@ -23,11 +23,16 @@ class CreateMoviesTable extends Migration
             $table->timestamps();
         });
 
-        // Only do this if we are on non postgres DB
+        // Blueprint can only set BLOB type (binary)
+        // We need to set it to LONGBLOB for base64 image storage
+
+        // For non Postgres Databases
         if (env('DB_CONNECTION') !== 'pgsql') {
-            // Blueprint can only set BLOB type (binary)
-            // We need to set it to LONGBLOB for base64 image storage
             DB::statement("ALTER TABLE movies MODIFY image LONGBLOB");
+        }
+        // For Postgres Databases
+        if (env('DB_CONNECTION') === 'pgsql') {
+            DB::statement("ALTER TABLE movies ALTER COLUMN image TYPE BYTEA");
         }
     }
 
