@@ -19,7 +19,7 @@ class CreateMoviesTable extends Migration
             $table->string('title');
             $table->text('description');
             $table->date('year');
-            $table->binary('image')->nullable();
+            // $table->binary('image')->nullable();
             $table->timestamps();
         });
 
@@ -29,9 +29,10 @@ class CreateMoviesTable extends Migration
         // For non Postgres Databases
         if (env('DB_CONNECTION') !== 'pgsql') {
             DB::statement("ALTER TABLE movies MODIFY image LONGBLOB");
-        } else {
-            DB::statement("ALTER TABLE movies ALTER COLUMN image TYPE BYTEA");
         }
+        // else {
+        //     DB::statement("ALTER TABLE movies ALTER COLUMN image TYPE BYTEA");
+        // }
     }
 
     /**
