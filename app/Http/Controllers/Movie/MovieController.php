@@ -26,8 +26,9 @@ class MovieController extends Controller
         $reviewsTable = DB::table('reviews');
         $usersTable = DB::table('users');
 
+        // Postgres DB saves image as BYTEA (HEX decimal) which we need to convert back to base64
         if (env('DB_CONNECTION') === 'pgsql') {
-            $movie->image = encode($movie->image, 'base64');
+            $movie->image = hex2bin(substr($movie->image, 2));
         }
 
         // Return movie view with movie and review data
