@@ -16,23 +16,22 @@ class CreateMoviesTable extends Migration
     {
         Schema::create('movies', function (Blueprint $table) {
             $table->id();
-            // $table->string('title');
-            // $table->text('description');
-            // $table->date('year');
-            // $table->binary('image')->nullable();
+            $table->string('title');
+            $table->text('description');
+            $table->date('year');
+            $table->binary('image')->nullable();
             $table->timestamps();
         });
 
-        // // Blueprint can only set BLOB type (binary)
-        // // We need to set it to LONGBLOB for base64 image storage
+        // Blueprint can only set BLOB type (binary)
+        // We need to set it to LONGBLOB for base64 image storage
 
-        // // For non Postgres Databases
-        // if (env('DB_CONNECTION') !== 'pgsql') {
-        //     DB::statement("ALTER TABLE movies MODIFY image LONGBLOB");
-        // }
-        // // else {
-        // //     DB::statement("ALTER TABLE movies ALTER COLUMN image TYPE BYTEA");
-        // // }
+        // For non Postgres Databases
+        if (env('DB_CONNECTION') !== 'pgsql') {
+            DB::statement("ALTER TABLE movies MODIFY image LONGBLOB");
+        } else {
+            DB::statement("ALTER TABLE movies ALTER COLUMN image TYPE BYTEA");
+        }
     }
 
     /**
