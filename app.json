@@ -1,9 +1,4 @@
 {
-    "addons": [
-        {
-            "plan": "heroku-postgresql:hobby-dev"
-        }
-    ],
     "buildpacks": [
         {
             "url": "heroku/php"
@@ -16,6 +11,6 @@
         }
     ],
     "scripts": {
-        "postdeploy": "npm run prod"
+        "postdeploy": "php artisan backpack:install && npm run prod"
     }
 }
