@@ -10,6 +10,9 @@
         },
         {
             "url": "heroku/nodejs"
+        },
+        {
+            "url": "https://github.com/carloluis/heroku-buildpack-vim"
         }
     ],
     "scripts": {

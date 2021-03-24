@@ -67,7 +67,7 @@ class MovieCrudController extends CrudController
         CRUD::field('title')->size(6);
         CRUD::field('year')->size(6)->type('date_picker');
         CRUD::field('description')->type('textarea');
-        CRUD::field('image')->type('image')->crop(true)->aspect_ratio(1);
+        CRUD::field('image')->type('base64_image')->filename(null)->src(null)->crop(true)->aspect_ratio(1);
 
         /**
          * Fields can be defined using the fluent syntax or array syntax:

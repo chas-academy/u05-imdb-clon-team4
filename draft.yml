@@ -3,7 +3,7 @@ models:
         title: string
         description: text
         year: date
-        image: string nullable
+        image: text nullable
         relationships:
             hasMany: Review
 
