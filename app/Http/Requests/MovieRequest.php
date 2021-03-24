@@ -26,7 +26,9 @@ class MovieRequest extends FormRequest
     public function rules()
     {
         return [
-            // 'name' => 'required|min:5|max:255'
+            'title' => 'required|min:5',
+            'year' => 'required',
+            'description' => 'required|min:5',
         ];
     }
 
