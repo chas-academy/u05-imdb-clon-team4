@@ -15,7 +15,7 @@ class CreateMoviesTable extends Migration
     public function up()
     {
         Schema::create('movies', function (Blueprint $table) {
-            $table->increments('id');
+            $table->id();
             $table->string('title');
             $table->text('description');
             $table->date('year');
@@ -30,10 +30,10 @@ class CreateMoviesTable extends Migration
         if (env('DB_CONNECTION') !== 'pgsql') {
             DB::statement("ALTER TABLE movies MODIFY image LONGBLOB");
         }
-        // // For Postgres Databases
-        // if (env('DB_CONNECTION') === 'pgsql') {
-        //     DB::statement("ALTER TABLE movies ALTER COLUMN image TYPE BYTEA");
-        // }
+        // For Postgres Databases
+        if (env('DB_CONNECTION') === 'pgsql') {
+            DB::statement("ALTER TABLE movies ALTER COLUMN image TYPE BYTEA");
+        }
     }
 
     /**
