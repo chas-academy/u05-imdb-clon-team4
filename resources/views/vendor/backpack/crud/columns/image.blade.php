@@ -11,11 +11,12 @@
     if (is_array($value)) {
       $value = json_encode($value);
     }
+    
+    dd($value);
 
     if (preg_match('/^data\:image\//', $value)) { // base64_image
       $href = $src = $value;
     } elseif (preg_match('/^\\x/', $value)) { // binary data
-      dd($value);
       $href = $src = hex2bin(substr($value, 2));
     } elseif (isset($column['disk'])) { // image from a different disk (like s3 bucket)
       $href = $src = Storage::disk($column['disk'])->url($column['prefix'].$value);

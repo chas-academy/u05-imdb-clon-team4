@@ -26,7 +26,11 @@ class MovieController extends Controller
         $reviewsTable = DB::table('reviews');
         $usersTable = DB::table('users');
 
-        dd($movie);
+        $dumparr = [
+            imagecreatefromstring($movie->image),
+            stream_get_contents($movie->image),
+        ];
+        dd($dumparr);
 
         // Postgres DB saves image as BYTEA (HEX decimal) which we need to convert back to base64
         if (env('DB_CONNECTION') === 'pgsql') {
