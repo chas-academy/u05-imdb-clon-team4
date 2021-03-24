@@ -1,8 +1,8 @@
 <footer class="footer text-white mt-auto py-3 bg-dark">
   <div class="footer-container d-flex justify-content-around">
-    <h4 class="p-2"><a href="#">About</a></h4>
+    <h4 class="p-2"><a href="{{route('page_home')}}">About</a></h4>
     <h4 class="p-2"><a href="#">FAQ</a></h4>
-    <h4 class="p-2"><a href="#">Contact</a></h4>
+    <h4 class="p-2"><a href="{{route('page_home')}}">Contact</a></h4>
     <h4 class="p-2"><a href="{{route('user_terms')}}">Terms & Conditions</a></h4>
   </div>
   <div class="d-flex justify-content-center my-4">
