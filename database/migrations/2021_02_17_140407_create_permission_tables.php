@@ -2,6 +2,8 @@
 
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Foundation\Auth\User;
+use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Schema;
 
 class CreatePermissionTables extends Migration
@@ -86,6 +88,21 @@ class CreatePermissionTables extends Migration
         app('cache')
             ->store(config('permission.cache.store') != 'default' ? config('permission.cache.store') : null)
             ->forget(config('permission.cache.key'));
+
+        // check for admin and user
+        // seed if not exists
+        $admin = User::where('email', '=', 'admin@admin.com')->first();
+        $user = User::where('email', '=', 'user@user.com')->first();
+
+        if ($admin === null || $user === null) {
+            // admin or user doesn't exist
+            Artisan::call('db:seed', [
+                '--class' => 'UserSeeder',
+                // use force for production
+                // otherwise it won't execute
+                '--force' => true,
+            ]);
+        }
     }
 
     /**
