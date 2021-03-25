@@ -54,7 +54,7 @@
                 </li>
                 <li class="nav-item">
                     <form action="{{ route('user_create') }}" class="nav-link">
-                        <button type="submit" class="btn-secondary">Create Account</button>
+                        <button type="submit" class="btn-secondary">Sign Up</button>
                     </form>
                 </li>
             @endguest
