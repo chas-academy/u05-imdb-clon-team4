@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\DB;
 
 class ComponentSearchController extends Controller
 {
-    public function results(Request $request)
+    public function search(Request $request)
     {
         // Take input data ($request->input) and search database table movies
         $search = $request->input;
