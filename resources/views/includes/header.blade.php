@@ -1,6 +1,9 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light p-3">
     <div class="container-fluid">    
         <a class="navbar-brand" href="{{ route('page_home') }}">IMDB Clone</a>
+        
+        {{-- Didn't know what the following was so I just commented out --}}
+
         {{-- <div class="menu">
             <div class="ham-menu">
                 <div class="ham"></div>
@@ -26,57 +29,56 @@
             </div> --}}
 
         {{-- <ul class="navbar-nav sign-flex mb-2 mb-lg-0"> --}}
-        <ul class="navbar-nav sign-flex mb-2 mb-lg-0">
+            
+        <ul class="navbar-nav mb-2 mb-lg-0">
             <li class="nav-item">
-                <button class="imdb-pro">IMDbPro</button>
+                <button class="nav-link imdb-pro">IMDbPro</button>
             </li>
             <li class="nav-item">
-                <div class="divider"></div>
-            </li>
-            <li class="nav-item">
-                <button class="watch-list"> Watchlist</button>
+                <button class="nav-link watch-list"> Watchlist</button>
             </li>
         
         @auth
             <li class="nav-item">
-                <button>
-                    <a href="{{ route('user_home') }}" class="signin-link">{{ auth()->user()->name }}
+                <button class="nav-link">
+                    <a href="{{ route('user_home') }}">{{ auth()->user()->name }}
                     </a>
                 </button>
             </li>
             <li class="nav-item">
-                <form action="{{ route('user_logout') }}" class="inline">
-                    <button type="submit">Logout</button>
+                <form action="{{ route('user_logout') }}">
+                    <button class="nav-link" type="submit">Logout</button>
                 </form>
             </li>
         @endauth
         @guest
+            {{-- Don't use forms for login and create re-routes. We only user form for logout because we want CSRF --}}
             <li class="nav-item">
-                <form action="{{ route('user_login') }}" class="nav-link">
-                    <button type="submit" class="btn-secondary">Login</button>
-                </form>
+                <button class="nav-link">
+                    <a href="{{ route('user_login') }}">Login</a>
+                </button>
             </li>
             <li class="nav-item">
-                <form action="{{ route('user_create') }}" class="nav-link">
-                    <button type="submit" class="btn-secondary">Sign Up</button>
-                </form>
+                <button class="nav-link">
+                    <a href="{{ route('user_create') }}">Sign up</a>
+                </button>
             </li>
         @endguest
         </ul>
-    </div>
-
-    <div class="d-flex">
-        <input
-            id="search-field"
-            class="form-control me-2"
-            type="search"
-            placeholder="Search"
-            aria-label="Search"
-        />
+        
+        <div class="d-flex">
+            <input
+                id="search-field"
+                class="form-control me-2"
+                type="search"
+                placeholder="Search"
+                aria-label="Search"
+            />
+        </div>
     </div>
 </nav>
 
-{{-- Search results area --}}
+{{-- Search results section --}}
 <div class="container mt-0 p-0">
-    <div id="search-results"  class="row m-0 mb-4"></div>
+    <div id="search-results" class="row m-0 mb-4"></div>
 </div>
