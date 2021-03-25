@@ -10,7 +10,8 @@
     </div>
 
     <div class="input-group">
-        <div class="input-group-prepend">
+        {{-- Filtering might be a later option --}}
+        {{-- <div class="input-group-prepend">
             <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">All</button>
                 <div class="dropdown-menu">
                     <a class="dropdown-item" href="#">Movies</a>
@@ -19,9 +20,14 @@
                     <div role="separator" class="dropdown-divider"></div>
                     <a class="dropdown-item" href="#">Separated link</a>
                 </div>
-        </div>
-        <input type="text" class="search-input" aria-label="Text input with dropdown button" placeholder="Search IMDb">
-        <button class="btn" type="button" id="button-addon2">🔍</button>
+        </div> --}}
+
+        <input
+            id="search-field"
+            type="text"
+            class="search-input"
+            aria-label="Text input with dropdown button" placeholder="Search IMDb">
+        {{-- <button class="btn" type="button" id="button-addon2">🔍</button> --}}
     </div>
 
     <ul class="navbar-nav sign-flex mb-2 mb-lg-0">
