@@ -21,7 +21,7 @@ const searchFunction = async () => {
     } else {
         try {
             const options = {
-                url: 'search-component',
+                url: 'search',
                 method: 'post',
                 headers: {
                     'X-CSRF-TOKEN': document.head.querySelector('meta[name="csrf-token"]').content,
@@ -42,7 +42,7 @@ const searchFunction = async () => {
             let results = '';
             for (let i = 0; i < response.length; i++) {
                 const movie = response[i];
-                results += `<div class="col-4"><h4>${movie.title}</h4><a href="movie/${movie.id}"><img src="${movie.image}" alt="${movie.title}" style="max-width: 100%;" /></a></div>`;
+                results += `<div class="col-4"><h4>${movie.title}</h4><a href="/movie/${movie.id}"><img src="${movie.image}" alt="${movie.title}" style="max-width: 100%;" /></a></div>`;
             }
 
             searchResults.innerHTML = results;
