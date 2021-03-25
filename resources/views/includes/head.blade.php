@@ -7,4 +7,6 @@
     <script src="{{ mix('js/app.js') }}" defer></script>
     {{-- Styles --}}
     <link href="{{ mix('css/app.css') }}" rel="stylesheet">
+    {{-- CSFR token for ajax script head --}}
+    <meta name="csrf-token" content="{{ csrf_token() }}" />
 </head>

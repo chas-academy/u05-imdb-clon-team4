@@ -7,9 +7,9 @@
     {{-- Include header --}}
     @include('includes.header')
 
-
     {{-- Yielded content goes here --}}
     <main class="container mt-5 mb-5">
+      {{-- Dynamic content --}}
       @yield('content')
     </main>
 
