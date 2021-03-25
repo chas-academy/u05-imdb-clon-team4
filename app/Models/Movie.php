@@ -40,6 +40,16 @@ class Movie extends Model
         return $this->hasMany(\App\Models\Review::class);
     }
 
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
+
+    public function addedMovies()
+    {
+        return $this->hasMany(\App\Models\Movie::class);
+    }
+
     // // Deleting image
     // public static function boot()
     // {
