@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-lg navbar-light nav-container p-3">
-    <a class="navbar-brand" href="http://imdb-clone-dev.herokuapp.com">IMDb</a>
+    <a class="navbar-brand" href="{{ route('page_home') }}">IMDb</a>
     <div class="menu">
         <div class="ham-menu">
             <div class="ham"></div>
@@ -37,13 +37,11 @@
         <li class="nav-item">
             <button class="watch-list"> Watchlist</button>
         </li>
-    
     @auth
         <li class="nav-item">
-            <button class="nav-link">
-                <a href="{{ route('user_home') }}">{{ auth()->user()->name }}
-                </a>
-            </button>
+            <a href="{{ route('user_home') }}" class="nav-link">
+                {{ auth()->user()->name }}
+            </a>
         </li>
         <li class="nav-item">
             <form action="{{ route('user_logout') }}">
@@ -54,14 +52,14 @@
     @guest
         {{-- Don't use forms for login and create re-routes. We only user form for logout because we want CSRF --}}
         <li class="nav-item">
-            <button class="btn-secondary">
-                <a href="{{ route('user_login') }}">Login</a>
-            </button>
+                <a href="{{ route('user_login') }}" class="nav-link">
+                    Login
+                </a>
         </li>
         <li class="nav-item">
-            <button class="btn-secondary">
-                <a href="{{ route('user_create') }}">Sign up</a>
-            </button>
+            <a href="{{ route('user_create') }}" class="nav-link">
+                Sign up
+            </a>
         </li>
     @endguest
     </ul>
