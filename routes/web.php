@@ -47,4 +47,5 @@ Route::get('movie/{id}/review-write', [MovieReviewWriteController::class, 'index
 Route::post('movie/{id}/review-write', [MovieReviewWriteController::class, 'create']);
 
 // Search
-Route::post('search-component', [ComponentSearchController::class, 'results'])->name('component_search');
+// With uri as an optional URL param where it can be anything or nothing
+Route::post('{uri?}search', [ComponentSearchController::class, 'search'])->name('component_search')->where('uri', '.*');
