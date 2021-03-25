@@ -1,9 +1,4 @@
 {
-    "addons": [
-        {
-            "plan": "heroku-postgresql:hobby-dev"
-        }
-    ],
     "buildpacks": [
         {
             "url": "heroku/php"
@@ -11,8 +6,5 @@
         {
             "url": "heroku/nodejs"
         }
-    ],
-    "scripts": {
-        "postdeploy": "npm run prod"
-    }
+    ]
 }

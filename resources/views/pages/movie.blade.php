@@ -22,7 +22,7 @@
 
         <div class="row my-auto col-lg-12">
             <div class="col-lg-5 h-50">
-                <img src="/{{ $movie->image }}" class="thumbnail">
+                <img src="{{ $movie->image }}" alt="{{ $movie->title }}" />
             </div>
 
             <div class="col-sm-12 col-lg-5  h-50">
