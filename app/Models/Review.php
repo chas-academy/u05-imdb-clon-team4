@@ -7,7 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class Review extends Model
 {
-    use \Backpack\CRUD\app\Models\Traits\CrudTrait;
     use HasFactory;
 
     /**
@@ -20,6 +19,7 @@ class Review extends Model
         'movie_id',
         'title',
         'description',
+        'status',
     ];
 
     /**
