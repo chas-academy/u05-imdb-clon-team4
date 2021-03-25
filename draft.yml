@@ -12,6 +12,7 @@ models:
         movie_id: id foregin
         title: string
         description: text
+        status: enum:pending,public,denied
         relationships:
             belongsTo: User, Movie
 
