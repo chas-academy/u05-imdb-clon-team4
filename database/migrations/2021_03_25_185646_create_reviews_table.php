@@ -19,6 +19,7 @@ class CreateReviewsTable extends Migration
             $table->unsignedBigInteger('movie_id');
             $table->string('title');
             $table->text('description');
+            $table->enum('status', ["pending","public","denied"]);
             $table->timestamps();
         });
     }
