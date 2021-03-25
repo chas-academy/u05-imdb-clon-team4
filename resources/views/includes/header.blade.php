@@ -26,15 +26,19 @@
             @endguest
         </ul>
 
-        <form class="d-flex">
+        <div class="d-flex">
             <input
+                id="search-field"
                 class="form-control me-2"
                 type="search"
                 placeholder="Search"
                 aria-label="Search"
             />
-            <button class="btn btn-outline-success" type="submit">Search</button>
-        </form>
-    
+        </div>
     </div>
 </nav>
+
+{{-- Search results area --}}
+<div class="container mt-0 p-0">
+    <div id="search-results"  class="row m-0 mb-4"></div>
+</div>

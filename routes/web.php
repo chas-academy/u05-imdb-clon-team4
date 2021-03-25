@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\Auth\RegisterAdminController;
+use App\Http\Controllers\ComponentSearchController;
 use App\Http\Controllers\Movie\MovieController;
 use App\Http\Controllers\Movie\MovieReviewWriteController;
 use App\Http\Controllers\Page\HomePageController;
@@ -44,3 +45,6 @@ Route::get('movie/{id}', [MovieController::class, 'index'])->name('page_movie');
 // review
 Route::get('movie/{id}/review-write', [MovieReviewWriteController::class, 'index'])->name('page_movie_review_create');
 Route::post('movie/{id}/review-write', [MovieReviewWriteController::class, 'create']);
+
+// Search
+Route::post('search-component', [ComponentSearchController::class, 'results'])->name('component_search');
