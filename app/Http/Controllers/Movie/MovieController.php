@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Movie;
 
 use App\Http\Controllers\Controller;
+use App\Models\Review;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -14,92 +15,79 @@ class MovieController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Request $request)
+    public function index(Request $request, Review $reviewModel)
     {
         // The id param from URL
-        $id = $request->id;
-        // Get movie from DB using ID
-        $movie = DB::table('movies')->where('id', "=", $id)->first();
-        // Get review(s) from DB for movie using ID
-        $reviews = DB::table('reviews')->where('movie_id', "=", $id)->get();
-        // Get reviews and users from DB
-        $reviewsTable = DB::table('reviews');
-        $usersTable = DB::table('users');
+        $movieId = $request->id;
+        $movies = DB::table('movies');
+        $reviews = DB::table('reviews');
 
-        // Return movie view with movie and review data
+        // Get movie from DB using ID
+        $movie = $movies->where('id', '=', $movieId)->first();
+
+        // Get review(s) from DB for movie using ID
+        $reviewsList = $reviews->where([
+            'movie_id' => $movieId,
+        ])->get();
+
+        // If there are reviews attache user_name to review object
+        if (count($reviewsList) > 0) {
+
+            foreach ($reviewsList as $review) {
+                $userName = DB::table('users')->where('id', '=', $review->user_id)->first();
+                $review->user_name = $userName->name;
+            }
+        }
+
+        // Default user has review to false
+        $userHasReview = false;
+
+        // Default user review to null
+        $userReview = null;
+
+        // If user signed in
+        $user = auth()->user();
+
+        if ($user) {
+            $userId = $user->id;
+            $userName = $user->name;
+
+            // Switch reviews list stdClass (object) to searchable array
+            $arrayReviewList = $reviewsList->toArray();
+
+            // Search reviews list for user id
+            // Return index if found
+            $userReview = array_search($userId, array_column($arrayReviewList, 'user_id'));
+
+            // If array search not false, user has a review
+            if ($userReview !== false) {
+                // Set user has review to true
+                $userHasReview = true;
+
+                // Remove user review from review list
+                unset($arrayReviewList[$userReview]);
+
+                // Set user review to seperate review
+                $userReview = $reviewsList[$userReview];
+
+                // Reindex review list after unser
+                $reviewsList = array_values($arrayReviewList);
+            }
+        }
+
+        // Return data
+        // Use json decode/encode to return object
+
+        // Return object to view with movie and review data
         return view('pages.movie')->with([
             'movie' => $movie,
             'reviews' => [
-                'movie' => $reviews,
-                'table' => $reviewsTable,
-                'users_table' => $usersTable,
+                'list' => $reviewsList,
+                'user' => json_decode(json_encode([
+                    'hasReview' => $userHasReview,
+                    'review' => $userReview,
+                ])),
             ],
         ]);
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show()
-    {
-        return view('pages.movie');
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
     }
 }
