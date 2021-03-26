@@ -13,7 +13,10 @@
             </div>
             <div class="col-sm-12 col-md-12 col-lg-6">
                 <button type="button" class="btn btn-warning m-2 p-2 col-sm-6 col-lg-2 ">[Rating]</button>
-                <button type="button" class="btn btn-primary m-2 p-2 col-sm-6 col-lg-4">[Add movie to list]</button>
+                <form action="{{route('add_movie', $movie->id)}}" method="POST">
+                    @csrf
+                    <button type="button" class="btn btn-primary m-2 p-2 col-sm-6 col-lg-4">[Add movie to list]</button>
+                </form>
             </div>
         </div>
     </section>
@@ -47,7 +50,7 @@
                 @endphp
 
                 {{-- Registered and authenticated users can write a review --}}
-                @auth    
+                @auth
                     {{-- If logged in user hasn't written a review, suggest they do --}}
                     @if (!$userReview)
                         <a href="{{ route('page_movie_review_create', $movie->id) }}"><h4 class="mt-3">Write review</h4></a>
@@ -56,9 +59,9 @@
 
                 {{-- Make sure we have reviews --}}
                 @if (count($reviewers) > 0)
-                
+
                 <h1 class="title">User reviews</h1>
-            
+
                     @for($i = 0; $i < count($reviewers) && $i < 5; $i++)
                         @php
                             $reviewerName = $reviews['users_table']->where('id', "=", $reviewers[$i]->user_id)->get()[0]->name;
@@ -73,12 +76,12 @@
                             </div>
                         </div>
                     @endfor
-                        
+
                 @else
 
                     @guest
                         <h3 class="mt-3">There are currently no reviews for {{ $movie->title }}</h3>
-                        
+
                         <p>
                             <a href="{{ route('user_login') }}">Login</a> or <a href="{{ route('user_create') }}">Create Account</a> to write a review
                         </p>

@@ -2,6 +2,9 @@
 
 namespace App\Models;
 
+use App\Models\AddMovie;
+use App\Models\Review;
+use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Storage;
@@ -47,7 +50,7 @@ class Movie extends Model
 
     public function addedMovies()
     {
-        return $this->hasMany(\App\Models\Movie::class);
+        return $this->hasMany(AddMovie::class);
     }
 
     // // Deleting image
