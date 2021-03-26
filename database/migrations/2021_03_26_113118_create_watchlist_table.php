@@ -13,7 +13,7 @@ class CreateWatchlistTable extends Migration
      */
     public function up()
     {
-        Schema::create('added_movie', function (Blueprint $table) {
+        Schema::create('added_movies', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('user_id')->onDelete('cascade');
             $table->unsignedBigInteger('movie_id')->onDelete('cascade');

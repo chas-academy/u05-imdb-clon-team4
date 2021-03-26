@@ -1,11 +1,13 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Movie;
 
-use App\Models\AddMovie;
+use App\Http\Controllers\Controller;
+use App\Models\AddedMovie;
+use App\Models\Movie;
 use Illuminate\Http\Request;
 
-class AddMovieController extends Controller
+class AddedMovieController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -33,18 +35,23 @@ class AddMovieController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request, Movie $movie)
     {
+        $movie->addedMovies()->create([
+            'user_id' => $request->user()->id,
+            'movie_id' => $movie->id,
+        ]);
 
+        return back();
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\AddMovie  $addMovie
+     * @param  \App\Models\AddedMovie  $addedMovie
      * @return \Illuminate\Http\Response
      */
-    public function show(AddMovie $addMovie)
+    public function show(AddedMovie $addedMovie)
     {
         //
     }
@@ -52,10 +59,10 @@ class AddMovieController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\AddMovie  $addMovie
+     * @param  \App\Models\AddedMovie  $addedMovie
      * @return \Illuminate\Http\Response
      */
-    public function edit(AddMovie $addMovie)
+    public function edit(AddedMovie $addedMovie)
     {
         //
     }
@@ -64,10 +71,10 @@ class AddMovieController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\AddMovie  $addMovie
+     * @param  \App\Models\AddedMovie  $addedMovie
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, AddMovie $addMovie)
+    public function update(Request $request, AddedMovie $addedMovie)
     {
         //
     }
@@ -75,10 +82,10 @@ class AddMovieController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\AddMovie  $addMovie
+     * @param  \App\Models\AddedMovie  $addedMovie
      * @return \Illuminate\Http\Response
      */
-    public function destroy(AddMovie $addMovie)
+    public function destroy(AddedMovie $addedMovie)
     {
         //
     }

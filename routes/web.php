@@ -2,7 +2,7 @@
 
 use App\Http\Controllers\Admin\Auth\RegisterAdminController;
 use App\Http\Controllers\ComponentSearchController;
-use App\Http\Controllers\Movie\AddMovieController;
+use App\Http\Controllers\Movie\AddedMovieController;
 use App\Http\Controllers\Movie\MovieController;
 use App\Http\Controllers\Movie\MovieReviewWriteController;
 use App\Http\Controllers\Page\HomePageController;
@@ -48,7 +48,7 @@ Route::get('user-terms', [TermsController::class, 'index'])->name('user_terms');
 Route::get('movie/{id}', [MovieController::class, 'index'])->name('page_movie');
 
 // post added movie to DB
-Route::post('movie/{id}', [AddMovieController::class, 'store'])->name('add_movie');
+Route::post('movie/{movie}/add', [AddedMovieController::class, 'store'])->name('add_to_watchlist');
 
 // user delete review
 Route::post('movie/{id}', [MovieReviewWriteController::class, 'destroy']);
@@ -58,4 +58,4 @@ Route::post('movie/{id}', [MovieReviewWriteController::class, 'destroy']);
 Route::get('movie/{id}/review-write', [MovieReviewWriteController::class, 'index'])->name('page_movie_review_create');
 
 // create
-Route::post('movie/{id}/review-write', [MovieReviewWriteController::class, 'create']);
+Route::post('movie/{movie}/review-write', [MovieReviewWriteController::class, 'create']);
