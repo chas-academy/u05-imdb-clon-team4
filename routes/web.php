@@ -12,6 +12,10 @@ use App\Http\Controllers\User\RegisterUserController;
 use App\Http\Controllers\User\TermsController;
 use Illuminate\Support\Facades\Route;
 
+// Search
+// With uri as an optional URL param where it can be anything or nothing
+Route::post('{uri?}search', [ComponentSearchController::class, 'search'])->name('component_search')->where('uri', '.*');
+
 // App Pages
 Route::get('/', [HomePageController::class, 'index'])->name('page_home');
 
@@ -42,10 +46,12 @@ Route::get('user-terms', [TermsController::class, 'index'])->name('user_terms');
 // movie
 Route::get('movie/{id}', [MovieController::class, 'index'])->name('page_movie');
 
-// review
-Route::get('movie/{id}/review-write', [MovieReviewWriteController::class, 'index'])->name('page_movie_review_create');
-Route::post('movie/{id}/review-write', [MovieReviewWriteController::class, 'create']);
+// user delete review
+Route::post('movie/{id}', [MovieReviewWriteController::class, 'destroy']);
 
-// Search
-// With uri as an optional URL param where it can be anything or nothing
-Route::post('{uri?}search', [ComponentSearchController::class, 'search'])->name('component_search')->where('uri', '.*');
+// review
+// form
+Route::get('movie/{id}/review-write', [MovieReviewWriteController::class, 'index'])->name('page_movie_review_create');
+
+// create
+Route::post('movie/{id}/review-write', [MovieReviewWriteController::class, 'create']);
