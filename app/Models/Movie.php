@@ -40,6 +40,11 @@ class Movie extends Model
         return $this->hasMany(\App\Models\Review::class);
     }
 
+    public function addedBy(User $user)
+    {
+        return $this->addedMovies->contains('user_id', $user->id);
+    }
+
     public function user()
     {
         return $this->belongsTo(User::class);

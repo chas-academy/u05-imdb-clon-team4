@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Movie;
 
 use App\Http\Controllers\Controller;
+use App\Models\Movie;
 use App\Models\Review;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Http\Request;

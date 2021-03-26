@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\Controller;
+use App\Models\AddedMovie;
 use Illuminate\Http\Request;
 
 class RegisteredUserController extends Controller
@@ -17,9 +18,13 @@ class RegisteredUserController extends Controller
     {
         $user = auth()->user();
 
+        $id = $request->user()->id;
+        $movies = AddedMovie::where('id', $id)->get();
+
         return view('pages.account')
             ->with([
                 'user' => $user,
+                'movies' => $movies,
             ]);
     }
 }
