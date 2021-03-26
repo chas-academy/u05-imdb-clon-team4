@@ -20,6 +20,7 @@ class Review extends Model
         'movie_id',
         'title',
         'description',
+        'status',
     ];
 
     /**

@@ -26,6 +26,9 @@ class ReviewRequest extends FormRequest
     public function rules()
     {
         return [
+            'status' => 'required',
+            'user_id' => 'required',
+            'movie_id' => 'required',
             'title' => 'required|min:5',
             'description' => 'required|min:5',
         ];

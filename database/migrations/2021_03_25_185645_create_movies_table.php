@@ -2,7 +2,6 @@
 
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
-use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Schema;
 
 class CreateMoviesTable extends Migration
@@ -28,6 +27,17 @@ class CreateMoviesTable extends Migration
         // For non Postgres Databases
         if (env('DB_CONNECTION') !== 'pgsql') {
             DB::statement("ALTER TABLE movies MODIFY image LONGBLOB");
+        }
+
+        // If there is no data in table seed movies from seeder
+        $dataInTable = DB::table('movies')->get();
+        if (count($dataInTable) === 0) {
+            Artisan::call('db:seed', [
+                '--class' => 'MovieSeeder',
+                // use force for production
+                // otherwise it won't execute
+                '--force' => true,
+            ]);
         }
     }
 

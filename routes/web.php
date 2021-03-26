@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\Auth\RegisterAdminController;
+use App\Http\Controllers\ComponentSearchController;
 use App\Http\Controllers\Movie\AddMovieController;
 use App\Http\Controllers\Movie\MovieController;
 use App\Http\Controllers\Movie\MovieReviewWriteController;
@@ -11,6 +12,10 @@ use App\Http\Controllers\User\RegisteredUserController;
 use App\Http\Controllers\User\RegisterUserController;
 use App\Http\Controllers\User\TermsController;
 use Illuminate\Support\Facades\Route;
+
+// Search
+// With uri as an optional URL param where it can be anything or nothing
+Route::post('{uri?}search', [ComponentSearchController::class, 'search'])->name('component_search')->where('uri', '.*');
 
 // App Pages
 Route::get('/', [HomePageController::class, 'index'])->name('page_home');
@@ -45,6 +50,12 @@ Route::get('movie/{id}', [MovieController::class, 'index'])->name('page_movie');
 // post added movie to DB
 Route::post('movie/{id}', [AddMovieController::class, 'store'])->name('add_movie');
 
+// user delete review
+Route::post('movie/{id}', [MovieReviewWriteController::class, 'destroy']);
+
 // review
+// form
 Route::get('movie/{id}/review-write', [MovieReviewWriteController::class, 'index'])->name('page_movie_review_create');
+
+// create
 Route::post('movie/{id}/review-write', [MovieReviewWriteController::class, 'create']);

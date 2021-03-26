@@ -11,5 +11,5 @@
 	   </ul>
    </li>
 @endif
-<li class='nav-item'><a class='nav-link' href='{{ backpack_url('movie') }}'><i class='nav-icon la la-question'></i> Movies</a></li>
-<li class='nav-item'><a class='nav-link' href='{{ backpack_url('review') }}'><i class='nav-icon la la-question'></i> Reviews</a></li>
+<li class='nav-item'><a class='nav-link' href='{{ backpack_url('movie') }}'><i class='nav-icon la la-film'></i> Movies</a></li>
+<li class='nav-item'><a class='nav-link' href='{{ backpack_url('review') }}'><i class='nav-icon la la-pencil-square'></i> Reviews</a></li>
