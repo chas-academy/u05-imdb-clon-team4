@@ -15,8 +15,8 @@ class CreateWatchlistTable extends Migration
     {
         Schema::create('added_movie', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id')->constrained()->onDelete('cascade');
-            $table->foreignId('movie_id')->constrained()->onDelete('cascade');
+            $table->unsignedBigInteger('user_id')->onDelete('cascade');
+            $table->unsignedBigInteger('movie_id')->onDelete('cascade');
             $table->timestamps();
         });
     }
@@ -28,6 +28,6 @@ class CreateWatchlistTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('added_movie');
+        Schema::dropIfExists('watchlist');
     }
 }
