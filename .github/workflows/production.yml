@@ -14,3 +14,4 @@ jobs:
                   heroku_api_key: ${{secrets.HEROKU_API_KEY}}
                   heroku_app_name: 'imdb-clone-g4' #Must be unique in Heroku
                   heroku_email: 'axel.roussilleaberg@chasacademy.se'
+                  remote_branch: 'main'
