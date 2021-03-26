@@ -3,9 +3,9 @@
     $userIsReviewer = !auth()->user() || auth()->user()->name !== $review->user_name;
 @endphp
 
-<div class="col-3">
-    <div class="card-body d-flex">
-        <div class="card mx-2 ">
+<div class="col-lg-10 mx-auto">
+    <div class="card-body d-flex flex-column">
+        <div class="card my-2 ">
             <h3 class="card-header ">{{ $review->title }}</h3>
             <div class="card-body">                
                 @if ($userIsReviewer)
