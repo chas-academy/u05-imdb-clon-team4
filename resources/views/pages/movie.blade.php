@@ -35,43 +35,46 @@
 
     <section id="reviews">
         <div class="container">
-                {{-- Setup some variables --}}
-                @php
-                    $user = auth();
-                    $id = $user->id();
-                    $userReview = $reviews['table']->where([
-                        'user_id' => $id,
-                        'movie_id' => $movie->id
-                    ])->first();
-                    $reviewers = $reviews['movie'];
-                @endphp
-
+            <div class="row">
                 {{-- Registered and authenticated users can write a review --}}
                 @auth    
                     {{-- If logged in user hasn't written a review, suggest they do --}}
-                    @if (!$userReview)
+                    @if (!$reviews['user']->hasReview)
                         <a href="{{ route('page_movie_review_create', $movie->id) }}"><h4 class="mt-3">Write review</h4></a>
+                    @else
+                        @if ($reviews['user']->review->status === 'pending')
+                            <h4>Your review is currently pending.</h4>                            
+                        @endif
+                        @if ($reviews['user']->review->status === 'denied')
+                            <h4>Your review was denied.</h4>                            
+                        @endif
+                        @if ($reviews['user']->review->status === 'public')
+                            <h3>Your review</h3>
+                            @include('components.review-card', ['review' => $reviews['user']->review])
+                        @endif
+                        <form
+                            class="p-3 formcontainer border border-2 rounded"
+                            action="{{ route('page_movie', ['id' => $movie->id]) }}"
+                            method="post"
+                        >
+                            @csrf
+                            <input type="hidden" name="review" value="{{ $reviews['user']->review->id }}">
+                            <button type="submit" class="btn logbtn">
+                                Delete review
+                            </button>
+                        </form>
                     @endif
                 @endauth
 
                 {{-- Make sure we have reviews --}}
-                @if (count($reviewers) > 0)
+                @if (count($reviews['list']) > 0)
                 
-                <h1 class="title">User reviews</h1>
+                    <h1 class="title">User reviews</h1>
             
-                    @for($i = 0; $i < count($reviewers) && $i < 5; $i++)
-                        @php
-                            $reviewerName = $reviews['users_table']->where('id', "=", $reviewers[$i]->user_id)->get()[0]->name;
-                        @endphp
-                        <div class="card-body d-flex">
-                            <div class="card mx-2 ">
-                                <h3 class="card-header ">{{ $reviewers[$i]->title }}</h3>
-                                <div class="card-body">
-                                    <p>Reviewer: {{ $reviewerName }}</p>
-                                    <p class="card-text">{!! $reviewers[$i]->description !!}</p>
-                                </div>
-                            </div>
-                        </div>
+                    @for($i = 0; $i < count($reviews['list']) && $i < 5; $i++)
+                        @if ($reviews['list'][$i]->status === 'public')
+                            @include('components.review-card', ['review' => $reviews['list'][$i]])
+                        @endif
                     @endfor
                         
                 @else
@@ -85,6 +88,7 @@
                     @endguest
 
                 @endif
+            </div>
         </div>
     </section>
 </div>

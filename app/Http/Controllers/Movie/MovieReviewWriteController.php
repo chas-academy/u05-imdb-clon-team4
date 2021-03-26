@@ -55,6 +55,7 @@ class MovieReviewWriteController extends Controller
             'description' => $request->review,
             'movie_id' => $movieId,
             'user_id' => $userId,
+            'status' => 'pending',
         ]);
 
         // Redirect to movie page
@@ -63,58 +64,16 @@ class MovieReviewWriteController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show()
-    {
-        return view('pages.movie-review');
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
      * Remove the specified resource from storage.
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Request $request, $id)
     {
-        //
+        $reviewId = $request->review;
+        DB::table('reviews')->delete($reviewId);
+
+        return redirect()->route('page_movie', ['id' => $id]);
     }
 }
