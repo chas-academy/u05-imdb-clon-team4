@@ -28,6 +28,17 @@ class CreateMoviesTable extends Migration
         if (env('DB_CONNECTION') !== 'pgsql') {
             DB::statement("ALTER TABLE movies MODIFY image LONGBLOB");
         }
+
+        // If there is no data in table seed movies from seeder
+        $dataInTable = DB::table('movies')->get();
+        if (count($dataInTable) === 0) {
+            Artisan::call('db:seed', [
+                '--class' => 'MovieSeeder',
+                // use force for production
+                // otherwise it won't execute
+                '--force' => true,
+            ]);
+        }
     }
 
     /**
