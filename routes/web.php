@@ -50,6 +50,8 @@ Route::get('movie/{id}', [MovieController::class, 'index'])->name('page_movie');
 // post added movie to DB
 Route::post('movie/{movie}/add', [AddedMovieController::class, 'store'])->name('add_to_watchlist');
 
+/* Route::get('account', [AddedMovieController::class, 'index'])->name('watchlist'); */
+
 // user delete review
 Route::post('movie/{id}', [MovieReviewWriteController::class, 'destroy']);
 

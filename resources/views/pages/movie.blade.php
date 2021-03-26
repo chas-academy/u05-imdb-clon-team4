@@ -13,10 +13,12 @@
             </div>
             <div class="col-sm-12 col-md-12 col-lg-6">
                 <button type="button" class="btn btn-warning m-2 p-2 col-sm-6 col-lg-2 ">[Rating]</button>
-                <form action="{{route('add_to_watchlist', $movie->id)}}" method="POST">
-                    @csrf
-                    <button type="submit" name="button" class="btn btn-primary m-2 p-2 col-sm-6 col-lg-4">[Add movie to list]</button>
-                </form>
+               {{--  @if(!$movie->addedBy($id)) --}}
+                    <form action="{{route('add_to_watchlist', $movie->id)}}" method="POST">
+                        @csrf
+                        <button type="submit" name="button" class="btn btn-primary m-2 p-2 col-sm-6 col-lg-4">[Add movie to list]</button>
+                    </form>
+               {{--  @endif --}}
             </div>
         </div>
     </section>
