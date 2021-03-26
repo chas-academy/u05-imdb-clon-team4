@@ -1,16 +1,16 @@
 name: Deploy to production
 
 on:
-  release:
-    types: [published]
+    release:
+        types: [published]
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - uses: akhileshns/heroku-deploy@v3.9.9 # This is the action
-        with:
-          heroku_api_key: ${{secrets.HEROKU_API_KEY}}
-          heroku_app_name: "imdb-clone-g4" #Must be unique in Heroku
-          heroku_email: "axel.roussilleaberg@chasacademy.se"
+    build:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v2
+            - uses: akhileshns/heroku-deploy@v3.12.12 # This is the action
+              with:
+                  heroku_api_key: ${{secrets.HEROKU_API_KEY}}
+                  heroku_app_name: 'imdb-clone-g4' #Must be unique in Heroku
+                  heroku_email: 'axel.roussilleaberg@chasacademy.se'
