@@ -26,7 +26,7 @@ Once you have Docker up and running (check for the Docker Whale icon in your tas
 
 ---
 
-Once everything is done you can view the app on [http://localhost](http://localhost).
+Once everything is done you can view the app on [https://localhost](https://localhost).
 
 The next time you want to start the app container you can do it directly in docker or run:
 
