@@ -30,12 +30,22 @@ class MovieController extends Controller
             'movie_id' => $movieId,
         ])->get();
 
+        // Default public review list count to 0
+        $reviewListCount = 0;
+
         // If there are reviews attache user_name to review object
         if (count($reviewsList) > 0) {
 
             foreach ($reviewsList as $review) {
                 $userName = DB::table('users')->where('id', '=', $review->user_id)->first();
+
+                // Append username to review
                 $review->user_name = $userName->name;
+
+                // Count public reviews
+                if ($review->status === 'public') {
+                    $reviewListCount++;
+                }
             }
         }
 
@@ -72,6 +82,9 @@ class MovieController extends Controller
 
                 // Reindex review list after unser
                 $reviewsList = array_values($arrayReviewList);
+
+                // Subtract 1 from the review list count since if user is viewing we don't need it for general list
+                $reviewListCount--;
             }
         }
 
@@ -83,6 +96,7 @@ class MovieController extends Controller
             'movie' => $movie,
             'reviews' => [
                 'list' => $reviewsList,
+                'list_count' => $reviewListCount,
                 'user' => json_decode(json_encode([
                     'hasReview' => $userHasReview,
                     'review' => $userReview,

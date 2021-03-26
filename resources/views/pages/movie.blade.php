@@ -49,11 +49,11 @@
                             <h4>Your review was denied.</h4>                            
                         @endif
                         @if ($reviews['user']->review->status === 'public')
-                            <h3>Your review</h3>
-                            @include('components.review-card', ['review' => $reviews['user']->review])
+                            <h4>Your review</h4>
                         @endif
+                        @include('components.review-card', ['review' => $reviews['user']->review])
                         <form
-                            class="p-3 formcontainer border border-2 rounded"
+                            class="p-3"
                             action="{{ route('page_movie', ['id' => $movie->id]) }}"
                             method="post"
                         >
@@ -67,11 +67,11 @@
                 @endauth
 
                 {{-- Make sure we have reviews --}}
-                @if (count($reviews['list']) > 0)
+                @if ($reviews['list_count'] > 0)
                 
                     <h1 class="title">User reviews</h1>
             
-                    @for($i = 0; $i < count($reviews['list']) && $i < 5; $i++)
+                    @for($i = 0; $i < $reviews['list_count'] && $i < 5; $i++)
                         @if ($reviews['list'][$i]->status === 'public')
                             @include('components.review-card', ['review' => $reviews['list'][$i]])
                         @endif
