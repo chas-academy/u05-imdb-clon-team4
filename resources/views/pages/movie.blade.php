@@ -8,7 +8,6 @@
             <div class="col-sm-12 ts-4 col-md-12 col-lg-6">
                 <h3 class=" title ">{{ $movie->title }}</h3>
 
-<<<<<<< HEAD
                     <p class="p-2 subtitle">{{ $movie->year }}</p>
 
             </div>
@@ -18,17 +17,6 @@
                     <button type="button" class="btn btn-primary m-2 p-2 col-sm-6 col-lg-6"><i class="fa fa-plus mx-2"
                         style=" pointer-events: none;"></i>Add to watchlist</button>
                 </form>
-=======
-                <p class="p-2 subtitle">{{ $movie->year }}</p>
-
-            </div>
-
-            <form action="{{ route('add_to_watchlist', $movie->id) }}" method="POST">
-                @csrf
-                <button type="button" class="btn btn-primary m-2 p-2 col-sm-6 col-lg-6"><i class="fa fa-plus mx-2"
-                        style=" pointer-events: none;"></i>Add to watchlist</button>
-            </form>
->>>>>>> 15f34ad23038a6009de093377be76c005d62c4e6
 
         </div>
     </section>
