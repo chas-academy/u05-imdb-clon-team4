@@ -15,16 +15,6 @@ class AddedMovieController extends Controller
     {
         $this->middleware(['auth']);
     }
-    /**
-     * Display a listing of the resource.
-     */
-    public function index(Request $request)
-    {
-        /*   $id = $request->user()->id;
-    $movies = AddedMovie::where('id', $id)->get();
-
-    return redirect()->route('user_home', ['movies' => $movies]); */
-    }
 
     public function store(Request $request, Movie $movie)
     {
@@ -40,31 +30,9 @@ class AddedMovieController extends Controller
         return back();
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\AddedMovie  $addedMovie
-     * @return \Illuminate\Http\Response
-     */
-    public function show(AddedMovie $addedMovie)
-    {
-
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\AddedMovie  $addedMovie
-     * @return \Illuminate\Http\Response
-     */
     public function destroy(AddedMovie $addedMovie, Movie $movie, Request $request)
     {
-        $movieId = $request->AddedMovie;
-        /*  dd($movieId); */
-        DB::table('added_movies')->delete($movieId);
-
-        /*   $request->user()->addedMovies()->where('id', $movie->id)->delete();
-        dd($movie->id); */
+        $request->user()->addedMovies()->where('movie_id', $movie->id)->delete();
         return back();
     }
 }

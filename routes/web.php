@@ -51,7 +51,7 @@ Route::get('movie/{id}', [MovieController::class, 'index'])->name('page_movie');
 Route::post('movie/{movie}/add', [AddedMovieController::class, 'store'])->name('add_to_watchlist');
 
 //movie removed from DB
-Route::delete('account', [AddedMovieController::class, 'destroy'])->name('remove_from_watchlist');
+Route::delete('account/{movie}', [AddedMovieController::class, 'destroy'])->name('remove_from_watchlist');
 
 // user delete review
 Route::delete('movie/{id}', [MovieReviewWriteController::class, 'destroy']);
