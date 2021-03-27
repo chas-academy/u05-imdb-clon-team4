@@ -11,13 +11,13 @@
                     <p class="p-2 subtitle">{{ $movie->year }}</p>
 
             </div>
-
-                <form action="{{route('add_to_watchlist', $movie->id)}}" method="POST">
-                        @csrf
-                    <button type="button" class="btn btn-primary m-2 p-2 col-sm-6 col-lg-6"><i class="fa fa-plus mx-2"
-                        style=" pointer-events: none;"></i>Add to watchlist</button>
-                </form>
-
+                @if($current_user && !$movieIsAdded)
+                    <form action="{{route('add_to_watchlist', $movie->id)}}" method="POST">
+                            @csrf
+                        <button type="submit" name="button" class="btn btn-primary m-2 p-2 col-sm-6 col-lg-6"><i class="fa fa-plus mx-2"
+                            style=" pointer-events: none;"></i>Add to watchlist</button>
+                    </form>
+                @endif
         </div>
     </section>
 

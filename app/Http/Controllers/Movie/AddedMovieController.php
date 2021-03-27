@@ -30,7 +30,7 @@ class AddedMovieController extends Controller
         return back();
     }
 
-    public function destroy(AddedMovie $addedMovie, Movie $movie, Request $request)
+    public function destroy(Movie $movie, Request $request)
     {
         $request->user()->addedMovies()->where('movie_id', $movie->id)->delete();
         return back();
