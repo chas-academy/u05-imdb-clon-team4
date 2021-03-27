@@ -39,9 +39,9 @@ class ReviewCrudController extends CrudController
      */
     protected function setupListOperation()
     {
-        CRUD::column('status');
-        CRUD::column('user_id');
-        CRUD::column('movie_id');
+        CRUD::column('status')->type('relationship');
+        CRUD::column('user')->type('relationship')->attribute('name');
+        CRUD::column('movie')->type('relationship')->attribute('title');
         CRUD::column('title');
         CRUD::column('description');
 
@@ -62,9 +62,9 @@ class ReviewCrudController extends CrudController
     {
         CRUD::setValidation(ReviewRequest::class);
 
-        CRUD::field('status')->type('enum');
-        CRUD::field('user_id');
-        CRUD::field('movie_id');
+        CRUD::field('status_id')->type('select')->size(4);
+        CRUD::field('user_id')->size(4);
+        CRUD::field('movie_id')->size(4);
         CRUD::field('title');
         CRUD::field('description');
 
