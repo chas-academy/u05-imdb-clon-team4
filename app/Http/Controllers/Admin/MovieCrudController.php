@@ -39,6 +39,7 @@ class MovieCrudController extends CrudController
      */
     protected function setupListOperation()
     {
+        CRUD::column('status')->type('relationship');
         CRUD::column('image')->type('image');
         CRUD::column('title');
         CRUD::column('description');
@@ -64,8 +65,9 @@ class MovieCrudController extends CrudController
         // Docs
         // https://backpackforlaravel.com/docs/4.1/crud-fields
 
-        CRUD::field('title')->size(6);
-        CRUD::field('year')->size(6)->type('date_picker');
+        CRUD::field('status_id')->size(4)->type('select');
+        CRUD::field('title')->size(4);
+        CRUD::field('year')->size(4)->type('date_picker');
         CRUD::field('description')->type('textarea');
         CRUD::field('image')->type('base64_image')->filename(null)->src(null)->crop(true)->aspect_ratio(1);
 

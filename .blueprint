@@ -1,12 +1,17 @@
 created:
     - database/factories/Models/MovieFactory.php
     - database/factories/Models/ReviewFactory.php
-    - database/migrations/2021_03_25_185645_create_movies_table.php
-    - database/migrations/2021_03_25_185646_create_reviews_table.php
+    - database/factories/Models/StatusFactory.php
+    - database/migrations/2021_03_27_101517_create_movies_table.php
+    - database/migrations/2021_03_27_101518_create_reviews_table.php
+    - database/migrations/2021_03_27_101519_create_statuses_table.php
     - app/Models/Movie.php
     - app/Models/Review.php
+    - app/Models/Status.php
     - database/seeders/MovieSeeder.php
     - database/seeders/ReviewSeeder.php
+    - database/seeders/StatusSeeder.php
 models:
-    Models\Movie: { title: string, description: text, year: date, image: 'text nullable', relationships: { hasMany: Review } }
-    Models\Review: { user_id: 'id foregin', movie_id: 'id foregin', title: string, description: text, status: 'enum:pending,public,denied', relationships: { belongsTo: 'User, Movie' } }
+    Models\Movie: { status_id: 'id foregin', title: string, description: text, year: date, image: 'text nullable', relationships: { hasMany: Review } }
+    Models\Review: { status_id: 'id foregin', user_id: 'id foregin', movie_id: 'id foregin', title: string, description: text, relationships: { belongsTo: 'User, Movie, Status' } }
+    Models\Status: { status: string, relationships: { hasMany: 'Movie, Review' } }
