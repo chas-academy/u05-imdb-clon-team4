@@ -60,7 +60,6 @@
                         </a>
                     @else
 
-<<<<<<< HEAD
                     @if ($reviews['user']->review->status === 'pending')
                         <h4>Your review is pending.</h4>
                     @endif
@@ -81,36 +80,6 @@
                         <form class="p-3" action="{{ route('page_movie', ['id' => $movie->id]) }}" method="post">
                             @csrf
                             <input type="hidden" name="review" value="{{ $reviews['user']->review->id }}">
-=======
-                        <blade
-                            if|%20(%24reviews%5B%26%2339%3Buser%26%2339%3B%5D-%3Ereview-%3Estatus%20%3D%3D%3D%20%26%2339%3Bpending%26%2339%3B)>
-                            <h4>Your review is pending.</h4>
-                        @endif
-
-                        <blade
-                            if|%20(%24reviews%5B%26%2339%3Buser%26%2339%3B%5D-%3Ereview-%3Estatus%20%3D%3D%3D%20%26%2339%3Bdraft%26%2339%3B)>
-                            <h4>Your review is a draft.</h4>
-                        @endif
-
-                        <blade
-                            if|%20(%24reviews%5B%26%2339%3Buser%26%2339%3B%5D-%3Ereview-%3Estatus%20%3D%3D%3D%20%26%2339%3Bpublished%26%2339%3B)>
-                            <h4>Your review</h4>
-                        @endif
-
-                        <blade
-                            if|%20(%24reviews%5B%26%2339%3Buser%26%2339%3B%5D-%3Ereview-%3Estatus%20%3D%3D%3D%20%26%2339%3Bdenied%26%2339%3B)>
-                            <h4>Your review was denied.</h4>
-                        @endif
-
-                        <blade
-                            include|(%26%2339%3Bcomponents.review-card%26%2339%3B%2C%20%5B%26%2339%3Breview%26%2339%3B%20%3D%3E%20%24reviews%5B%26%2339%3Buser%26%2339%3B%5D-%3Ereview%5D) />
-                        <form class="p-3"
-                            action="{{ route('page_movie', ['id' => $movie->id]) }}"
-                            method="post">
-                            @csrf
-                            <input type="hidden" name="review"
-                                value="{{ $reviews['user']->review->id }}">
->>>>>>> 15f34ad23038a6009de093377be76c005d62c4e6
 
                             <button type="submit" class="btn logbtn">
                                 Delete review
@@ -120,7 +89,6 @@
                 @endauth
 
                 {{-- Make sure we have reviews --}}
-<<<<<<< HEAD
                 @if ($reviews['list_count'] > 0)
 
                 <h1 class="title text-center">User reviews</h1>
@@ -135,24 +103,6 @@
 
                         @guest
                         <h3 class="mt-3">There are currently no reviews for {{ $movie->title }}</h3>
-=======
-                @if($reviews['list_count'] > 0)
-
-                    <h1 class="title text-center">User reviews</h1>
-                    <div class="card-body d-flex flex-column">
-                        <blade
-                            for|(%24i%20%3D%200%3B%20%24i%20%3C%20%24reviews%5B%26%2339%3Blist_count%26%2339%3B%5D%20%26%26%20%24i%20%3C%205%3B%20%24i%2B%2B)%20%40if%20(%24reviews%5B%26%2339%3Blist%26%2339%3B%5D%5B%24i%5D-%3Estatus%20%3D%3D%3D>
-                            'published')
-                            <blade
-                                include|(%26%2339%3Bcomponents.review-card%26%2339%3B%2C%20%5B%26%2339%3Breview%26%2339%3B%20%3D%3E%20%24reviews%5B%26%2339%3Blist%26%2339%3B%5D%5B%24i%5D%5D) />
-                        @endif
-                @endfor
-
-            @else
-
-                @guest
-                    <h3 class="mt-3">There are currently no reviews for {{ $movie->title }}</h3>
->>>>>>> 15f34ad23038a6009de093377be76c005d62c4e6
 
                     <p>
                         <a href="{{ route('user_login') }}">Login</a> or <a
@@ -161,12 +111,8 @@
                     </p>
                 @endguest
 
-<<<<<<< HEAD
                         @endif
                 </div>
-=======
-                @endif
->>>>>>> 15f34ad23038a6009de093377be76c005d62c4e6
             </div>
         </div>
 </div>
