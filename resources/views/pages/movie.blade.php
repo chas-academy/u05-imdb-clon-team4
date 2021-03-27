@@ -45,17 +45,25 @@
                             <h4 class="mt-3">Write review</h4>
                         </a>
                     @else
+                   
                     @if ($reviews['user']->review->status === 'pending')
                         <h4>Your review is pending.</h4>
                     @endif
+
+                    @if ($reviews['user']->review->status === 'draft')
+                        <h4>Your review is a draft.</h4>
+                    @endif
+                    
+                    @if ($reviews['user']->review->status === 'published')
+                        <h4>Your review</h4>
+                    @endif
+
                     @if ($reviews['user']->review->status === 'denied')
                         <h4>Your review was denied.</h4>
                     @endif
-                    @if ($reviews['user']->review->status === 'public')
-                        <h4>Your review</h4>
-                    @endif
+                    
                     @include('components.review-card', ['review' => $reviews['user']->review])
-                        <form class="p-3 formcontainer border border-2 rounded" action="{{ route('page_movie', ['id' => $movie->id]) }}" method="post">
+                        <form class="p-3" action="{{ route('page_movie', ['id' => $movie->id]) }}" method="post">
                             @csrf
                             <input type="hidden" name="review" value="{{ $reviews['user']->review->id }}">
                             
@@ -72,7 +80,7 @@
                 <h1 class="title text-center">User reviews</h1>
                 <div class="card-body d-flex flex-column">
                     @for($i = 0; $i < $reviews['list_count'] && $i < 5; $i++) @if ($reviews['list'][$i]->status ===
-                        'public')
+                        'published')
                         @include('components.review-card', ['review' => $reviews['list'][$i]])
                         @endif
                         @endfor

@@ -42,8 +42,28 @@ class MovieController extends Controller
                 // Append username to review
                 $review->user_name = $userName->name;
 
+                $review->status = '';
+                switch ($review->status_id) {
+                    case 1:
+                        $review->status = 'pending';
+                        break;
+                    case 2:
+                        $review->status = 'draft';
+                        break;
+                    case 3:
+                        $review->status = 'published';
+                        break;
+                    case 4:
+                        $review->status = 'denied';
+                        break;
+
+                    default:
+                        $review->status = 'pending';
+                        break;
+                }
+
                 // Count public reviews
-                if ($review->status === 'public') {
+                if ($review->status_id === 3) {
                     $reviewListCount++;
                 }
             }
@@ -84,7 +104,7 @@ class MovieController extends Controller
                 $reviewsList = array_values($arrayReviewList);
 
                 // Subtract 1 from the review list count since if user is viewing we don't need it for general list
-                $reviewListCount--;
+                // $reviewListCount--;
             }
         }
 

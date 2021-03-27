@@ -16,6 +16,7 @@ class Movie extends Model
      * @var array
      */
     protected $fillable = [
+        'status_id',
         'title',
         'description',
         'year',
@@ -29,6 +30,7 @@ class Movie extends Model
      */
     protected $casts = [
         'id' => 'integer',
+        'status_id' => 'integer',
         'year' => 'date',
     ];
 
@@ -36,5 +38,10 @@ class Movie extends Model
     public function reviews()
     {
         return $this->hasMany(\App\Models\Review::class);
+    }
+
+    public function status()
+    {
+        return $this->belongsTo(\App\Models\Status::class);
     }
 }

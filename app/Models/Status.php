@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Review extends Model
+class Status extends Model
 {
     use \Backpack\CRUD\app\Models\Traits\CrudTrait;
     use HasFactory;
@@ -16,11 +16,7 @@ class Review extends Model
      * @var array
      */
     protected $fillable = [
-        'status_id',
-        'user_id',
-        'movie_id',
-        'title',
-        'description',
+        'status',
     ];
 
     /**
@@ -30,23 +26,15 @@ class Review extends Model
      */
     protected $casts = [
         'id' => 'integer',
-        'status_id' => 'integer',
-        'user_id' => 'integer',
-        'movie_id' => 'integer',
     ];
 
-    public function status()
+    public function movies()
     {
-        return $this->belongsTo(\App\Models\Status::class);
+        return $this->hasMany(\App\Models\Movie::class);
     }
 
-    public function user()
+    public function reviews()
     {
-        return $this->belongsTo(\App\Models\User::class);
-    }
-
-    public function movie()
-    {
-        return $this->belongsTo(\App\Models\Movie::class);
+        return $this->hasMany(\App\Models\Review::class);
     }
 }
