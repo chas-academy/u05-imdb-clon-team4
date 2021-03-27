@@ -11,6 +11,11 @@
 </div>
 <div class="col-sm-12 col-md-12 col-lg-6">
     <button type="button" class="btn btn-warning m-2 p-2 col-sm-6 col-lg-2 ">[Rating]</button>
+     <form action="{{route('remove_from_watchlist', $movie->id)}}" method="post">
+        @csrf
+        @method('DELETE')
+        <button type="submit" class="btn btn-warning m-2 p-2 col-sm-6 col-lg-2">Delete</button>
+    </form>
 </div>
 
 

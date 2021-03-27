@@ -7,6 +7,7 @@ use App\Models\AddedMovie;
 use App\Models\Movie;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class AddedMovieController extends Controller
 {
@@ -23,6 +24,7 @@ class AddedMovieController extends Controller
     $movies = AddedMovie::where('id', $id)->get();
 
     return redirect()->route('user_home', ['movies' => $movies]); */
+
     }
 
     public function store(Request $request, Movie $movie)
@@ -58,6 +60,12 @@ class AddedMovieController extends Controller
      */
     public function destroy(AddedMovie $addedMovie, Movie $movie, Request $request)
     {
-        dd($movie);
+        $movieId = $request->AddedMovie;
+        /*  dd($movieId); */
+        DB::table('added_movies')->delete($movieId);
+
+        /*   $request->user()->addedMovies()->where('id', $movie->id)->delete();
+        dd($movie->id); */
+        return back();
     }
 }
