@@ -26,6 +26,9 @@ class RegisteredUserController extends Controller
         $added_movies = auth()->user()->addedMovies()->pluck('movie_id');
         $movies = Movie::whereIn('id', $added_movies)->get();
 
+        /*    $id = $request->user()->id;
+        $movies = AddedMovie::where('id', $id)->get(); */
+
         return view('pages.account')
             ->with([
                 'user' => $user,

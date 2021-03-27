@@ -24,7 +24,6 @@ class AddedMovieController extends Controller
     $movies = AddedMovie::where('id', $id)->get();
 
     return redirect()->route('user_home', ['movies' => $movies]); */
-
     }
 
     public function store(Request $request, Movie $movie)
