@@ -1,5 +1,6 @@
 models:
     Models\Movie:
+        status_id: id foregin
         title: string
         description: text
         year: date
@@ -8,12 +9,17 @@ models:
             hasMany: Review
 
     Models\Review:
+        status_id: id foregin
         user_id: id foregin
         movie_id: id foregin
         title: string
         description: text
-        status: enum:pending,public,denied
         relationships:
-            belongsTo: User, Movie
+            belongsTo: User, Movie, Status
 
-seeders: Movie, Review
+    Models\Status:
+        status: string
+        relationships:
+            hasMany: Movie, Review
+
+seeders: Movie, Review, Status

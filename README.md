@@ -71,14 +71,3 @@ code --install-extension kokororin.vscode-phpfmt
 code --install-extension HookyQR.beautify
 code --install-extension esbenp.prettier-vscode
 ```
-
-## Setup local environment
-
-Depending on what OS and/or hosting tools you have, the setup might differ. You should, however, be able to get this repository up and running with these four simple commands:
-
-```bash
-$ npm install
-$ composer install
-$ npm run dev
-$ php artisan serve
-```

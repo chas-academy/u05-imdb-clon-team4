@@ -21,7 +21,7 @@ class UserSeeder extends Seeder
          *
          */
 
-        $current_timestamp = \DB::raw('CURRENT_TIMESTAMP');
+        $current_timestamp = DB::raw('CURRENT_TIMESTAMP');
         DB::table('users')->insert([
             [
                 'name' => 'Admin',
