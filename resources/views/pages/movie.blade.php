@@ -1,7 +1,7 @@
 @extends('layouts.default')
 
 @section('content')
-<div class="  d-flex flex-column g-3 justify-content-evenly col-lg-10 mx-auto">
+<div class="  d-flex flex-column g-3 justify-content-evenly col-lg-10 mx-auto gy-4">
 
     <section class="col-sm-12 col-md-12 col-lg-12">
         <div class="col-lg-12 d-lg-flex flex-row row">
@@ -18,7 +18,7 @@
         </div>
     </section>
 
-    <section class="col-sm-12 col-md-12 d-lg-flex justify-content-lg-start flex-row h-auto mb-5">
+    <section class="col-sm-12 col-md-12 d-lg-flex justify-content-lg-start flex-row h-auto mb-3">
 		<div class="row py-2">
             <div class="col-lg-6 mb-3" style="object-fit: contain;">
                 <img src=" {{ $movie->image }}" alt="{{ $movie->title }}" class=" img-fluid" />
@@ -36,9 +36,9 @@
                 @auth
                     {{-- If logged in user hasn't written a review, suggest they do --}}
                     @if (!$reviews['user']->hasReview)
-                        <a class="btn btn-secondary" href="{{ route('page_movie_review_create', $movie->id) }}">
-                            <h4 class="mt-3">Write review</h4>
-                        </a>
+					<div class="col-sm-12 col-md-12 col-lg-6">
+                        <a class="btn btn-rosewood mb-2 p-2 col-sm-6 col-lg-6" href="{{ route('page_movie_review_create', $movie->id) }}">Write review</a>
+					</div>
                     @else
 
                     @if ($reviews['user']->review->status === 'pending')
@@ -73,7 +73,7 @@
                 @if ($reviews['list_count'] > 0)
 
                 <h3 class="title">User reviews</h3>
-                <div class="row row-cols-1 row-cols-lg-2 g-4">
+                <div class="row row-cols-1 row-cols-lg-2 g-4 mt-0">
                     @for($i = 0; $i < $reviews['list_count'] && $i < 5; $i++) @if ($reviews['list'][$i]->status ===
                         'published')
                         @include('components.review-card', ['review' => $reviews['list'][$i]])
