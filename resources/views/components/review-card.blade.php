@@ -9,7 +9,7 @@
         	<p class="card-text">{!! $review->description !!}</p>
     	</div>
 		@if ($userIsReviewer)
-		<div class="card-footer text-muted rounded-0">
+		<div class="card-footer text-silver rounded-0">
 			Reviewer: {{ $review->user_name }}
 		</div>
 		@endif
