@@ -76,8 +76,8 @@
 
                 <h3 class="title mt-3">User reviews</h3>
                 <div class="row row-cols-1 row-cols-lg-2 g-4 mt-0">
-                    @for($i = 0; $i < $reviews['list_count'] && $i < 5; $i++) @if ($reviews['list'][$i]->status ===
-                        'published')
+                    @for($i = 0; $i < $reviews['list_count'] && $i < 5; $i++) 
+					@if ($reviews['list'][$i]->status === 'published')
                         @include('components.review-card', ['review' => $reviews['list'][$i]])
                         @endif
                         @endfor
