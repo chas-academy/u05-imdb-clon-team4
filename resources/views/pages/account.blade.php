@@ -7,7 +7,7 @@
 
   <section class="lh-lg border border-2 rounded alert-primary border-primary p-3 font-monospace">
     <h3>Some <span class="fw-lighter small">(not so) fun facts</span></h3>
-    <p>User <strong>{{ $user->name }}</strong> <span class="small">(ID: <strong>{{ $user->id }}</strong>, Role: <strong>{{ $user->getRoleNames()[0] }})</strong></span>, was created <strong>{{ $user->created_at->diffForHumans() }}</strong> and can be reached at <strong><a href="mailto:{{ $user->email }}">{{ $user->email }}</a></strong></p>
+    <p>User <strong>{{ $user->name }}</strong> <span class="small">(ID: <strong>{{ $user->id }}</strong>, Role: <strong>{{-- {{ $user->getRoleNames()[0] }}) --}}</strong></span>, was created <strong>{{ $user->created_at->diffForHumans() }}</strong> and can be reached at <strong><a href="mailto:{{ $user->email }}">{{ $user->email }}</a></strong></p>
   </section>
 
 @endsection

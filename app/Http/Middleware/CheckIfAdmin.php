@@ -29,11 +29,12 @@ class CheckIfAdmin
     private function checkIfUserIsAdmin($user)
     {
         $checkAdminUser = env('USER_IS_ADMIN', true);
-        if($checkAdminUser){
+        if ($checkAdminUser) {
             return ($user->hasRole('admin'));
-        }else{
+        } else {
             return true;
         }
+
     }
 
     /**
