@@ -37,7 +37,7 @@
                     {{-- If logged in user hasn't written a review, suggest they do --}}
                     @if (!$reviews['user']->hasReview)
 					<div class="col-sm-12 col-md-12 col-lg-6">
-                        <a class="btn btn-rosewood mb-2 p-2 col-sm-6 col-lg-6" href="{{ route('page_movie_review_create', $movie->id) }}">Write review</a>
+                        <a class="btn btn-burnt-maroon mb-2 p-2 col-sm-6 col-lg-6 text-silver" href="{{ route('page_movie_review_create', $movie->id) }}">Write review</a>
 					</div>
                     @else
 
@@ -72,7 +72,7 @@
                 {{-- Make sure we have reviews --}}
                 @if ($reviews['list_count'] > 0)
 
-                <h3 class="title">User reviews</h3>
+                <h3 class="title mt-3">User reviews</h3>
                 <div class="row row-cols-1 row-cols-lg-2 g-4 mt-0">
                     @for($i = 0; $i < $reviews['list_count'] && $i < 5; $i++) @if ($reviews['list'][$i]->status ===
                         'published')
