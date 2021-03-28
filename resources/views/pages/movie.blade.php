@@ -42,27 +42,29 @@
                     @else
 
                     @if ($reviews['user']->review->status === 'pending')
-                        <h4>Your review is pending.</h4>
+                    <h3 class="h5 fst-italic">Your review is pending</h3>
                     @endif
 
                     @if ($reviews['user']->review->status === 'draft')
-                        <h4>Your review is a draft.</h4>
+                    <h3 class="h5 fst-italic">Your review is a draft</h3>
                     @endif
 
                     @if ($reviews['user']->review->status === 'published')
-                        <h4>Your review</h4>
+                    <h3 class="h5 fst-italic">Your review</h3>
                     @endif
 
                     @if ($reviews['user']->review->status === 'denied')
-                        <h4>Your review was denied.</h4>
+                    <h3 class="h5 fst-italic">Your review was denied.</h3>
                     @endif
 
+					<div class="row row-cols-1 g-4 mt-0">
                     @include('components.review-card', ['review' => $reviews['user']->review])
-                        <form class="p-3" action="{{ route('page_movie', ['id' => $movie->id]) }}" method="post">
+					</div>
+                        <form class="py-3" action="{{ route('page_movie', ['id' => $movie->id]) }}" method="post">
                             @csrf
                             <input type="hidden" name="review" value="{{ $reviews['user']->review->id }}">
 
-                            <button type="submit" class="btn logbtn">
+                            <button type="submit" class="btn btn-burnt-maroon text-silver">
                                 Delete review
                             </button>
                         </form>
