@@ -104,7 +104,7 @@ class MovieController extends Controller
                 $reviewsList = array_values($arrayReviewList);
 
                 // Subtract 1 from the review list count since if user is viewing we don't need it for general list
-                // $reviewListCount--;
+                $reviewListCount--;
             }
         }
 
