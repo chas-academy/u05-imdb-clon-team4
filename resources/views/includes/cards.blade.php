@@ -7,9 +7,7 @@
 				<img class="card-img-top rounded-0" src="{{ $movies[$i]->image }}" alt="{{ $movies[$i]->title }}">
 				<div class="card-body rounded-0">
 					<h3 class="card-title h5">{{ $movies[$i]->title }}</h2>
-					<p class="card-subtitle mb-2 text-muted h6">Year
-						<span>{{ $movies[$i]->year }}</span>
-					</p>
+					<p class="card-subtitle mb-2 text-muted h6">{{ $movies[$i]->year }}</p>
 				</div>
 			</a>
 		</div>
