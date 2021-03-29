@@ -1,13 +1,13 @@
 @extends('layouts.default')
 
 @section('content')
-<div class="  d-flex flex-column g-3 justify-content-evenly col-lg-10 mx-auto gy-4">
+<div class="d-flex flex-column g-3 justify-content-evenly col-lg-10 mx-auto gy-4">
 
     <section class="col-sm-12 col-md-12 col-lg-12">
         <div class="col-lg-12 d-lg-flex flex-row row">
             <div class="col-sm-12 ts-4 col-md-12 col-lg-6">
-                <h1 class=" title h2">{{ $movie->title }}</h1>
-                <p class="subtitle">{{ $movie->year }}</p>
+                <h1 class="title">{{ $movie->title }}</h1>
+                <h2 class="subtitle text-silver h5 mb-4">{{ $movie->year }}</h2>
             </div>
                 @if($current_user && !$movieIsAdded)
                 <form action="{{route('add_to_watchlist', $movie->id)}}" method="POST">
