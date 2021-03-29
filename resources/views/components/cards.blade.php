@@ -1,18 +1,7 @@
-{{-- Do we have movies to show --}}
-@if (count($movies) > 0)
-  <div class="d-flex flex-column align-items-center card-container">
-    <h2 class="text-center mt-3">Other content below</h2>
-    <div class="container row p-2 gx-5">
-      {{-- Loop movies, stop on COUNT_MOVIES or max 5 --}}
-      @for($i = 0; $i < count($movies) && $i < 5; $i++)
-      <a href="movie/{{ $movies[$i]->id }}" class="card text-dark bg-light col m-3" style="max-width: 18rem;">
-          <div class="card-header">{{ $movies[$i]->title }}</div>
-          <div class="card-body">´
-            <h5 class="card-title">Light card title</h5>
-            <p class="card-text">{!! $movies[$i]->description !!}</p>
-          </div>
-        </a>
-      @endfor
+<a href="movie/{{ $movies[$i]->id }}" class="card p-0 border-0 rounded-0 h-100">
+    <img class="card-img-top rounded-0" src="{{ $movies[$i]->image }}" alt="{{ $movies[$i]->title }}">
+    <div class="card-body rounded-0">
+        <h3 class="card-title h5">{{ $movies[$i]->title }}</h2>
+        <p class="card-subtitle mb-2 text-muted h6">{{ substr($movies[$i]->year, 0, 4) }}</p>
     </div>
-  </div>
-@endif
+</a>

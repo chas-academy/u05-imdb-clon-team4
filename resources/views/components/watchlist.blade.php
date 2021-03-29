@@ -1,7 +1,7 @@
 @for($i = 0; $i < count($movies); $i++)
 	<div class="col movie-cards-col h-100">
 		{{-- Include cards --}}
-    	@include('includes.cards', ['movies' => $movies])
+    	@include('components.cards', ['movies' => $movies])
 		<div class="card-footer mb-4">
      		<form action="{{route('remove_from_watchlist', $movies[$i]->id)}}" method="post" >
         		@csrf

@@ -14,7 +14,7 @@
 				@for($i = 0; $i < count($movies) && $i < 5; $i++)
 					<div class="col movie-cards-col">
 						{{-- Include cards --}}
-                		@include('includes.cards', ['movies' => $movies])
+                		@include('components.cards', ['movies' => $movies])
 					</div>
 				@endfor
             </div>
