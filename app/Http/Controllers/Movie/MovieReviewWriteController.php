@@ -51,11 +51,11 @@ class MovieReviewWriteController extends Controller
 
         // Create review
         $user = Review::create([
-            'title' => $request->title,
-            'description' => $request->review,
             'movie_id' => $movieId,
             'user_id' => $userId,
-            'status' => 'pending',
+            'status_id' => 1,
+            'title' => $request->title,
+            'description' => $request->review,
         ]);
 
         // Redirect to movie page

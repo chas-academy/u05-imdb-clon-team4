@@ -34,6 +34,7 @@ class CheckIfAdmin
         } else {
             return true;
         }
+
     }
 
     /**
