@@ -7,7 +7,7 @@
         <div class="col-lg-12 d-lg-flex flex-row row">
             <div class="col-sm-12 ts-4 col-md-12 col-lg-6">
                 <h1 class="title">{{ $movie->title }}</h1>
-                <h2 class="subtitle text-silver h5 mb-4">{{ $movie->year }}</h2>
+                <h2 class="subtitle text-silver h5 mb-4">{{ $year }}</h2>
             </div>
                 @if($current_user && !$movieIsAdded)
                 <form action="{{route('add_to_watchlist', $movie->id)}}" method="POST">

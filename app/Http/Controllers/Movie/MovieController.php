@@ -121,6 +121,7 @@ class MovieController extends Controller
             'movie' => $movie,
             'movieIsAdded' => $movieIsAdded,
             'current_user' => $user,
+			'year' => substr($movie->year, 0, 4),
             'reviews' => [
                 'list' => $reviewsList,
                 'list_count' => $reviewListCount,
