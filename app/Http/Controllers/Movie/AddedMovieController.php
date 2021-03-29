@@ -8,6 +8,7 @@ use App\Models\Movie;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Session;
 
 class AddedMovieController extends Controller
 {
@@ -26,6 +27,7 @@ class AddedMovieController extends Controller
             'user_id' => $request->user()->id,
             'movie_id' => $movie->id,
         ]);
+        session()->flash('add-message', "The movie was added to your watchlist");
 
         return back();
     }
@@ -33,6 +35,8 @@ class AddedMovieController extends Controller
     public function destroy(Movie $movie, Request $request)
     {
         $request->user()->addedMovies()->where('movie_id', $movie->id)->delete();
+        session()->flash('delete-message', "The movie has been removed");
+
         return back();
     }
 }

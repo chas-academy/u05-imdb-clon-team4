@@ -1,6 +1,10 @@
 @extends('layouts.default')
 
 @section('content')
+@if(Session::has('add-message'))
+    <div class="alert alert-success message">{{session('add-message')}}</div>
+@include('components.sessionMessage')
+@endif
 <div class="d-flex flex-column g-3 justify-content-evenly col-lg-10 mx-auto gy-4">
 
     <section class="col-sm-12 col-md-12 col-lg-12">
@@ -10,13 +14,19 @@
                 <h2 class="subtitle text-silver h5 mb-4">{{ $year }}</h2>
             </div>
                 @if($current_user && !$movieIsAdded)
-                <form action="{{route('add_to_watchlist', $movie->id)}}" method="POST">
+                <form action="{{route('add_to_watchlist', $movie->id)}}" method="POST" class="col-sm-6 col-lg-6 mb-2 p-2 d-flex align-items-center">
                     @csrf
-                    <button type="submit" name="button" class="btn btn-primary mb-2 p-2 col-sm-6 col-lg-6">
+                    <button type="submit" name="button" class="btn btn-primary" onclick="timeout()">
                         <i class="fa fa-plus mx-2" style=" pointer-events: none;"></i>
                         Add to watchlist
                     </button>
                 </form>
+                @elseif($current_user && $movieIsAdded)
+                    <div class="col-sm-6 col-lg-6 mb-2 p-2 d-flex align-items-center">
+                         <button type="button" name="button" class="btn btn-primary">
+                     <i class="fa fa-plus mx-2" style=" pointer-events: none;"></i>
+                    Already added to watchlist</button>
+                    </div>
                 @endif
         </div>
     </section>

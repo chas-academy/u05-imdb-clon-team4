@@ -10,8 +10,8 @@ const searchResults = document.querySelector('#search-results');
 
 // Handle search field input data
 const searchFunction = async () => {
-    // const searchInput = searchField.val();
-    const searchInput = searchField.value;
+    // const searchInput = searchField.val().toLowerCase();
+    const searchInput = searchField.value.toLowerCase();
 
     if (!searchInput) {
         // searchResults.html('');

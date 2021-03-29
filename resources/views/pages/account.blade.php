@@ -1,6 +1,10 @@
 @extends('layouts.default')
 
 @section('content')
+@if(Session::has('delete-message'))
+    <div class="alert alert-danger message">{{session('delete-message')}}</div>
+@include('components.sessionMessage')
+@endif
 	<h1>Hi {{ $user->name }}!</h1>
 
 	{{-- Do we have movies to show --}}
