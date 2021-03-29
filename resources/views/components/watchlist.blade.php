@@ -1,8 +1,3 @@
-@if(Session::has('delete-message'))
-    <div class="alert alert-danger message">{{session('delete-message')}}</div>
-@endif
-@include('components.sessionMessage')
-
 @for($i = 0; $i < count($movies); $i++)
 	<div class="col movie-cards-col h-100">
 		{{-- Include cards --}}
