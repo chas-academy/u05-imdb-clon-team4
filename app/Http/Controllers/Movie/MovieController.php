@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Movie;
 
 use App\Http\Controllers\Controller;
+use App\Models\AddedMovie;
+use App\Models\Movie;
 use App\Models\Review;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Http\Request;
@@ -19,11 +21,11 @@ class MovieController extends Controller
     {
         // The id param from URL
         $movieId = $request->id;
-        $movies = DB::table('movies');
         $reviews = DB::table('reviews');
+        $movieIsAdded = null;
 
         // Get movie from DB using ID
-        $movie = $movies->where('id', '=', $movieId)->first();
+        $movie = Movie::where('id', '=', $movieId)->first();
 
         // Get review(s) from DB for movie using ID
         $reviewsList = $reviews->where([
@@ -106,6 +108,9 @@ class MovieController extends Controller
                 // Subtract 1 from the review list count since if user is viewing we don't need it for general list
                 // $reviewListCount--;
             }
+
+            // Get method to see if movie is added to watchlist
+            $movieIsAdded = $movie->addedBy($user);
         }
 
         // Return data
@@ -114,6 +119,8 @@ class MovieController extends Controller
         // Return object to view with movie and review data
         return view('pages.movie')->with([
             'movie' => $movie,
+            'movieIsAdded' => $movieIsAdded,
+            'current_user' => $user,
             'reviews' => [
                 'list' => $reviewsList,
                 'list_count' => $reviewListCount,
