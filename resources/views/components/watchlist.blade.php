@@ -1,3 +1,8 @@
+@if(Session::has('delete-message'))
+    <div class="alert alert-danger message">{{session('delete-message')}}</div>
+@endif
+@include('components.sessionMessage')
+
 <h1>Watchlist</h1>
 
 
@@ -13,7 +18,7 @@
      <form action="{{route('remove_from_watchlist', $movie->id)}}" method="post">
         @csrf
         @method('DELETE')
-        <button type="submit" class="btn btn-warning m-2 p-2 col-sm-6 col-lg-2">Delete</button>
+        <button type="submit" class="btn btn-warning m-2 p-2 col-sm-6 col-lg-2" onclick="timeout()">Delete</button>
     </form>
 </div>
 
