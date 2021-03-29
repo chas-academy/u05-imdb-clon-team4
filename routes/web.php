@@ -61,4 +61,4 @@ Route::delete('account/{movie}', [AddedMovieController::class, 'destroy'])->name
 Route::get('movie/{id}/review-write', [MovieReviewWriteController::class, 'index'])->name('page_movie_review_create');
 
 // create
-Route::post('movie/{movie}/review-write', [MovieReviewWriteController::class, 'create']);
+Route::post('movie/{id}/review-write', [MovieReviewWriteController::class, 'create']);
