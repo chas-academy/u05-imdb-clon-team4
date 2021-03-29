@@ -6,16 +6,6 @@
     }
 }
 
-a {
-    text-decoration: none;
-
-    &:hover {
-        text-decoration: underline;
-        text-decoration-color: $primary-color;
-        color: $text-color;
-    }
-}
-
 .fa {
     font-size: 1.2em;
 

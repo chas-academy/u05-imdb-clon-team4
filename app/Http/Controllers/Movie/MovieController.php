@@ -106,7 +106,7 @@ class MovieController extends Controller
                 $reviewsList = array_values($arrayReviewList);
 
                 // Subtract 1 from the review list count since if user is viewing we don't need it for general list
-                // $reviewListCount--;
+                $reviewListCount--;
             }
 
             // Get method to see if movie is added to watchlist
@@ -121,6 +121,7 @@ class MovieController extends Controller
             'movie' => $movie,
             'movieIsAdded' => $movieIsAdded,
             'current_user' => $user,
+			'year' => substr($movie->year, 0, 4),
             'reviews' => [
                 'list' => $reviewsList,
                 'list_count' => $reviewListCount,
