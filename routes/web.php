@@ -47,18 +47,18 @@ Route::get('user-terms', [TermsController::class, 'index'])->name('user_terms');
 // movie
 Route::get('movie/{id}', [MovieController::class, 'index'])->name('page_movie');
 
+// user delete review
+Route::post('movie/{id}', [MovieReviewWriteController::class, 'destroy']);
+
 // movie added movie to DB
 Route::post('movie/{movie}/add', [AddedMovieController::class, 'store'])->name('add_to_watchlist');
 
 //movie removed from DB
 Route::delete('account/{movie}', [AddedMovieController::class, 'destroy'])->name('remove_from_watchlist');
 
-// user delete review
-Route::delete('movie/{id}', [MovieReviewWriteController::class, 'destroy']);
-
 // review
 // form
 Route::get('movie/{id}/review-write', [MovieReviewWriteController::class, 'index'])->name('page_movie_review_create');
 
 // create
-Route::post('movie/{movie}/review-write', [MovieReviewWriteController::class, 'create']);
+Route::post('movie/{id}/review-write', [MovieReviewWriteController::class, 'create']);
