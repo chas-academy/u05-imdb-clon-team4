@@ -9,12 +9,15 @@
                 <h1 class=" title h2">{{ $movie->title }}</h1>
                 <p class="subtitle">{{ $movie->year }}</p>
             </div>
-            <div class="col-sm-12 col-md-12 col-lg-6">
-                <button type="button" class="btn btn-primary mb-2 p-2 col-sm-6 col-lg-6">
-                    <i class="fa fa-plus mx-2" style="pointer-events: none;"></i>
-                    Add to watchlist
-                </button>
-            </div>
+                @if($current_user && !$movieIsAdded)
+                <form action="{{route('add_to_watchlist', $movie->id)}}" method="POST">
+                    @csrf
+                    <button type="submit" name="button" class="btn btn-primary mb-2 p-2 col-sm-6 col-lg-6">
+                        <i class="fa fa-plus mx-2" style=" pointer-events: none;"></i>
+                        Add to watchlist
+                    </button>
+                </form>
+                @endif
         </div>
     </section>
 
@@ -61,6 +64,7 @@
                     <div class="row row-cols-1 g-4 mt-0">
                         @include('components.review-card', ['review' => $reviews['user']->review])
                     </div>
+
                 {{-- Button to remove user's review --}}
                     <form class="py-3" action="{{ route('page_movie', ['id' => $movie->id]) }}" method="post">
                         @csrf

@@ -13,5 +13,7 @@ class TermsController extends Controller
         // $test = Test::whereSlug($slug)->firstOrFail();
         // return view('user.terms', compact('test'));
         // return view('user.terms');
+
+        return view('pages.terms');
     }
 }
