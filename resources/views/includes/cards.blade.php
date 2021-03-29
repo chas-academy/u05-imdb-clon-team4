@@ -1,6 +1,4 @@
-<h2 class="mt-3 mb-4">Top new picks</h2>
-	<div class="row gx-4 flex-nowrap">
-	{{-- Loop movies, stop on COUNT_MOVIES or max 5 --}}
+{{-- Loop movies, stop on COUNT_MOVIES or max 5 --}}
 	@for($i = 0; $i < count($movies) && $i < 5; $i++)
 		<div class="col">
 			<a href="movie/{{ $movies[$i]->id }}" class="card p-0 border-0 rounded-0">
@@ -12,4 +10,3 @@
 			</a>
 		</div>
 	@endfor
-</div>
