@@ -22,6 +22,7 @@ class CreateMoviesTable extends Migration
             $table->text('description');
             $table->date('year');
             $table->text('image')->nullable();
+            $table->integer('tmdb_id')->nullable();
             $table->timestamps();
         });
 
