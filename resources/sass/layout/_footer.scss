@@ -13,3 +13,17 @@
         transform: scale(1.5);
     }
 }
+
+@media (max-width: 767.98px) {
+  .footer-container {
+    display: flex;
+    flex-direction: column !important;
+  }
+  .p-2 {
+      text-align:center;
+  }
+
+  .button{
+      display: flex-wrap;
+  }
+}
