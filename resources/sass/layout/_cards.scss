@@ -1,5 +1,31 @@
-.movie-cards-col {
-	max-width: 18rem;
+.custom-class {
+  display: none;
+}
+
+.home-cards {
+	.card, 
+	.card-img {
+		height: 100%;
+	}
+}
+
+@include media-breakpoint-down(lg) {
+	.movie-cards-col {
+	 	max-height: 10rem;
+		 .card, .card-img {
+			height: 100%;
+			max-height: 10rem;
+		 }
+	}
+}
+
+@include media-breakpoint-up(lg) {
+	.movie-cards-col {
+	 	max-width: 18rem;
+	}
+  .custom-class {
+    display: block;
+  }
 }
 
 .card-footer {
