@@ -34,82 +34,12 @@
     <section class="col-sm-12 col-md-12 d-lg-flex justify-content-lg-start flex-row h-auto mb-3">
         <div class="row py-2">
             <div class="col-lg-6 mb-3" style="object-fit: contain;">
-                <img src="https://www.themoviedb.org/t/p/w300_and_h450_bestv2/{{ $movie->poster_path }}" alt="{{ $movie->title }}" class=" img-fluid" />
+                <img src=" {{ $movie->image }}" alt="{{ $movie->title }}" class=" img-fluid" />
             </div>
             <div class="col-sm-12 col-lg-4 ml-8">
                 <h2 class="">Storyline</h2>
                 <p class="my-2">{{ $movie->description }}</p>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Name</th>
-                            <th>Content</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Studios</td>
-                            <td>
-                                @foreach ($movie->production_companies as $company)
-                                    <span>{{ $company->name}}</span>
-                                @endforeach
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Tagline</td>
-                            <td>
-                                {{ $movie->tagline }}
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Runtime</td>
-                            <td>
-                                {{ floor($movie->runtime / 60) }}h {{ $movie->runtime - floor($movie->runtime / 60) * 60 }}min
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Budget</td>
-                            <td>
-                                {{ $movie->budget }}
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Revenue</td>
-                            <td>
-                                {{ $movie->revenue }}
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Popularity</td>
-                            <td>
-                                {{ $movie->popularity }}
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Spoken languages</td>
-                            <td>
-                                @foreach ($movie->spoken_languages as $language)
-                                    <span>{{ $language->name }}</span>
-                                @endforeach
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-
-                <div style="width: 50vw; display: flex; overflow: auto; margin-top: 10px;">
-                    @foreach ($movie->cast as $actor)
-                        <div>
-                            <img style="border-radius: 15px; margin-right: 10px;" src="https://www.themoviedb.org/t/p/w138_and_h175_face{{$actor->profile_path}}" alt="">
-                            <h4>{{ $actor->name }}</h4>
-                            <h4>{{ $actor->character }}</h4>
-                            <h4>{{ $actor->popularity }}</h4>
-                            <h4>{{ $actor->gender === 2 ? "male" : "female"}}</h4>
-                        </div>
-                    @endforeach
-                </div>
-
             </div>
-
         </div>
     </section>
 
