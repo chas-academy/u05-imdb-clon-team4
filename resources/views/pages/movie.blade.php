@@ -1,10 +1,12 @@
 @extends('layouts.default')
 
 @section('content')
+
 @if(Session::has('add-message'))
     <div class="alert alert-success message">{{session('add-message')}}</div>
 @include('components.session-message')
 @endif
+
 <div class="d-flex flex-column g-3 justify-content-evenly col-lg-10 mx-auto gy-4">
 
     <section class="col-sm-12 col-md-12 col-lg-12 d-sm-flex justify-content-sm-center align-content-sm-center ">
