@@ -6,26 +6,22 @@
  }
 
  .nav-item {
-	 button {
-		background-color: $primary;
-		border: none;
-		&:hover {
-			background-color: none;
-			border: none;
-		}
-	 }
+     button {
+        background-color: $primary;
+        border: none;
+        &:hover {
+            background-color: none;
+            border: none;
+        }
+     }
  }
 
  .header-link {
-	color: $text-color;
-	&:hover {
-		color: $text-color;
-		text-decoration: underline;
-		text-decoration-color: $cod-gray;
-		text-decoration-thickness: 20%;
-	}
+    color: $text-color;
+    &:hover {
+        color: $text-color;
+        text-decoration: underline;
+        text-decoration-color: $cod-gray;
+        text-decoration-thickness: 20%;
+    }
  }
-
-//  .collapse.navbar-collapse.show {
-
-//  }
