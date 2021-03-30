@@ -1,4 +1,4 @@
- <li class="list-group-item fw-bold text-dark d-flex justify-content-between ">{{ $review->title }}<span>
+ <li class="list-group-item fw-bold text-light d-flex justify-content-between bg-dark ">{{ $review->title }}<span class="p-2 h-100 border-start border-secondary">
          @if($review->status->id=== 1)
          <i class="circle bg-warning "></i>
 
@@ -18,6 +18,7 @@
 
      </span></li>
  <style>
+
 .circle { 
 height: 25px;
 width: 25px;
