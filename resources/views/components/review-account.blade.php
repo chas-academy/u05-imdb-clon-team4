@@ -1,29 +1,24 @@
- <li class="list-group-item fw-bold text-light d-flex justify-content-between bg-dark col-12 "><span class="col-10">{{ $review->title }}</span><span class=" col-2 d-flex align-items-center justify-content-center " style="min-height:48px;">
-         @if($review->status->id=== 1)
-         <i class="circle bg-warning "></i>
+<a href="movie/{{ $review->movie->id }}" class="card p-0 border-0 rounded-0 mb-4">
+    <h3 class="card-header p-2 bg-primary rounded-0 h6">{{ $review->movie->title }}</h3>
+    <div class="card-body rounded-0 p-2">
+        <p class="card-text">{{ $review->title }}</p>
+    </div>
+    <div class="card-footer text-muted rounded-0 p-2 d-flex justify-content-between">
+        @if($review->status->id === 1)
+        <i>Pending</i>
+        <i class="circle bg-warning "></i>
 
+        @elseif($review->status->id === 2)
+         <i>Draft</i>
 
+        @elseif($review->status->id === 3)
+        <i>Published</i>
+        <i class="circle bg-success "></i>
 
-         @elseif($review->status->id=== 2)
-         <i class="circle bg-danger"></i>
+        @else($review->status->id === 4)
+        <i>Denied</i>
+        <i class="circle bg-danger"></i>
 
-
-
-         @else($review->status->id=== 3)
-         <i class="circle bg-success "></i>
-
-
-
-         @endif
-
-     </span></li>
- <style>
-
-.circle { 
-height: 25px;
-width: 25px;
-  border-radius: 50%;
-  display: inline-block;
-}
-
- </style>
+        @endif
+    </div>
+</a>
