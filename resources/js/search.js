@@ -42,7 +42,19 @@ const searchFunction = async () => {
             let results = '';
             for (let i = 0; i < response.length; i++) {
                 const movie = response[i];
-                results += `<div class="col-4"><h4>${movie.title}</h4><a href="/movie/${movie.id}"><img src="${movie.image}" alt="${movie.title}" style="max-width: 100%;" /></a></div>`;
+                results += `<a class="card my-2 me-3 p-0" style="max-width: 30rem;" href="/movie/${movie.id}">
+					<div class="row g-0">
+					<div class="col-3">
+					<img src="${movie.image}" alt="${movie.title}" style="height: 7rem;"/>
+					</div>
+					<div class="col-9">
+					<div class="card-body">
+					<h2 class="card-title h5">${movie.title}</h2>
+					<h3 class="card-subtitle h6">${movie.year}</h3>
+					</div>
+					</div>
+					</div>
+					</a>`;
             }
 
             searchResults.innerHTML = results;
