@@ -1,68 +1,48 @@
-<nav class="navbar navbar-expand-lg navbar-light nav-container p-3">
-    <a class="navbar-brand" href="{{ route('page_home') }}">IMDb</a>
-    <div class="menu">
-        <div class="ham-menu">
-            <div class="ham"></div>
-            <div class="ham"></div>
-            <div class="ham"></div>
-        </div>
-            <p> Menu </p>
-    </div>
-
-    <div class="input-group">
-        {{-- Filtering might be a later option --}}
-        {{-- <div class="input-group-prepend">
-            <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">All</button>
-                <div class="dropdown-menu">
-                    <a class="dropdown-item" href="#">Movies</a>
-                    <a class="dropdown-item" href="#">Most watch</a>
-                    <a class="dropdown-item" href="#">Something else here</a>
-                    <div role="separator" class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#">Separated link</a>
-                </div>
-        </div> --}}
-
-        <input
-            id="search-field"
-            type="text"
-            class="search-input"
-            aria-label="Text input with dropdown button" placeholder="Search IMDb">
-        {{-- <button class="btn" type="button" id="button-addon2">🔍</button> --}}
-    </div>
-
-    <ul class="navbar-nav sign-flex mb-2 mb-lg-0">
-        <li class="nav-item">
-            <button class="imdb-pro">IMDbPro</button>
-        </li>
-        <li class="nav-item">
-            <button class="watch-list"> Watchlist</button>
-        </li>
-    @auth
-        <li class="nav-item">
-            <a href="{{ route('user_home') }}" class="nav-link">
-                {{ auth()->user()->name }}
-            </a>
-        </li>
-        <li class="nav-item">
-            <form action="{{ route('user_logout') }}">
-                <button class="nav-link" type="submit">Logout</button>
+<nav class="navbar sticky-top bg-primary navbar-dark navbar-expand-md p-2">
+    <div class="container-fluid">
+        <a class="navbar-brand bg-silver p-1 text-primary rounded-3 ms-3" href="{{ route('page_home') }}">IMDb</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-between" id="navbarSupportedContent">
+            <form class="d-flex my-3 my-md-0 w-50">
+                <input id="search-field" type="text" class="form-control border-0 p-1" aria-label="Search" placeholder="Search IMDb">
             </form>
-        </li>
-    @endauth
-    @guest
-        {{-- Don't use forms for login and create re-routes. We only user form for logout because we want CSRF --}}
-        <li class="nav-item">
-                <a href="{{ route('user_login') }}" class="nav-link">
-                    Login
-                </a>
-        </li>
-        <li class="nav-item">
-            <a href="{{ route('user_create') }}" class="nav-link">
-                Sign up
-            </a>
-        </li>
-    @endguest
-    </ul>
+            <ul class="navbar-nav mb-2 mb-md-0 gap-3">
+                <li class="nav-item">
+                    <a href="{{ route('user_home') }}" class="nav-link header-link">
+                        Watchlist
+                    </a>
+                </li>
+            @auth
+                <li class="nav-item">
+                    <a href="{{ route('user_home') }}" class="fw-bold nav-link header-link">
+                        {{ auth()->user()->name }}
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <form action="{{ route('user_logout') }}">
+                        @csrf
+                        <button class="nav-link header-link" type="submit">Logout</button>
+                    </form>
+                </li>
+            @endauth
+            @guest
+                {{-- Don't use forms for login and create re-routes. We only user form for logout because we want CSRF --}}
+                <li class="nav-item">
+                    <a href="{{ route('user_login') }}" class="nav-link header-link">
+                        Login
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{ route('user_create') }}" class="nav-link header-link">
+                        Sign up
+                    </a>
+                </li>
+            @endguest
+            </ul>
+        </div>
+    </div>
 </nav>
 
 {{-- Search results section --}}

@@ -1,152 +1,27 @@
 @import url("https://fonts.googleapis.com/css2?family=Anton&display=swap");
 
- .nav-container {
-   background-color: $red-devil;
-   justify-content: space-around;
- }
-
  .navbar-brand {
-   margin-left: 45px;
-   background-color: $silver;
-   padding: 5px;
-   border-radius: 5px;
    font-family: "Anton", sans-serif;
-   color: $red-devil !important;
    font-size: x-large;
  }
 
- .input-group .btn {
-   position: relative;
-   left: 0;
-   z-index: 2;
-   border: none;
- }
- .search-input {
-   text-align: center;
-   border-radius: 5px !important;
-   width: 450px;
- }
-
- nav .navbar-nav li a {
-   color: $text-color !important;
-   margin-left: 46px;
+ .nav-item {
+     button {
+        background-color: $primary;
+        border: none;
+        &:hover {
+            background-color: none;
+            border: none;
+        }
+     }
  }
 
-
- .me-2 {
-   width: 430px !important;
-   border-radius: 10px;
- }
-
- #button-addon2 {
-   position: relative;
-   left: -40px;
-   z-index: 2;
-   border: none;
- }
- .input-group {
-   width: 50% !important;
- }
-
- .input-group .btn {
-   position: relative;
-   left: 115px;
-   z-index: 2;
-   padding: 3 50px 0px;
-   border: none;
-   font-size: x-large;
-   border-right: 1px solid black;
-   &:hover {
-     background-color: $burnt-maroon;
-   }
- }
-
- .imdb-pro {
-   background-color: $red-devil;
-   margin: 5px;
-   font-size: larger;
-   padding: 6px;
-   border-radius: 6px;
-   color: $text-color;
-   font-family: "Anton", sans-serif;
-
-   &:hover {
-     background-color: $burnt-maroon;
-   }
- }
-
- .divider {
-   border-left: 2px solid $silver;
-   height: 50px;
- }
-
- .watch-list {
-   background-color: $red-devil;
-   margin: 5px;
-   font-size: larger;
-   padding: 6px;
-   border-radius: 6px;
-   padding: 6px;
-
-   color: $text-color;
-   font-family: "Anton", sans-serif;
-
-   &:hover {
-     background-color: $burnt-maroon;
-   }
- }
-
- .nav-link {
-   background-color: $red-devil;
-   margin: 5px;
-   font-size: larger;
-   padding: 6px;
-   border-radius: 6px;
-   padding: 6px;
-
-   color: $text-color;
-   font-family: "Anton", sans-serif;
-
-   &:hover {
-     background-color: $burnt-maroon;
-   }
- }
-
- .me-auto {
-   display: flex;
-   flex-direction: row;
- }
-
- .sign-flex {
-   display: flex;
- }
-
- .menu {
-   display: flex;
-   margin-top: 10px;
-   border-radius: 6px;
-   padding: 6px;
-     &:hover {
-     background-color: $burnt-maroon;
-
-   }
- }
-
- .ham-menu {
-   display: flex;
-   flex-direction: column;
-   position: relative;
-   top: 5px;
- }
- .ham {
-   width: 55px;
-   height: 5px;
-   background-color: $silver;
-   margin: 3px 0;
- }
-
- .menu p {
-   font-size: x-large;
-   margin-left: 10px;
-   font-family: "Anton", sans-serif;
+ .header-link {
+    color: $text-color;
+    &:hover {
+        color: $text-color;
+        text-decoration: underline;
+        text-decoration-color: $cod-gray;
+        text-decoration-thickness: 20%;
+    }
  }
