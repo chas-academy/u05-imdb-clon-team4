@@ -34,6 +34,7 @@ class MovieSeeder extends Seeder
                 'image' => base64FromFile('raya-2021'),
                 'created_at' => $current_timestamp,
                 'updated_at' => $current_timestamp,
+                'tmdb_id' => 527774,
             ],
             [
                 'status_id' => 3,
@@ -43,6 +44,7 @@ class MovieSeeder extends Seeder
                 'image' => base64FromFile('justice-league-2021'),
                 'created_at' => $current_timestamp,
                 'updated_at' => $current_timestamp,
+                'tmdb_id' => 791373,
             ],
             [
                 'status_id' => 3,
@@ -52,6 +54,7 @@ class MovieSeeder extends Seeder
                 'image' => base64FromFile('shawshank-redemption-the-1994'),
                 'created_at' => $current_timestamp,
                 'updated_at' => $current_timestamp,
+                'tmdb_id' => 278,
             ],
             [
                 'status_id' => 3,
@@ -61,6 +64,7 @@ class MovieSeeder extends Seeder
                 'image' => base64FromFile('godfather-the-1972'),
                 'created_at' => $current_timestamp,
                 'updated_at' => $current_timestamp,
+                'tmdb_id' => 238,
             ],
             [
                 'status_id' => 3,
@@ -70,6 +74,7 @@ class MovieSeeder extends Seeder
                 'image' => base64FromFile('schindlers-list-1993'),
                 'created_at' => $current_timestamp,
                 'updated_at' => $current_timestamp,
+                'tmdb_id' => 424,
             ],
             [
                 'status_id' => 3,
@@ -79,6 +84,7 @@ class MovieSeeder extends Seeder
                 'image' => base64FromFile('green-mile-the-1999'),
                 'created_at' => $current_timestamp,
                 'updated_at' => $current_timestamp,
+                'tmdb_id' => 497,
             ],
             [
                 'status_id' => 3,
@@ -88,6 +94,7 @@ class MovieSeeder extends Seeder
                 'image' => base64FromFile('spirited-away-2001'),
                 'created_at' => $current_timestamp,
                 'updated_at' => $current_timestamp,
+                'tmdb_id' => null,
             ],
             [
                 'status_id' => 3,
@@ -97,6 +104,7 @@ class MovieSeeder extends Seeder
                 'image' => base64FromFile('godfather-the-part-II-1974'),
                 'created_at' => $current_timestamp,
                 'updated_at' => $current_timestamp,
+                'tmdb_id' => 240,
             ],
             [
                 'status_id' => 3,
@@ -106,6 +114,7 @@ class MovieSeeder extends Seeder
                 'image' => base64FromFile('pulp-fiction-1994'),
                 'created_at' => $current_timestamp,
                 'updated_at' => $current_timestamp,
+                'tmdb_id' => 680,
             ],
             [
                 'status_id' => 3,
@@ -115,6 +124,7 @@ class MovieSeeder extends Seeder
                 'image' => base64FromFile('forrest-gump-1994'),
                 'created_at' => $current_timestamp,
                 'updated_at' => $current_timestamp,
+                'tmdb_id' => 13,
             ],
             [
                 'status_id' => 3,
@@ -124,6 +134,7 @@ class MovieSeeder extends Seeder
                 'image' => base64FromFile('lord-of-the-rings-the-return-of-the-king-the-2003'),
                 'created_at' => $current_timestamp,
                 'updated_at' => $current_timestamp,
+                'tmdb_id' => 122,
             ],
             [
                 'status_id' => 3,
@@ -133,6 +144,7 @@ class MovieSeeder extends Seeder
                 'image' => base64FromFile('good-the-bad-and-the-ugly-the-1966'),
                 'created_at' => $current_timestamp,
                 'updated_at' => $current_timestamp,
+                'tmdb_id' => 429,
             ],
             [
                 'status_id' => 3,
@@ -142,6 +154,7 @@ class MovieSeeder extends Seeder
                 'image' => base64FromFile('once-upon-a-time-in-america-1984'),
                 'created_at' => $current_timestamp,
                 'updated_at' => $current_timestamp,
+                'tmdb_id' => 311,
             ],
             [
                 'status_id' => 3,
@@ -151,6 +164,7 @@ class MovieSeeder extends Seeder
                 'image' => base64FromFile('good-fellas-1990'),
                 'created_at' => $current_timestamp,
                 'updated_at' => $current_timestamp,
+                'tmdb_id' => 769,
             ],
             [
                 'status_id' => 3,
@@ -160,6 +174,7 @@ class MovieSeeder extends Seeder
                 'image' => base64FromFile('fight-club-1999'),
                 'created_at' => $current_timestamp,
                 'updated_at' => $current_timestamp,
+                'tmdb_id' => 550,
             ],
             [
                 'status_id' => 3,
@@ -169,6 +184,7 @@ class MovieSeeder extends Seeder
                 'image' => base64FromFile('city-of-god-2002'),
                 'created_at' => $current_timestamp,
                 'updated_at' => $current_timestamp,
+                'tmdb_id' => 598,
             ],
             [
                 'status_id' => 3,
@@ -178,6 +194,7 @@ class MovieSeeder extends Seeder
                 'image' => base64FromFile('one-flew-over-the cuckoos-nest-1975'),
                 'created_at' => $current_timestamp,
                 'updated_at' => $current_timestamp,
+                'tmdb_id' => 510,
             ],
             [
                 'status_id' => 3,
@@ -187,6 +204,7 @@ class MovieSeeder extends Seeder
                 'image' => base64FromFile('american-history-x-1998'),
                 'created_at' => $current_timestamp,
                 'updated_at' => $current_timestamp,
+                'tmdb_id' => 73,
             ],
             [
                 'status_id' => 3,
@@ -196,6 +214,7 @@ class MovieSeeder extends Seeder
                 'image' => base64FromFile('inception-2010'),
                 'created_at' => $current_timestamp,
                 'updated_at' => $current_timestamp,
+                'tmdb_id' => 27205,
             ],
             [
                 'status_id' => 3,
@@ -205,6 +224,7 @@ class MovieSeeder extends Seeder
                 'image' => base64FromFile('se7en-1995'),
                 'created_at' => $current_timestamp,
                 'updated_at' => $current_timestamp,
+                'tmdb_id' => 807,
             ],
             [
                 'status_id' => 3,
@@ -214,6 +234,7 @@ class MovieSeeder extends Seeder
                 'image' => base64FromFile('leon-the-professional-1994'),
                 'created_at' => $current_timestamp,
                 'updated_at' => $current_timestamp,
+                'tmdb_id' => 101,
             ],
             [
                 'status_id' => 3,
@@ -223,6 +244,7 @@ class MovieSeeder extends Seeder
                 'image' => base64FromFile('silence-of-the-lambs-the-1991'),
                 'created_at' => $current_timestamp,
                 'updated_at' => $current_timestamp,
+                'tmdb_id' => 274,
             ],
             [
                 'status_id' => 3,
@@ -232,6 +254,7 @@ class MovieSeeder extends Seeder
                 'image' => base64FromFile('apocalypse-now-1979'),
                 'created_at' => $current_timestamp,
                 'updated_at' => $current_timestamp,
+                'tmdb_id' => 28,
             ],
             [
                 'status_id' => 3,
@@ -241,6 +264,7 @@ class MovieSeeder extends Seeder
                 'image' => base64FromFile('intouchables-the-2011'),
                 'created_at' => $current_timestamp,
                 'updated_at' => $current_timestamp,
+                'tmdb_id' => 77338,
             ],
             [
                 'status_id' => 3,
@@ -250,6 +274,7 @@ class MovieSeeder extends Seeder
                 'image' => base64FromFile('clockwork-orange-a-1971'),
                 'created_at' => $current_timestamp,
                 'updated_at' => $current_timestamp,
+                'tmdb_id' => 185,
             ],
             [
                 'status_id' => 3,
@@ -259,15 +284,7 @@ class MovieSeeder extends Seeder
                 'image' => base64FromFile('usual-suspects-the-1995'),
                 'created_at' => $current_timestamp,
                 'updated_at' => $current_timestamp,
-            ],
-            [
-                'status_id' => 3,
-                'title' => 'The Usual Suspects',
-                'description' => 'Held in an L.A. interrogation room, Verbal Kint attempts to convince the feds that a mythic crime lord, Keyser Soze, not only exists, but was also responsible for drawing him and his four partners into a multi-million dollar heist that ended with an explosion in San Pedro harbor – leaving few survivors. Verbal lures his interrogators with an incredible story of the crime lord\'s almost supernatural prowess.',
-                'year' => '1995-09-15',
-                'image' => base64FromFile('usual-suspects-the-1995'),
-                'created_at' => $current_timestamp,
-                'updated_at' => $current_timestamp,
+                'tmdb_id' => 629,
             ],
             [
                 'status_id' => 3,
@@ -277,6 +294,7 @@ class MovieSeeder extends Seeder
                 'image' => base64FromFile('godzilla-2014'),
                 'created_at' => $current_timestamp,
                 'updated_at' => $current_timestamp,
+                'tmdb_id' => 399566,
             ],
             [
                 'status_id' => 3,
@@ -286,6 +304,7 @@ class MovieSeeder extends Seeder
                 'image' => base64FromFile('birds-the-1963'),
                 'created_at' => $current_timestamp,
                 'updated_at' => $current_timestamp,
+                'tmdb_id' => 571,
             ],
             [
                 'status_id' => 3,
@@ -295,6 +314,7 @@ class MovieSeeder extends Seeder
                 'image' => base64FromFile('la-femme-nikita-1990'),
                 'created_at' => $current_timestamp,
                 'updated_at' => $current_timestamp,
+                'tmdb_id' => 9322,
             ],
             [
                 'status_id' => 3,
@@ -304,6 +324,7 @@ class MovieSeeder extends Seeder
                 'image' => base64FromFile('soul-2020'),
                 'created_at' => $current_timestamp,
                 'updated_at' => $current_timestamp,
+                'tmdb_id' => 508442,
             ],
         ]);
     }
