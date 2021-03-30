@@ -5,51 +5,47 @@
     <div class="alert alert-success message">{{session('add-message')}}</div>
 @include('components.sessionMessage')
 @endif
-<div class="d-flex flex-column g-3 justify-content-evenly col-lg-10 mx-auto gy-4">
+<div class="d-flex flex-column justify-content-evenly col-lg-12 col-sm-12 mx-auto">
 
-    <section class="col-sm-12 col-md-12 col-lg-12 d-sm-flex justify-content-sm-center align-content-sm-center ">
-        <div class="col-lg-12 d-lg-flex flex-row row ">
-            <div class="col-sm-6 ts-4 col-lg-6 justify-content-start w-50">
-                <h1 class="title m-0">{{ $movie->title }}</h1>
-                <h2 class="subtitle text-silver h5 mb-3">{{ $year }}</h2>
+   
+        <div class="col-lg-12 col-sm-12  d-lg-flex flex-row  bg-tundora rounded-top d-flex justify-content-between">
+            <div class="align-self-end p-2">
+                <h1 class="card-title m-0 text-alto">{{ $movie->title }} <span> </span></h1>
+                <h2 class="card-subtitle  fs-5 fst-italic text-silver my-3">{{ $year }}</h2>
             </div>
                 @if($current_user && !$movieIsAdded)
-                <form action="{{route('add_to_watchlist', $movie->id)}}" method="POST" class="col-sm-6 col-lg-6 mb-2 p-4 justify-content-end w-50">
+                <form action="{{route('add_to_watchlist', $movie->id)}}" method="POST" class="align-self-end m-2 mb-2">
                     @csrf
-                    <button type="submit" name="button" class="btn btn-primary mr-2" onclick="timeout()">
-                        <i class="fa fa-plus mx-2" style=" pointer-events: none;"></i>
+                    <button type="submit" name="button" class="btn btn-red-devil my-3 p-2" onclick="timeout()">
+                        <i class="fa fa-plus mx-2" style=" pointer-events: none; "></i>
                         Add to watchlist
                     </button>
                 </form>
                 @elseif($current_user && $movieIsAdded)
-                    <div class="col-sm-6 col-lg-6 mb-2 p-4 justify-content-end w-50">
-                         <button type="button" name="button" class="btn btn-primary disabled mr-2">
-                     <i class="fa fa-check mx-2" style=" pointer-events: none;"></i>
+                   <div class="align-self-end m-2">
+                         <button type="button" name="button" class="btn btn-red-devil disabled my-3 p-2">
+                     <i class="fa fa-check mx-2" style=" pointer-events: none; "></i>
                     Already added to watchlist</button>
                     </div>
                 @endif
         </div>
-    </section>
+  
 
     <section class="col-sm-12 col-md-12 d-lg-flex flex-row h-auto mb-3">
         <div class="row py-2">
-            <div class="col-lg-6 mb-3" style="object-fit: contain;">
-                <img src=" {{ $movie->image }}" alt="{{ $movie->title }}" class=" img-fluid" />
+            <div class="col-lg-6   mb-3" style="object-fit: contain;">
+                <img src=" {{ $movie->image }}" alt="{{ $movie->title }}" class="col-sm-12  rounded img-fluid" />
             </div>
-            <div class="col-sm-12 col-lg-4 ml-8">
-                <h2 class="">Storyline</h2>
-                <p class="my-2">{{ $movie->description }}</p>
-            </div>
-        </div>
-    </section>
-
-    <section class="col-lg-12">
-        <div class="row">
+            
+            <div class="col-sm-12 col-lg-6 ">
+                <h2 class="text-center">Storyline</h2>
+                <p class="my-3 mb-3">{{ $movie->description }}</p>
+                      
         {{-- Registered and authenticated users can write a review --}}
         @auth
             {{-- If logged in user hasn't written a review, suggest they do --}}
             @if (!$reviews['user']->hasReview)
-                <div class="col-sm-12 col-md-12 col-lg-6">
+                <div class="col-sm-12  col-lg-12 justify-content-end">
                     <a class="btn btn-burnt-maroon mb-2 p-2 col-sm-6 col-lg-6 text-silver" href="{{ route('page_movie_review_create', $movie->id) }}">Write review</a>
                 </div>
             @else
@@ -85,7 +81,15 @@
                     </form>
             @endif
         @endauth
+            
+        </div>
+            </div>
+          
+  
+    </section>
 
+    <section class="col-lg-12">
+        <div class="row">
         {{-- Make sure we have reviews --}}
         @if ($reviews['list_count'] > 0)
             <h3 class="title mt-3">User reviews</h3>
