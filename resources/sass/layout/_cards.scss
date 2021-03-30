@@ -3,52 +3,52 @@
 }
 
 .home-cards {
-	.card, 
-	.card-img {
-		height: 100%;
-	}
+  .card, 
+  .card-img {
+    height: 100%;
+  }
 }
 
 .list-cards {
-	.card {
-		height: 80%;
-	}
+  .card {
+    height: 80%;
+  }
 }
 
 @include media-breakpoint-down(lg) {
-	.movie-cards-col {
-	 	max-height: 10rem;
-		 .card, .card-img {
-			height: 100%;
-			max-height: 10rem;
-		 }
-	}
+  .movie-cards-col {
+     max-height: 10rem;
+     .card, .card-img {
+      height: 100%;
+      max-height: 10rem;
+     }
+  }
 
-	.list-cards {
-		.card {
-			height: 80%;
-		}
-		.card-footer {
-			height: 20%;
-			margin-bottom: 0;
-		}
-	}
+  .list-cards {
+    .card {
+      height: 80%;
+    }
+    .card-footer {
+      height: 20%;
+      margin-bottom: 0;
+    }
+  }
 }
 
 @include media-breakpoint-up(lg) {
-	.movie-cards-col,
-	.list-cards {
-	 	max-width: 18rem;
-		 min-width: 12rem;
-	}
+  .movie-cards-col,
+  .list-cards {
+     max-width: 18rem;
+     min-width: 12rem;
+  }
   .custom-class {
     display: block;
   }
   .card-footer {
-	  margin-bottom: 2rem;
+    margin-bottom: 2rem;
   }
 }
 
 .card-footer {
-	background-color: mix(black, $card-bg, 20%);
+  background-color: mix(black, $card-bg, 20%);
 }
