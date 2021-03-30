@@ -29,6 +29,8 @@
             @foreach($reviews as $review)
                 @include('components.review-account', ['review' => $review])
             @endforeach
+	@else
+		<h2 class="h3 mt-3 mb-4">You have no reviews</h2>
     @endif
     </div>
 </div>
