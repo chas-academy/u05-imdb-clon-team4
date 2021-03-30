@@ -10,8 +10,7 @@
 	{{-- Do we have movies to show --}}
     @if (count($movies) > 0)
 		<h2 class="h3 mt-3 mb-4">Here is your watchlist</h2>
-		<div class="row g-4 flex-row">
-
+		<div class="row g-4 flex-column flex-wrap flex-lg-row justify-content-evenly align-content-around">
 			@include('components.watchlist')
 		</div>
 	@else

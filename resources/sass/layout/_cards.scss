@@ -9,6 +9,12 @@
 	}
 }
 
+.list-cards {
+	.card {
+		height: 80%;
+	}
+}
+
 @include media-breakpoint-down(lg) {
 	.movie-cards-col {
 	 	max-height: 10rem;
@@ -17,14 +23,29 @@
 			max-height: 10rem;
 		 }
 	}
+
+	.list-cards {
+		.card {
+			height: 80%;
+		}
+		.card-footer {
+			height: 20%;
+			margin-bottom: 0;
+		}
+	}
 }
 
 @include media-breakpoint-up(lg) {
-	.movie-cards-col {
+	.movie-cards-col,
+	.list-cards {
 	 	max-width: 18rem;
+		 min-width: 12rem;
 	}
   .custom-class {
     display: block;
+  }
+  .card-footer {
+	  margin-bottom: 2rem;
   }
 }
 
