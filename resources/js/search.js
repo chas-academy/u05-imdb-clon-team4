@@ -42,7 +42,7 @@ const searchFunction = async () => {
             let results = '';
             for (let i = 0; i < response.length; i++) {
                 const movie = response[i];
-                results += `<a class="card my-2 me-3 p-0" style="max-width: 30rem;" href="/movie/${movie.id}">
+                results += `<a class="card my-2 mx-2 p-0" style="max-width: 30rem;" href="/movie/${movie.id}">
 					<div class="row g-0">
 					<div class="col-3">
 					<img src="${movie.image}" alt="${movie.title}" style="height: 7rem;"/>
