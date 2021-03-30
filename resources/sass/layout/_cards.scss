@@ -5,6 +5,10 @@
 .card-footer {
 	background-color: mix(black, $card-bg, 20%);
 }
+.movie-cards{
+	min-width: 18rem;
+
+}
 .movie-cards a:hover{
 	  	text-decoration: none;
 

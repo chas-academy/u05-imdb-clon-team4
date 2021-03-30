@@ -7,13 +7,13 @@
 @include('components.sessionMessage')
 @endif
 
-<div class=" row justify-content-sm-center col-sm-12">
+<div class=" d-sm-flex  col-lg-12 flex-lg-row ">
 
 
     {{-- Do we have movies to show --}}
     @if (count($movies) > 0)
 
-    <div class=" row col-lg-9 col-sm-12 mb-4 flex-lg-wrap  flex-lg-row flex-sm-column flex-sm-nowrap">
+    <div class=" row col-lg-9 col-sm-12 mb-4 flex-lg-wrap  flex-lg-row  flex-sm-column flex-sm-nowrap  ">
         <h3 class= "card-header mb-3 bg-primary">{{ $user->name }} Watchlist</h3>
 
         @include('components.watchlist')
@@ -24,8 +24,8 @@
     @endif
 
     @if (count($reviews) > 0)
-    <div class="movie-card  col-lg-3 col-sm-12">
-        <h3 class="card-header d-flex justify-content-between mb-3 bg-primary">
+    <div class="movie-card  col-lg-3 col-sm-12 mr-3">
+        <h3 class="card-header d-flex justify-content-between mb-3 bg-secondary">
             <span class=" title fs-3"> Your Reviews </span>
             <span class="subtitle fs-3 text-muted"> Status</span>
         </h3>
