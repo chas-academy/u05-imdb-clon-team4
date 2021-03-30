@@ -19,8 +19,11 @@
         @include('components.watchlist')
     </div>
     @else
-    <h2 class="h3 mt-3 mb-4">If you add some movies to your watchlist, they will end up here</h2>
+    <div class=" card">
 
+    <h3 class= " card-header mb-3 bg-primary">{{ $user->name }} Watchlist</h3>
+    <h2 class="card-body subtitle mt-3 mb-4 bg-secondary">If you add some movies to your watchlist, they will end up here</h2>
+   </div>
     @endif
 
     @if (count($reviews) > 0)
