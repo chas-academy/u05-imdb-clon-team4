@@ -1,13 +1,13 @@
-<div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
-    <ol class="carousel-indicators">
-        <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
-        <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
-        <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
-    </ol>
+<div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+  </div>
 
-    <div class="carousel-inner" role="listbox">
+    <div class="carousel-inner">
         @foreach ($movies as $movie)
-            <div class="item{{ $loop->index === 0 ? " active" : "" }}" onclick="window.location.href='/movie/{{ $movie->id }}'">
+            <div class="carousel-item {{ $loop->index === 0 ? 'active' : '' }}" onclick="window.location.href='/movie/{{ $movie->id }}'">
                 <img
                 src="https://www.themoviedb.org/t/p/w1920_and_h800_multi_faces{{ $movie->backdrop }}"
                 class="d-inline-block w-100"
@@ -15,9 +15,9 @@
                 height="500"
                 />
                 <div class="carousel-caption d-none d-md-block">
-                <h2>{{ $movie->title }}</h2>
-                <h3>{{ $movie->tagline }}</h3>
-                <p>{{ $movie->description }}</p>
+                <h2 class="">{{ $movie->title }}</h2>
+                <h3 class="">{{ $movie->tagline }}</h3>
+                <p class="fs-6">{{ $movie->description }}</p>
                 </div>
             </div>
         @endforeach
