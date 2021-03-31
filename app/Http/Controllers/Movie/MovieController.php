@@ -9,7 +9,7 @@ use App\Models\Review;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-
+use Illuminate\Support\Facades\Http;
 
 class MovieController extends Controller
 {
@@ -45,7 +45,6 @@ class MovieController extends Controller
         foreach ($tmdb_credits_result as $k => $v) {
             $movie->$k = $v;
         }
-
 
         // Get review(s) from DB for movie using ID
         $reviewsList = $reviews->where([
@@ -141,7 +140,7 @@ class MovieController extends Controller
             'movie' => $movie,
             'movieIsAdded' => $movieIsAdded,
             'current_user' => $user,
-			'year' => substr($movie->year, 0, 4),
+            'year' => substr($movie->year, 0, 4),
             'reviews' => [
                 'list' => $reviewsList,
                 'list_count' => $reviewListCount,
