@@ -9,7 +9,6 @@ use App\Models\Review;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Http;
 
 class MovieController extends Controller
 {
@@ -27,24 +26,6 @@ class MovieController extends Controller
 
         // Get movie from DB using ID
         $movie = Movie::where('id', '=', $movieId)->first();
-
-        // Get metadata on movie from TMDB
-        $tmdb_meta_response = Http::get("https://api.themoviedb.org/3/movie/" . $movie->tmdb_id . "?api_key=db04754e6a4ab8980172edf96f20adaa");
-        $tmdb_meta_result = json_decode($tmdb_meta_response->body());
-
-        // Assign metadata to existing movie object
-        foreach ($tmdb_meta_result as $k => $v) {
-            $movie->$k = $v;
-        }
-
-        // Get credits on movie from TMDB
-        $tmdb_credits_response = Http::get("https://api.themoviedb.org/3/movie/" . $movie->tmdb_id . "/credits?api_key=db04754e6a4ab8980172edf96f20adaa");
-        $tmdb_credits_result = json_decode($tmdb_credits_response->body());
-
-        // Assign credits data to existing movie object
-        foreach ($tmdb_credits_result as $k => $v) {
-            $movie->$k = $v;
-        }
 
         // Get review(s) from DB for movie using ID
         $reviewsList = $reviews->where([
@@ -140,7 +121,7 @@ class MovieController extends Controller
             'movie' => $movie,
             'movieIsAdded' => $movieIsAdded,
             'current_user' => $user,
-            'year' => substr($movie->year, 0, 4),
+			'year' => substr($movie->year, 0, 4),
             'reviews' => [
                 'list' => $reviewsList,
                 'list_count' => $reviewListCount,

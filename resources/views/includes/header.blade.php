@@ -8,7 +8,7 @@
             <form class="d-flex my-3 my-md-0 w-50">
                 <input id="search-field" type="text" class="form-control border-0 p-1" aria-label="Search" placeholder="Search IMDb">
             </form>
-                <ul class="navbar-nav mb-2 mb-md-0 gap-3">
+            <ul class="navbar-nav mb-2 mb-md-0 gap-3">
                 <li class="nav-item">
                     <a href="{{ route('user_home') }}" class="nav-link header-link">
                         Watchlist

@@ -1,11 +1,10 @@
-
 @extends('layouts.default')
 
 @section('content')
     <h1 class="mb-5">Welcome to the IMDB Clone by team 4!</h1>
 
-    {{-- Include carousel --}}
-    @include('components.carousel', ["movies" => $latestMovies])
+        {{-- Include carousel --}}
+        {{-- @include('components.carousel') --}}
 
     {{-- Do we have movies to show --}}
     @if (count($movies) > 0)
