@@ -14,10 +14,10 @@
                 alt="{{$movie->title}}"
                 height="500"
             />
-            <div class="carousel-caption d-none d-md-block">
-            <h3>{{ $movie->title }}</h3>
-            <h5>{{ $movie->tagline }}</h5>
-            <p class="fs-6">{{ $movie->description }}</p>
+            <div class="carousel-caption d-none d-md-block text-silver">
+                <h2 class="h3">{{ $movie->title }}</h2>
+                <h3 class="h5">{{ $movie->tagline }}</h3>
+                <p class="fs-6">{{ $movie->description }}</p>
             </div>
         </div>
         @endforeach
