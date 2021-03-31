@@ -1,37 +1,39 @@
 @extends('layouts.default')
 
 @section('content')
+
 @if(Session::has('add-message'))
     <div class="alert alert-success message">{{session('add-message')}}</div>
-@include('components.sessionMessage')
+@include('components.session-message')
 @endif
+
 <div class="d-flex flex-column g-3 justify-content-evenly col-lg-10 mx-auto gy-4">
 
-    <section class="col-sm-12 col-md-12 col-lg-12">
-        <div class="col-lg-12 d-lg-flex flex-row row">
-            <div class="col-sm-12 ts-4 col-md-12 col-lg-6">
-                <h1 class="title">{{ $movie->title }}</h1>
-                <h2 class="subtitle text-silver h5 mb-4">{{ $year }}</h2>
+    <section class="col-sm-12 col-md-12 col-lg-12 d-sm-flex justify-content-sm-center align-content-sm-center ">
+        <div class="col-lg-12 d-lg-flex flex-row row ">
+            <div class="col-sm-6 ts-4 col-lg-6 justify-content-start w-50">
+                <h1 class="title m-0">{{ $movie->title }}</h1>
+                <h2 class="subtitle text-silver h5 mb-3">{{ $year }}</h2>
             </div>
                 @if($current_user && !$movieIsAdded)
-                <form action="{{route('add_to_watchlist', $movie->id)}}" method="POST" class="col-sm-6 col-lg-6 mb-2 p-2 d-flex align-items-center">
+                <form action="{{route('add_to_watchlist', $movie->id)}}" method="POST" class="col-sm-6 col-lg-6 mb-2 p-4 justify-content-end w-50">
                     @csrf
-                    <button type="submit" name="button" class="btn btn-primary" onclick="timeout()">
+                    <button type="submit" name="button" class="btn btn-primary mr-2" onclick="timeout()">
                         <i class="fa fa-plus mx-2" style=" pointer-events: none;"></i>
                         Add to watchlist
                     </button>
                 </form>
                 @elseif($current_user && $movieIsAdded)
-                    <div class="col-sm-6 col-lg-6 mb-2 p-2 d-flex align-items-center">
-                         <button type="button" name="button" class="btn btn-primary">
-                     <i class="fa fa-plus mx-2" style=" pointer-events: none;"></i>
+                    <div class="col-sm-6 col-lg-6 mb-2 p-4 justify-content-end w-50">
+                         <button type="button" name="button" class="btn btn-primary disabled mr-2">
+                     <i class="fa fa-check mx-2" style=" pointer-events: none;"></i>
                     Already added to watchlist</button>
                     </div>
                 @endif
         </div>
     </section>
 
-    <section class="col-sm-12 col-md-12 d-lg-flex justify-content-lg-start flex-row h-auto mb-3">
+    <section class="col-sm-12 col-md-12 d-lg-flex flex-row h-auto mb-3">
         <div class="row py-2">
             <div class="col-lg-6 mb-3" style="object-fit: contain;">
                 <img src="https://www.themoviedb.org/t/p/w300_and_h450_bestv2/{{ $movie->poster_path }}" alt="{{ $movie->title }}" class="img-fluid" />

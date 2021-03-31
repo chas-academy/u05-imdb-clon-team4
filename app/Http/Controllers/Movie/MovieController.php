@@ -62,6 +62,7 @@ class MovieController extends Controller
 
                 // Append username to review
                 $review->user_name = $userName->name;
+                $review->isReviewedByCurrentUser = !auth()->user() || auth()->user()->name !== $review->user_name;
 
                 $review->status = '';
                 switch ($review->status_id) {
