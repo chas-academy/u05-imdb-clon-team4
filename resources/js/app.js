@@ -1,3 +1,1 @@
-$('.carousel').carousel();
-
 import './search';
