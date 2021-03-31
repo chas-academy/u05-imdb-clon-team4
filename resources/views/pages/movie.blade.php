@@ -36,7 +36,7 @@
     <section class="col-sm-12 col-md-12 d-lg-flex flex-row h-auto mb-3">
         <div class="row py-2">
             <div class="col-lg-6 mb-3" style="object-fit: contain;">
-                <img src=" {{ $movie->image }}" alt="{{ $movie->title }}" class=" img-fluid" />
+                <img src="https://www.themoviedb.org/t/p/w300_and_h450_bestv2/{{ $movie->poster_path }}" alt="{{ $movie->title }}" class="img-fluid" />
             </div>
             <div class="col-sm-12 col-lg-4 ml-8">
                 <h2 class="">Storyline</h2>
