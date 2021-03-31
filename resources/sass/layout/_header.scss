@@ -1,31 +1,27 @@
 @import url("https://fonts.googleapis.com/css2?family=Anton&display=swap");
 
- .navbar-brand {
-   font-family: "Anton", sans-serif;
-   font-size: x-large;
- }
+.navbar-brand {
+  font-family: "Anton", sans-serif;
+  font-size: x-large;
+}
 
- .nav-item {
-	 button {
-		background-color: $primary;
-		border: none;
-		&:hover {
-			background-color: none;
-			border: none;
-		}
-	 }
- }
+.nav-item {
+  button {
+    background-color: $primary;
+    border: none;
+    &:hover {
+      background-color: none;
+      border: none;
+    }
+  }
+}
 
- .header-link {
-	color: $text-color;
-	&:hover {
-		color: $text-color;
-		text-decoration: underline;
-		text-decoration-color: $cod-gray;
-		text-decoration-thickness: 20%;
-	}
- }
-
-//  .collapse.navbar-collapse.show {
-
-//  }
+.header-link {
+  color: $text-color;
+  &:hover {
+    color: $text-color;
+    text-decoration: underline;
+    text-decoration-color: $cod-gray;
+    text-decoration-thickness: 20%;
+  }
+}

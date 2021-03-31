@@ -1,15 +1,29 @@
 .footer {
-    background-color: $dark-bg-color;
+  background-color: $dark-bg-color;
 
-    * {
-        color: $text-color;
-    }
+  * {
+    color: $text-color;
+  }
 }
 
 .fa {
-    font-size: 1.2em;
+  font-size: 1.2em;
 
-    &:hover {
-        transform: scale(1.5);
-    }
+  &:hover {
+    transform: scale(1.5);
+  }
+}
+
+@media (max-width: 767.98px) {
+  .footer-container {
+    display: flex;
+    flex-direction: column !important;
+  }
+  .p-2 {
+    text-align:center;
+  }
+
+  .button{
+    display: flex-wrap;
+  }
 }

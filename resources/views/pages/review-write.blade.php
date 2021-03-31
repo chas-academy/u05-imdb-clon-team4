@@ -19,8 +19,8 @@
                     {{ $message }}
                 </div>
                 @enderror
-			</div>
-			<div class="mb-3">
+            </div>
+            <div class="mb-3">
                 <label for="review" class="form-label">Review</label>
                 <textarea rows="6" type="text" class="form-control @error('review') border-danger @enderror" name="review" id="review" value="{{ old('review') }}"></textarea>
 
