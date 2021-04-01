@@ -34,7 +34,9 @@ class MovieController extends Controller
 
         // Assign metadata to existing movie object
         foreach ($tmdb_meta_result as $k => $v) {
-            $movie->$k = $v;
+            if ($k !== 'id') {
+                $movie->$k = $v;
+            }
         }
 
         // Get credits on movie from TMDB
@@ -43,7 +45,9 @@ class MovieController extends Controller
 
         // Assign credits data to existing movie object
         foreach ($tmdb_credits_result as $k => $v) {
-            $movie->$k = $v;
+            if ($k !== 'id') {
+                $movie->$k = $v;
+            }
         }
 
         // Get review(s) from DB for movie using ID
